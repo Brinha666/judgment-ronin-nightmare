@@ -1,0 +1,1845 @@
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #101010 0%,
+            #050505 48%,
+            #000000 100%
+        );
+
+    color: white;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* ======================================
+   FUNDO
+====================================== */
+
+.fundo-estrelas {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    opacity: 0.18;
+
+    background-image:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.7) 1px,
+            transparent 1px
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(120,210,255,0.45) 1px,
+            transparent 1px
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(160,30,30,0.45) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        180px 180px,
+        270px 270px,
+        350px 350px;
+
+    animation:
+        estrelas 45s linear infinite;
+}
+
+
+
+/* ======================================
+   AURAS
+====================================== */
+
+.aura {
+    position: fixed;
+
+    width: 700px;
+    height: 700px;
+
+    top: 50%;
+
+    border-radius: 50%;
+
+    filter: blur(130px);
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    animation:
+        respirar 6s ease-in-out infinite;
+}
+
+
+.aura-sans {
+    left: -420px;
+
+    background: #74d8ff;
+
+    opacity: 0.20;
+}
+
+
+.aura-nightmare {
+    right: -420px;
+
+    background: #740000;
+
+    opacity: 0.20;
+}
+
+
+body.tema-sans .aura-sans {
+    opacity: 0.28;
+}
+
+
+body.tema-sans .aura-nightmare {
+    opacity: 0.06;
+}
+
+
+body.tema-nightmare .aura-sans {
+    opacity: 0.06;
+}
+
+
+body.tema-nightmare .aura-nightmare {
+    opacity: 0.30;
+}
+
+
+
+/* ======================================
+   HOME
+====================================== */
+
+.home {
+    min-height: 100svh;
+}
+
+
+.inicio {
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 100svh;
+
+    padding:
+        90px 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.topo {
+    position: absolute;
+
+    z-index: 10;
+
+    width: 100%;
+
+    top: 0;
+
+    padding:
+        25px 35px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color:
+        rgba(255,255,255,0.35);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+.status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.status-ponto {
+    width: 6px;
+    height: 6px;
+
+    background: #c7f2ff;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px #70d7ff;
+
+    animation:
+        piscar 2s infinite;
+}
+
+
+.selo {
+    margin:
+        0 0 18px;
+
+    color:
+        rgba(255,255,255,0.25);
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+}
+
+
+.titulo {
+    margin:
+        0 20px 20px;
+
+    font-size:
+        clamp(42px, 6vw, 76px);
+}
+
+
+.sans {
+    color: #dff6ff;
+
+    text-shadow:
+        0 0 12px rgba(150,220,255,0.55),
+        0 0 35px rgba(80,180,230,0.20);
+}
+
+
+.e {
+    color: white;
+}
+
+
+.nightmare {
+    color: #9d2222;
+
+    text-shadow:
+        0 0 12px rgba(180,20,20,0.45),
+        0 0 35px rgba(110,0,0,0.30);
+}
+
+
+.dualidade {
+    width:
+        min(580px, 75vw);
+
+    display: flex;
+
+    align-items: center;
+
+    margin-bottom: 28px;
+}
+
+
+.linha-sans,
+.linha-nightmare {
+    flex: 1;
+
+    height: 1px;
+}
+
+
+.linha-sans {
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #a6eaff
+        );
+}
+
+
+.linha-nightmare {
+    background:
+        linear-gradient(
+            to left,
+            transparent,
+            #8b1616
+        );
+}
+
+
+.centro-dualidade {
+    width: 6px;
+    height: 6px;
+
+    margin:
+        0 9px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px white;
+}
+
+
+.frase {
+    min-height: 28px;
+
+    margin:
+        0 20px 14px;
+
+    font-size: 18px;
+
+    font-style: italic;
+
+    transition:
+        opacity 1s,
+        color 1s;
+}
+
+
+.frase.sumindo {
+    opacity: 0;
+}
+
+
+.fala-sans {
+    color: #dff6ff;
+}
+
+
+.fala-nightmare {
+    color: #a92929;
+}
+
+
+.subtitulo {
+    margin:
+        0 0 38px;
+
+    color:
+        rgba(255,255,255,0.28);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+}
+
+
+
+/* ======================================
+   MENU
+====================================== */
+
+.menu {
+    display: flex;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+}
+
+
+.menu a,
+.menu-em-breve {
+    padding:
+        11px 18px;
+
+    color:
+        rgba(255,255,255,0.80);
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
+    border-radius: 4px;
+
+    background:
+        rgba(255,255,255,0.01);
+
+    text-decoration: none;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    transition: 1s;
+}
+
+
+.menu a:hover {
+    color: white;
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(255,255,255,0.55);
+
+    box-shadow:
+        0 0 20px rgba(255,255,255,0.08);
+}
+
+
+.menu-em-breve {
+    opacity: 0.28;
+
+    cursor: not-allowed;
+}
+
+
+.entrar {
+    margin-top: 27px;
+
+    color:
+        rgba(255,255,255,0.50);
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    padding: 12px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.20);
+
+    transition: 1s;
+}
+
+
+.entrar:hover {
+    color: white;
+
+    letter-spacing: 4px;
+}
+
+
+
+/* ======================================
+   CURSOR
+====================================== */
+
+#cursor-glow {
+    position: fixed;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    filter: blur(65px);
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    opacity: 0.10;
+
+    transform:
+        translate(-50%, -50%);
+}
+
+
+body.tema-sans #cursor-glow {
+    background: #75d9ff;
+}
+
+
+body.tema-nightmare #cursor-glow {
+    background: #9e1616;
+}
+
+
+
+/* ======================================
+   PLAYER HOME
+====================================== */
+
+.player-musica {
+    position: fixed;
+
+    right: 22px;
+
+    bottom: 20px;
+
+    z-index: 20;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 5px;
+}
+
+
+.tocando-agora {
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    color:
+        rgba(255,255,255,0.25);
+}
+
+
+#botao-musica {
+    padding:
+        10px 15px;
+
+    color:
+        rgba(255,255,255,0.75);
+
+    background:
+        rgba(5,5,5,0.85);
+
+    border:
+        1px solid rgba(255,255,255,0.16);
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    transition: 1s;
+}
+
+
+#botao-musica:hover {
+    color: white;
+
+    border-color:
+        rgba(255,255,255,0.45);
+}
+
+
+
+/* ======================================
+   CABEÇALHO DE PÁGINAS
+====================================== */
+
+.cabecalho-pagina {
+    position: relative;
+
+    z-index: 10;
+
+    min-height: 80px;
+
+    padding:
+        20px 35px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.06);
+
+    color:
+        rgba(255,255,255,0.30);
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+
+.voltar {
+    flex-shrink: 0;
+
+    color:
+        rgba(255,255,255,0.55);
+
+    text-decoration: none;
+
+    transition: 0.6s;
+}
+
+
+.voltar:hover {
+    color: #bdefff;
+}
+
+
+
+/* ======================================
+   HISTÓRIA
+====================================== */
+
+.pagina-historia {
+    min-height: 100vh;
+}
+
+
+.historia-container {
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(1150px, 90%);
+
+    margin: auto;
+
+    padding:
+        90px 0 140px;
+}
+
+
+.historia-intro {
+    max-width: 720px;
+
+    margin-bottom: 65px;
+}
+
+
+.capitulo-label {
+    color: #9edff6 !important;
+
+    font-size: 9px !important;
+
+    letter-spacing: 5px;
+}
+
+
+.historia-intro h1 {
+    margin:
+        10px 0 18px;
+
+    font-size:
+        clamp(42px, 7vw, 68px);
+}
+
+
+.historia-intro p {
+    color:
+        rgba(255,255,255,0.48);
+
+    line-height: 1.8;
+}
+
+
+
+/* ======================================
+   CAPÍTULOS
+====================================== */
+
+.lista-capitulos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 80px;
+}
+
+
+.lista-capitulos button {
+    min-height: 115px;
+
+    padding: 24px;
+
+    text-align: left;
+
+    color: white;
+
+    background:
+        rgba(255,255,255,0.015);
+
+    border:
+        1px solid rgba(255,255,255,0.09);
+}
+
+
+.lista-capitulos button span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color:
+        rgba(255,255,255,0.30);
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
+}
+
+
+.lista-capitulos button strong {
+    display: block;
+
+    font-size: 20px;
+}
+
+
+.capitulo-selecionado {
+    border-color:
+        rgba(130,220,255,0.35) !important;
+
+    box-shadow:
+        0 0 30px rgba(80,180,230,0.05);
+}
+
+
+.capitulo-indisponivel {
+    opacity: 0.35;
+}
+
+
+.capitulo-indisponivel small {
+    display: block;
+
+    margin-top: 15px;
+
+    color: #a82b2b;
+
+    letter-spacing: 2px;
+}
+
+
+
+/* ======================================
+   LEITURA
+====================================== */
+
+.leitura {
+    width:
+        min(760px, 100%);
+
+    margin: auto;
+}
+
+
+.cabecalho-capitulo {
+    margin-bottom: 60px;
+}
+
+
+.cabecalho-capitulo span {
+    color: #9edff6;
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+}
+
+
+.cabecalho-capitulo h2 {
+    margin:
+        10px 0 22px;
+
+    font-size:
+        clamp(35px, 6vw, 52px);
+}
+
+
+.cabecalho-capitulo div {
+    width: 110px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            to right,
+            #9ce6ff,
+            #751818
+        );
+}
+
+
+.leitura > p,
+.momento-papyrus p {
+    margin:
+        0 0 23px;
+
+    color:
+        rgba(255,255,255,0.72);
+
+    font-size: 17px;
+
+    line-height: 1.9;
+}
+
+
+.dialogo {
+    padding-left: 18px;
+
+    border-left:
+        1px solid rgba(255,255,255,0.10);
+}
+
+
+.sans-texto {
+    color: #c9f1ff !important;
+}
+
+
+.papyrus-texto {
+    color: white !important;
+
+    font-weight: bold;
+}
+
+
+.chara-texto {
+    color: #bd3737 !important;
+
+    font-style: italic;
+}
+
+
+.temmie-texto {
+    color: #e3c9ff !important;
+}
+
+
+.papyrus-fraco {
+    color:
+        rgba(255,255,255,0.52) !important;
+
+    font-style: italic;
+}
+
+
+.frase-impacto {
+    margin:
+        42px 0 !important;
+
+    color: white !important;
+
+    font-size: 22px !important;
+
+    font-weight: bold;
+
+    text-align: center;
+}
+
+
+.frase-impacto.azul {
+    color: #bcecff !important;
+
+    text-shadow:
+        0 0 15px rgba(100,210,255,0.25);
+}
+
+
+.quebra-cena {
+    margin:
+        75px 0;
+
+    text-align: center;
+
+    color:
+        rgba(255,255,255,0.22);
+}
+
+
+.nota-historia {
+    margin:
+        50px 0;
+
+    padding:
+        30px;
+
+    color:
+        rgba(255,255,255,0.65);
+
+    border-left:
+        2px solid rgba(255,255,255,0.30);
+
+    background:
+        rgba(255,255,255,0.02);
+
+    font-style: italic;
+
+    line-height: 1.7;
+}
+
+
+.fim-leitura {
+    margin-top: 100px;
+
+    padding:
+        45px 0;
+
+    border-top:
+        1px solid rgba(255,255,255,0.08);
+
+    text-align: center;
+}
+
+
+.fim-leitura span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color:
+        rgba(255,255,255,0.25);
+
+    font-size: 8px;
+
+    letter-spacing: 5px;
+}
+
+
+.fim-leitura strong {
+    color: #bcecff;
+
+    font-size: 17px;
+}
+
+
+
+/* ======================================
+   PERSONAGENS
+====================================== */
+
+.pagina-personagens {
+    min-height: 100vh;
+}
+
+
+.personagens-container {
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(1150px, 90%);
+
+    margin: auto;
+
+    padding:
+        90px 0 130px;
+}
+
+
+.personagens-intro {
+    max-width: 720px;
+
+    margin-bottom: 80px;
+}
+
+
+.personagens-intro h1 {
+    margin:
+        10px 0 18px;
+
+    font-size:
+        clamp(42px, 7vw, 68px);
+}
+
+
+.personagens-intro > p:last-child {
+    color:
+        rgba(255,255,255,0.48);
+
+    line-height: 1.8;
+}
+
+
+
+/* ======================================
+   BIOGRAFIA
+====================================== */
+
+.biografia {
+    position: relative;
+
+    margin:
+        0 0 110px;
+
+    padding:
+        clamp(32px, 6vw, 70px);
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    background:
+        rgba(255,255,255,0.012);
+
+    overflow: hidden;
+}
+
+
+.biografia-sans {
+    border-left:
+        3px solid rgba(130,220,255,0.55);
+
+    box-shadow:
+        -20px 0 80px rgba(50,170,220,0.025);
+}
+
+
+.biografia-nightmare {
+    border-left:
+        3px solid rgba(160,25,25,0.65);
+
+    box-shadow:
+        -20px 0 80px rgba(160,0,0,0.035);
+}
+
+
+.bio-identidade {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 55px;
+}
+
+
+.bio-categoria {
+    font-size: 9px;
+
+    letter-spacing: 5px;
+}
+
+
+.bio-azul {
+    color: #a5e8ff;
+}
+
+
+.bio-vermelho {
+    color: #b82a2a;
+}
+
+
+.bio-identidade h2 {
+    margin:
+        10px 0 7px;
+
+    font-size:
+        clamp(40px, 7vw, 66px);
+}
+
+
+.biografia-sans h2 {
+    color: #e2f7ff;
+
+    text-shadow:
+        0 0 25px rgba(90,200,240,0.13);
+}
+
+
+.biografia-nightmare h2 {
+    color: #a92828;
+
+    text-shadow:
+        0 0 25px rgba(180,20,20,0.15);
+}
+
+
+.bio-subtitulo {
+    margin: 0;
+
+    color:
+        rgba(255,255,255,0.35);
+
+    font-style: italic;
+}
+
+
+.bio-conteudo {
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(790px, 100%);
+}
+
+
+.bio-conteudo > p {
+    margin:
+        0 0 24px;
+
+    color:
+        rgba(255,255,255,0.67);
+
+    font-size: 17px;
+
+    line-height: 1.9;
+}
+
+
+.bio-impacto {
+    margin:
+        38px 0 !important;
+
+    font-size:
+        clamp(22px, 4vw, 30px) !important;
+
+    font-weight: bold;
+}
+
+
+.bio-impacto-azul {
+    color: #c1efff !important;
+
+    text-shadow:
+        0 0 18px rgba(100,210,255,0.22);
+}
+
+
+.bio-impacto-vermelho {
+    color: #b82c2c !important;
+
+    text-shadow:
+        0 0 18px rgba(180,20,20,0.25);
+}
+
+
+
+/* ======================================
+   ALMAS
+====================================== */
+
+.lista-almas {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin:
+        32px 0;
+}
+
+
+.lista-almas span {
+    padding:
+        8px 12px;
+
+    border:
+        1px solid rgba(150,220,255,0.15);
+
+    color:
+        rgba(210,245,255,0.72);
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    background:
+        rgba(80,180,220,0.025);
+}
+
+
+
+/* ======================================
+   CITAÇÕES
+====================================== */
+
+.bio-citacao {
+    margin:
+        55px 0 15px;
+
+    padding:
+        25px 30px;
+
+    font-size:
+        20px;
+
+    font-style: italic;
+
+    line-height: 1.6;
+
+    background:
+        rgba(255,255,255,0.015);
+}
+
+
+.citacao-azul {
+    color: #d6f5ff;
+
+    border-left:
+        2px solid #9ee6ff;
+}
+
+
+.citacao-vermelha {
+    color: #c13434;
+
+    border-left:
+        2px solid #8d1717;
+}
+
+
+
+/* ======================================
+   DIVISOR
+====================================== */
+
+.divisor-biografias {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin:
+        20px 0 110px;
+
+    color:
+        rgba(255,255,255,0.20);
+}
+
+
+.divisor-biografias span {
+    height: 1px;
+
+    flex: 1;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(255,255,255,0.15),
+            transparent
+        );
+}
+
+
+
+/* ======================================
+   IMAGEM NIGHTMARE
+====================================== */
+
+.nightmare-imagem-container {
+    position: relative;
+
+    width:
+        min(520px, 55%);
+
+    float: right;
+
+    margin:
+        -15px -20px 45px 50px;
+
+    z-index: 2;
+}
+
+
+.nightmare-imagem {
+    display: block;
+
+    width: 100%;
+
+    max-height: 760px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border:
+        1px solid rgba(160,20,20,0.22);
+
+    box-shadow:
+        0 0 60px rgba(150,0,0,0.15);
+
+    filter:
+        saturate(1.05)
+        contrast(1.03);
+}
+
+
+.sombra-imagem-nightmare {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    box-shadow:
+        inset 0 0 90px 35px rgba(0,0,0,0.60);
+}
+
+
+
+/* ======================================
+   PLAYER VAZIO
+====================================== */
+
+.player-vazio {
+    clear: both;
+
+    margin-top: 60px;
+
+    padding:
+        25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+
+    border:
+        1px solid rgba(160,20,20,0.25);
+
+    background:
+        rgba(120,0,0,0.05);
+}
+
+
+.player-vazio div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.player-vazio span {
+    color:
+        rgba(255,255,255,0.27);
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
+}
+
+
+.player-vazio strong {
+    color: #b52b2b;
+
+    font-size: 24px;
+}
+
+
+#botao-vazio {
+    padding:
+        12px 20px;
+
+    color: #c33535;
+
+    background: transparent;
+
+    border:
+        1px solid rgba(180,30,30,0.42);
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.8s;
+}
+
+
+#botao-vazio:hover {
+    color: #ff5555;
+
+    border-color: #bd3030;
+
+    box-shadow:
+        0 0 25px rgba(190,0,0,0.15);
+}
+
+
+
+/* ======================================
+   RODAPÉ PERSONAGENS
+====================================== */
+
+.rodape-personagens {
+    padding-top: 50px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    border-top:
+        1px solid rgba(255,255,255,0.07);
+}
+
+
+.rodape-personagens span {
+    color:
+        rgba(255,255,255,0.20);
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
+}
+
+
+.rodape-personagens a {
+    color: #bcecff;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    transition: 0.8s;
+}
+
+
+.rodape-personagens a:hover {
+    letter-spacing: 4px;
+
+    color: white;
+}
+
+
+
+/* ======================================
+   ANIMAÇÕES
+====================================== */
+
+@keyframes respirar {
+
+    0%,
+    100% {
+        scale: 1;
+    }
+
+    50% {
+        scale: 1.12;
+    }
+
+}
+
+
+@keyframes estrelas {
+
+    from {
+        background-position:
+            0 0,
+            80px 60px,
+            120px 130px;
+    }
+
+    to {
+        background-position:
+            180px 180px,
+            350px 330px,
+            470px 480px;
+    }
+
+}
+
+
+@keyframes piscar {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+
+
+
+/* ======================================
+   TABLET
+====================================== */
+
+@media (max-width: 900px) {
+
+    .nightmare-imagem-container {
+        width: 46%;
+
+        margin-left: 30px;
+    }
+
+
+    .bio-conteudo > p {
+        font-size: 16px;
+    }
+
+}
+
+
+
+/* ======================================
+   CELULAR
+====================================== */
+
+@media (max-width: 700px) {
+
+
+    body {
+        background:
+            radial-gradient(
+                circle at center,
+                #101010,
+                #030303 65%,
+                #000000
+            );
+    }
+
+
+    /* HOME */
+
+    .home {
+        min-height: 100svh;
+
+        overflow-y: auto;
+    }
+
+
+    .inicio {
+        min-height: 100svh;
+
+        padding:
+            110px 18px 100px;
+    }
+
+
+    .topo {
+        padding:
+            18px 15px;
+
+        font-size: 7px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .status {
+        gap: 5px;
+    }
+
+
+    .titulo {
+        margin:
+            0 0 20px;
+
+        font-size:
+            clamp(37px, 12vw, 50px);
+
+        line-height: 1.05;
+    }
+
+
+    .titulo span {
+        display: inline;
+    }
+
+
+    .selo {
+        font-size: 8px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .dualidade {
+        width: 88%;
+    }
+
+
+    .frase {
+        min-height: 55px;
+
+        font-size: 14px;
+
+        line-height: 1.5;
+    }
+
+
+    .subtitulo {
+        max-width: 320px;
+
+        font-size: 8px;
+
+        letter-spacing: 2px;
+
+        line-height: 1.7;
+    }
+
+
+    .menu {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+
+    .menu a,
+    .menu-em-breve {
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        min-height: 47px;
+
+        padding: 10px;
+
+        font-size: 13px;
+    }
+
+
+    .player-musica {
+        right: 10px;
+
+        bottom: 10px;
+    }
+
+
+    .tocando-agora {
+        display: none;
+    }
+
+
+    #botao-musica {
+        padding:
+            9px 12px;
+
+        font-size: 11px;
+    }
+
+
+
+    /* CABEÇALHO */
+
+    .cabecalho-pagina {
+        min-height: 70px;
+
+        padding:
+            15px 18px;
+
+        font-size: 7px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .cabecalho-pagina > span {
+        text-align: right;
+    }
+
+
+
+    /* HISTÓRIA */
+
+    .historia-container,
+    .personagens-container {
+        width: 88%;
+
+        padding:
+            60px 0 90px;
+    }
+
+
+    .historia-intro,
+    .personagens-intro {
+        margin-bottom: 50px;
+    }
+
+
+    .historia-intro h1,
+    .personagens-intro h1 {
+        font-size: 42px;
+
+        line-height: 1.05;
+    }
+
+
+    .lista-capitulos {
+        grid-template-columns: 1fr;
+
+        margin-bottom: 60px;
+    }
+
+
+    .leitura > p,
+    .momento-papyrus p {
+        font-size: 16px;
+
+        line-height: 1.85;
+    }
+
+
+    .nota-historia {
+        padding:
+            25px 20px;
+    }
+
+
+
+    /* PERSONAGENS */
+
+    .biografia {
+        margin-bottom: 75px;
+
+        padding:
+            32px 22px;
+    }
+
+
+    .bio-identidade {
+        margin-bottom: 40px;
+    }
+
+
+    .bio-identidade h2 {
+        font-size: 42px;
+
+        line-height: 1.05;
+    }
+
+
+    .bio-conteudo {
+        width: 100%;
+    }
+
+
+    .bio-conteudo > p {
+        font-size: 16px;
+
+        line-height: 1.85;
+    }
+
+
+    .bio-impacto {
+        font-size: 23px !important;
+    }
+
+
+    .bio-citacao {
+        padding:
+            20px;
+
+        font-size: 17px;
+    }
+
+
+    .lista-almas {
+        gap: 7px;
+    }
+
+
+    .lista-almas span {
+        font-size: 10px;
+    }
+
+
+
+    /* IMAGEM NIGHTMARE */
+
+    .nightmare-imagem-container {
+        float: none;
+
+        width: 100%;
+
+        margin:
+            0 0 45px;
+    }
+
+
+    .nightmare-imagem {
+        max-height: none;
+
+        aspect-ratio: auto;
+
+        object-fit: contain;
+    }
+
+
+
+    /* PLAYER VAZIO */
+
+    .player-vazio {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+
+    #botao-vazio {
+        width: 100%;
+    }
+
+
+
+    /* RODAPÉ */
+
+    .rodape-personagens {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .divisor-biografias {
+        margin-bottom: 75px;
+    }
+
+}
