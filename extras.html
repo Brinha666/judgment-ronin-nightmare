@@ -136,11 +136,11 @@
     .voltar {
 
       color:
-        rgba(255,255,255,0.65);
+        rgba(255,255,255,0.68);
 
       text-decoration: none;
 
-      font-size: 12px;
+      font-size: 13px;
 
       font-weight: 700;
 
@@ -164,9 +164,9 @@
     .projeto {
 
       color:
-        rgba(255,255,255,0.25);
+        rgba(255,255,255,0.30);
 
-      font-size: 10px;
+      font-size: 11px;
 
       letter-spacing: 3px;
     }
@@ -191,12 +191,12 @@
     .categoria {
 
       margin:
-        0 0 15px;
+        0 0 17px;
 
       color:
-        rgba(255,255,255,0.30);
+        rgba(255,255,255,0.36);
 
-      font-size: 10px;
+      font-size: 12px;
 
       font-weight: 700;
 
@@ -204,9 +204,24 @@
     }
 
 
+    /* ======================================================
+       TÍTULO EXTRAS
+
+       Cada parte é um span separado,
+       mas SEM espaço entre eles.
+    ====================================================== */
+
     h1 {
 
       margin: 0;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: baseline;
+
+      gap: 0;
 
       font-size:
         clamp(42px, 7vw, 78px);
@@ -214,6 +229,11 @@
       letter-spacing: -2px;
 
       color: #f4f4f4;
+    }
+
+
+    h1 span {
+      display: inline-block;
     }
 
 
@@ -239,15 +259,15 @@
 
     .descricao {
 
-      max-width: 650px;
+      max-width: 700px;
 
       margin:
-        25px auto 0;
+        28px auto 0;
 
       color:
-        rgba(255,255,255,0.46);
+        rgba(255,255,255,0.53);
 
-      font-size: 14px;
+      font-size: 16px;
 
       line-height: 1.8;
     }
@@ -349,15 +369,19 @@
     }
 
 
+    /* ======================================================
+       LETRAS PEQUENAS MAIORES
+    ====================================================== */
+
     .rotulo {
 
       margin:
-        0 0 10px;
+        0 0 12px;
 
       color:
-        rgba(255,255,255,0.28);
+        rgba(255,255,255,0.38);
 
-      font-size: 9px;
+      font-size: 11px;
 
       font-weight: 700;
 
@@ -368,13 +392,13 @@
     .titulo-bloco {
 
       margin:
-        0 0 14px;
+        0 0 16px;
 
       color:
-        rgba(255,255,255,0.91);
+        rgba(255,255,255,0.94);
 
       font-size:
-        clamp(22px, 3vw, 30px);
+        clamp(23px, 3vw, 31px);
 
       letter-spacing: -0.5px;
     }
@@ -382,14 +406,14 @@
 
     .texto-bloco {
 
-      max-width: 700px;
+      max-width: 720px;
 
       margin: 0;
 
       color:
-        rgba(255,255,255,0.43);
+        rgba(255,255,255,0.50);
 
-      font-size: 13px;
+      font-size: 15px;
 
       line-height: 1.8;
     }
@@ -403,20 +427,20 @@
 
       display: inline-block;
 
-      margin-top: 20px;
+      margin-top: 22px;
 
       padding:
-        8px 11px;
+        9px 12px;
 
       border:
-        1px solid rgba(255,255,255,0.09);
+        1px solid rgba(255,255,255,0.11);
 
       border-radius: 3px;
 
       color:
-        rgba(255,255,255,0.28);
+        rgba(255,255,255,0.38);
 
-      font-size: 9px;
+      font-size: 10px;
 
       font-weight: 700;
 
@@ -430,13 +454,13 @@
 
     .creditos {
 
-      margin-top: 45px;
+      margin-top: 48px;
     }
 
 
     .cabecalho-creditos {
 
-      margin-bottom: 25px;
+      margin-bottom: 26px;
     }
 
 
@@ -455,10 +479,10 @@
 
       position: relative;
 
-      min-height: 155px;
+      min-height: 165px;
 
       padding:
-        25px;
+        27px;
 
       overflow: hidden;
 
@@ -527,12 +551,12 @@
     .credito h3 {
 
       margin:
-        0 0 12px;
+        0 0 14px;
 
       color:
-        rgba(255,255,255,0.92);
+        rgba(255,255,255,0.94);
 
-      font-size: 17px;
+      font-size: 18px;
     }
 
 
@@ -541,13 +565,17 @@
       margin: 0;
 
       color:
-        rgba(255,255,255,0.40);
+        rgba(255,255,255,0.48);
 
-      font-size: 12px;
+      font-size: 14px;
 
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
+
+    /* ======================================================
+       BRINHA
+    ====================================================== */
 
     .credito.brinha h3 {
 
@@ -558,6 +586,10 @@
         rgba(110,215,255,0.17);
     }
 
+
+    /* ======================================================
+       NIGHTMARE
+    ====================================================== */
 
     .credito.nightmare h3 {
 
@@ -570,31 +602,78 @@
 
 
     /* ======================================================
+       VOX — AZUL ESCURO
+    ====================================================== */
+
+    .credito.vox h3 {
+
+      color: #3976c9;
+
+      text-shadow:
+        0 0 16px
+        rgba(40,105,200,0.28);
+    }
+
+
+    /* ======================================================
+       TOBY FOX — COLORIDO
+
+       Gradiente inspirado nas cores das almas.
+    ====================================================== */
+
+    .credito.toby h3 {
+
+      display: inline-block;
+
+      color: transparent;
+
+      background:
+
+        linear-gradient(
+          90deg,
+          #ff4545,
+          #ffb52e,
+          #ffe85a,
+          #63db76,
+          #5fcaff,
+          #6477ff,
+          #ca69e8
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      text-shadow:
+        none;
+    }
+
+
+    /* ======================================================
        AVISO LEGAL
     ====================================================== */
 
     .aviso-creditos {
 
       margin:
-        25px 0 0;
+        26px 0 0;
 
       padding:
-        22px 25px;
+        23px 26px;
 
       border-left:
-        2px solid rgba(255,255,255,0.13);
+        2px solid rgba(255,255,255,0.15);
 
       color:
-        rgba(255,255,255,0.27);
+        rgba(255,255,255,0.38);
 
       background:
         rgba(255,255,255,0.012);
 
-      font-size: 10px;
+      font-size: 12px;
 
       line-height: 1.8;
 
-      letter-spacing: 0.8px;
+      letter-spacing: 0.6px;
     }
 
 
@@ -620,9 +699,9 @@
       margin: 0;
 
       color:
-        rgba(255,255,255,0.18);
+        rgba(255,255,255,0.28);
 
-      font-size: 9px;
+      font-size: 11px;
 
       line-height: 1.8;
 
@@ -675,6 +754,14 @@
       }
 
 
+      .categoria {
+
+        font-size: 11px;
+
+        letter-spacing: 4px;
+      }
+
+
       h1 {
 
         font-size:
@@ -684,14 +771,30 @@
 
       .descricao {
 
-        font-size: 13px;
+        font-size: 15px;
+
+        line-height: 1.7;
       }
 
 
       .bloco {
 
         padding:
-          28px 23px;
+          29px 23px;
+      }
+
+
+      .rotulo {
+
+        font-size: 10px;
+
+        letter-spacing: 3px;
+      }
+
+
+      .texto-bloco {
+
+        font-size: 14px;
       }
 
 
@@ -708,9 +811,27 @@
       }
 
 
+      .credito h3 {
+
+        font-size: 18px;
+      }
+
+
+      .credito p {
+
+        font-size: 14px;
+      }
+
+
       .titulo-bloco {
 
-        font-size: 23px;
+        font-size: 24px;
+      }
+
+
+      .aviso-creditos {
+
+        font-size: 11px;
       }
 
     }
@@ -753,18 +874,13 @@
       ARQUIVOS DO PROJETO
     </p>
 
+    <!--
+      IMPORTANTE:
+      Não existe espaço entre EX e TRAS.
+    -->
+
     <h1>
-
-      <span class="azul">
-        EX
-      </span>
-
-      TRAS
-
-      <span class="vermelho">
-        .
-      </span>
-
+      <span class="azul">EX</span><span>TRAS</span><span class="vermelho">.</span>
     </h1>
 
     <p class="descricao">
@@ -900,7 +1016,7 @@
 
         <!-- VOX -->
 
-        <article class="credito">
+        <article class="credito vox">
 
           <h3>
             Vox — ChatGPT / OpenAI
@@ -916,7 +1032,7 @@
 
         <!-- TOBY FOX -->
 
-        <article class="credito">
+        <article class="credito toby">
 
           <h3>
             Toby Fox — UNDERTALE
