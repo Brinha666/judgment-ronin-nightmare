@@ -1,0 +1,689 @@
+/* =========================================================
+   HOME 1.0
+   Estilo exclusivo da página inicial.
+
+   Esse arquivo é carregado DEPOIS de style.css,
+   então ele corrige apenas a Home sem quebrar
+   História, Personagens, Músicas ou Extras.
+========================================================= */
+
+
+body.home {
+  --azul: #dff6ff;
+  --vermelho: #a92929;
+
+  min-height: 100svh;
+}
+
+
+/* =========================================================
+   NÃO DEIXAR SELECIONAR A INTERFACE
+========================================================= */
+
+body.home,
+body.home * {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+
+body.home img,
+body.home a {
+  -webkit-user-drag: none;
+}
+
+
+
+/* =========================================================
+   AURAS LATERAIS
+
+   Agora as duas SEMPRE existem.
+
+   Uma vai desaparecendo enquanto a outra
+   vai aparecendo lentamente.
+========================================================= */
+
+body.home .aura {
+
+  opacity: 0 !important;
+
+  transition:
+    opacity 2.2s ease-in-out !important;
+
+  will-change:
+    opacity,
+    transform;
+}
+
+
+/* SANS ATIVO */
+
+body.home.tema-sans .aura-sans {
+
+  opacity:
+    0.34 !important;
+}
+
+
+body.home.tema-sans .aura-nightmare {
+
+  opacity:
+    0.055 !important;
+}
+
+
+/* NIGHTMARE ATIVO */
+
+body.home.tema-nightmare .aura-sans {
+
+  opacity:
+    0.055 !important;
+}
+
+
+body.home.tema-nightmare .aura-nightmare {
+
+  opacity:
+    0.34 !important;
+}
+
+
+
+/* =========================================================
+   FRASE CENTRAL
+
+   Existe SOMENTE uma frase.
+
+   Ela desaparece,
+   o texto troca,
+   e a nova aparece.
+========================================================= */
+
+body.home #frase-destaque {
+
+  display: block !important;
+
+  min-height: 32px;
+
+  opacity: 1 !important;
+
+  transform:
+    translateY(0);
+
+  transition:
+    opacity 0.9s ease-in-out,
+    transform 0.9s ease-in-out,
+    color 0.9s ease-in-out,
+    text-shadow 0.9s ease-in-out !important;
+}
+
+
+body.home #frase-destaque.is-hidden {
+
+  opacity:
+    0 !important;
+
+  transform:
+    translateY(6px);
+}
+
+
+
+/* FRASE DO SANS */
+
+body.home #frase-destaque.fala-sans {
+
+  color:
+    #dff6ff !important;
+
+  text-shadow:
+    0 0 18px
+    rgba(120, 210, 255, 0.24) !important;
+}
+
+
+
+/* FRASE DO NIGHTMARE */
+
+body.home #frase-destaque.fala-nightmare {
+
+  color:
+    #b72b31 !important;
+
+  text-shadow:
+    0 0 18px
+    rgba(190, 25, 35, 0.28) !important;
+}
+
+
+
+/* =========================================================
+   CURSOR
+
+   Mais visível.
+
+   Azul na esquerda.
+   Branco no meio.
+   Vermelho na direita.
+========================================================= */
+
+body.home #cursor-glow {
+
+  display: block;
+
+  position: fixed;
+
+  width:
+    410px !important;
+
+  height:
+    410px !important;
+
+  left: 50%;
+
+  top: 50%;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  opacity:
+    0.58 !important;
+
+  filter:
+    blur(42px) !important;
+
+  transform:
+    translate(-50%, -50%);
+
+  transition:
+    opacity 0.35s ease !important;
+
+  will-change:
+    left,
+    top,
+    background;
+}
+
+
+body.home #cursor-glow.ativo {
+
+  opacity:
+    0.72 !important;
+}
+
+
+/*
+  Evita as regras antigas do style.css
+  de decidirem a cor do mouse.
+*/
+
+body.home.tema-sans #cursor-glow,
+body.home.tema-nightmare #cursor-glow {
+
+  background-color:
+    transparent !important;
+}
+
+
+
+/* =========================================================
+   TELA DE ENTRADA
+========================================================= */
+
+body.home .tela-entrada {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 28px;
+
+
+  background:
+
+    radial-gradient(
+      circle at 32% 50%,
+      rgba(75, 190, 235, 0.10),
+      transparent 36%
+    ),
+
+    radial-gradient(
+      circle at 68% 50%,
+      rgba(150, 0, 10, 0.11),
+      transparent 36%
+    ),
+
+    rgba(0, 0, 0, 0.94);
+
+
+  backdrop-filter:
+    blur(18px);
+
+
+  opacity: 1;
+
+  visibility: visible;
+
+
+  transition:
+
+    opacity 0.8s ease,
+
+    visibility 0.8s ease;
+}
+
+
+
+body.home .tela-entrada[hidden] {
+
+  display:
+    none !important;
+}
+
+
+
+body.home .tela-entrada.saindo {
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+}
+
+
+
+/* =========================================================
+   CONTEÚDO DA ENTRADA
+========================================================= */
+
+body.home .entrada-conteudo {
+
+  width:
+    min(680px, 100%);
+
+  text-align: center;
+}
+
+
+
+/* NOME DO PROJETO */
+
+body.home .entrada-selo {
+
+  margin:
+    0 0 34px;
+
+  color:
+    rgba(255, 255, 255, 0.48);
+
+  font-size:
+    clamp(13px, 1.15vw, 17px) !important;
+
+  line-height:
+    1.5;
+
+  letter-spacing:
+    clamp(3px, 0.45vw, 6px) !important;
+}
+
+
+
+/* BOTÃO PRINCIPAL */
+
+body.home .entrada-principal {
+
+  min-width:
+    min(420px, 100%);
+
+  padding:
+    18px 32px !important;
+
+
+  color:
+    rgba(255, 255, 255, 0.94);
+
+
+  background:
+
+    linear-gradient(
+      90deg,
+      rgba(80, 190, 235, 0.07),
+      rgba(255, 255, 255, 0.035),
+      rgba(150, 10, 18, 0.075)
+    );
+
+
+  border:
+
+    1px solid
+    rgba(255, 255, 255, 0.24);
+
+
+  border-radius:
+    5px;
+
+
+  font:
+    inherit;
+
+
+  font-size:
+    clamp(14px, 1vw, 17px) !important;
+
+
+  font-weight:
+    700;
+
+
+  letter-spacing:
+    clamp(2px, 0.32vw, 4px) !important;
+
+
+  cursor:
+    pointer;
+
+
+  transition:
+
+    transform 0.55s ease,
+
+    border-color 0.55s ease,
+
+    box-shadow 0.55s ease,
+
+    background 0.55s ease;
+}
+
+
+
+body.home .entrada-principal:hover {
+
+  transform:
+    translateY(-3px);
+
+
+  border-color:
+    rgba(255, 255, 255, 0.58);
+
+
+  box-shadow:
+
+    -35px 0 70px
+    rgba(75, 205, 255, 0.10),
+
+    35px 0 70px
+    rgba(180, 15, 20, 0.11);
+}
+
+
+
+/* TEXTO DA MÚSICA */
+
+body.home .entrada-audio {
+
+  margin:
+    22px 0 12px;
+
+  color:
+    rgba(255, 255, 255, 0.52);
+
+
+  font-size:
+    clamp(13px, 0.9vw, 16px) !important;
+
+
+  line-height:
+    1.6;
+
+
+  letter-spacing:
+    clamp(1px, 0.2vw, 3px) !important;
+}
+
+
+
+/* ENTRAR SEM SOM */
+
+body.home .entrada-sem-som {
+
+  padding:
+    10px 14px;
+
+
+  color:
+    rgba(255, 255, 255, 0.42);
+
+
+  background:
+    transparent;
+
+
+  border:
+    0;
+
+
+  font:
+    inherit;
+
+
+  font-size:
+    clamp(11px, 0.78vw, 14px) !important;
+
+
+  letter-spacing:
+    2px !important;
+
+
+  cursor:
+    pointer;
+
+
+  transition:
+    color 0.4s ease;
+}
+
+
+
+body.home .entrada-sem-som:hover {
+
+  color:
+    rgba(255, 255, 255, 0.82);
+}
+
+
+
+/* =========================================================
+   SITE ATRÁS DA TELA DE ENTRADA
+========================================================= */
+
+body.home .topo,
+body.home .inicio,
+body.home .player-musica {
+
+  transition:
+
+    filter 0.9s ease,
+
+    opacity 0.9s ease,
+
+    transform 0.9s ease;
+}
+
+
+
+body.home.entrada-pendente .topo,
+body.home.entrada-pendente .inicio,
+body.home.entrada-pendente .player-musica {
+
+  filter:
+    blur(8px);
+
+  opacity:
+    0.2;
+
+  transform:
+    scale(1.005);
+
+  pointer-events:
+    none;
+}
+
+
+
+/* =========================================================
+   ACESSIBILIDADE DE TECLADO
+========================================================= */
+
+body.home a:focus-visible,
+body.home button:focus-visible {
+
+  outline:
+
+    1px solid
+    rgba(220, 247, 255, 0.92);
+
+  outline-offset:
+    4px;
+}
+
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media
+(max-width: 700px),
+(pointer: coarse) {
+
+  body.home #cursor-glow {
+
+    display:
+      none !important;
+  }
+
+}
+
+
+
+@media (max-width: 700px) {
+
+  body.home .tela-entrada {
+
+    padding:
+      24px 20px;
+  }
+
+
+
+  body.home .entrada-conteudo {
+
+    width:
+      100%;
+  }
+
+
+
+  body.home .entrada-selo {
+
+    margin-bottom:
+      28px;
+
+
+    font-size:
+      13px !important;
+
+
+    line-height:
+      1.7;
+
+
+    letter-spacing:
+      3px !important;
+  }
+
+
+
+  body.home .entrada-principal {
+
+    width:
+      100%;
+
+
+    min-width:
+      0;
+
+
+    padding:
+      18px 16px !important;
+
+
+    font-size:
+      15px !important;
+
+
+    line-height:
+      1.4;
+
+
+    letter-spacing:
+      2px !important;
+  }
+
+
+
+  body.home .entrada-audio {
+
+    margin-top:
+      20px;
+
+
+    font-size:
+      14px !important;
+
+
+    line-height:
+      1.55;
+
+
+    letter-spacing:
+      1px !important;
+  }
+
+
+
+  body.home .entrada-sem-som {
+
+    font-size:
+      12px !important;
+  }
+
+
+
+  body.home #frase-destaque {
+
+    min-height:
+      52px;
+
+
+    font-size:
+      15px !important;
+
+
+    line-height:
+      1.55;
+  }
+
+}
