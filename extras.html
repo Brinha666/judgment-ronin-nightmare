@@ -1,61 +1,969 @@
-<section class="creditos">
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-  <p class="categoria">CRÉDITOS</p>
+<head>
 
-  <h2>Quem fez este projeto acontecer.</h2>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Extras — Judgment Ronin & Nightmare
+  </title>
 
 
-  <div class="credito">
+  <style>
 
-    <h3>Brinha</h3>
+    /* ======================================================
+       BASE
+    ====================================================== */
 
-    <p>
-      Criador de Judgment Ronin, história, roteiro,
-      direção criativa e desenvolvimento do projeto.
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      margin: 0;
+
+      min-height: 100vh;
+
+      color: #f3f3f3;
+
+      background:
+
+        radial-gradient(
+          circle at 8% 45%,
+          rgba(85, 200, 245, 0.09),
+          transparent 33%
+        ),
+
+        radial-gradient(
+          circle at 92% 45%,
+          rgba(170, 15, 25, 0.09),
+          transparent 33%
+        ),
+
+        #050505;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      overflow-x: hidden;
+    }
+
+
+    /* ======================================================
+       ESTRELAS
+    ====================================================== */
+
+    body::before {
+
+      content: "";
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: -1;
+
+      pointer-events: none;
+
+      opacity: 0.32;
+
+      background-image:
+
+        radial-gradient(
+          circle,
+          rgba(210, 245, 255, 0.75) 1px,
+          transparent 1px
+        ),
+
+        radial-gradient(
+          circle,
+          rgba(180, 35, 45, 0.55) 1px,
+          transparent 1px
+        );
+
+      background-size:
+        145px 145px,
+        220px 220px;
+
+      background-position:
+        30px 25px,
+        110px 95px;
+    }
+
+
+    /* ======================================================
+       TOPO
+    ====================================================== */
+
+    .topo {
+
+      width:
+        min(1100px, calc(100% - 40px));
+
+      min-height: 82px;
+
+      margin:
+        0 auto;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.08);
+    }
+
+
+    .voltar {
+
+      color:
+        rgba(255,255,255,0.65);
+
+      text-decoration: none;
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      letter-spacing: 2px;
+
+      transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+    }
+
+
+    .voltar:hover {
+
+      color: #dff6ff;
+
+      transform:
+        translateX(-3px);
+    }
+
+
+    .projeto {
+
+      color:
+        rgba(255,255,255,0.25);
+
+      font-size: 10px;
+
+      letter-spacing: 3px;
+    }
+
+
+    /* ======================================================
+       INTRODUÇÃO
+    ====================================================== */
+
+    .cabecalho {
+
+      width:
+        min(900px, calc(100% - 40px));
+
+      margin:
+        85px auto 70px;
+
+      text-align: center;
+    }
+
+
+    .categoria {
+
+      margin:
+        0 0 15px;
+
+      color:
+        rgba(255,255,255,0.30);
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: 5px;
+    }
+
+
+    h1 {
+
+      margin: 0;
+
+      font-size:
+        clamp(42px, 7vw, 78px);
+
+      letter-spacing: -2px;
+
+      color: #f4f4f4;
+    }
+
+
+    .azul {
+
+      color: #dff6ff;
+
+      text-shadow:
+        0 0 24px
+        rgba(100,210,255,0.24);
+    }
+
+
+    .vermelho {
+
+      color: #b32a31;
+
+      text-shadow:
+        0 0 24px
+        rgba(200,20,30,0.25);
+    }
+
+
+    .descricao {
+
+      max-width: 650px;
+
+      margin:
+        25px auto 0;
+
+      color:
+        rgba(255,255,255,0.46);
+
+      font-size: 14px;
+
+      line-height: 1.8;
+    }
+
+
+    /* ======================================================
+       CONTEÚDO PRINCIPAL
+    ====================================================== */
+
+    .conteudo {
+
+      width:
+        min(900px, calc(100% - 40px));
+
+      margin:
+        0 auto 100px;
+    }
+
+
+    /* ======================================================
+       BLOCO
+    ====================================================== */
+
+    .bloco {
+
+      position: relative;
+
+      margin-bottom: 22px;
+
+      padding:
+        38px 40px;
+
+      overflow: hidden;
+
+      border:
+        1px solid rgba(255,255,255,0.085);
+
+      border-radius: 6px;
+
+      background:
+        rgba(255,255,255,0.018);
+
+      transition:
+        border-color 0.4s ease,
+        transform 0.4s ease,
+        background 0.4s ease;
+    }
+
+
+    .bloco::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      opacity: 0;
+
+      background:
+
+        linear-gradient(
+          110deg,
+          rgba(100,210,255,0.045),
+          transparent 45%,
+          rgba(180,20,30,0.045)
+        );
+
+      transition:
+        opacity 0.5s ease;
+    }
+
+
+    .bloco:hover {
+
+      transform:
+        translateY(-2px);
+
+      border-color:
+        rgba(255,255,255,0.17);
+
+      background:
+        rgba(255,255,255,0.024);
+    }
+
+
+    .bloco:hover::before {
+      opacity: 1;
+    }
+
+
+    .bloco-conteudo {
+
+      position: relative;
+
+      z-index: 1;
+    }
+
+
+    .rotulo {
+
+      margin:
+        0 0 10px;
+
+      color:
+        rgba(255,255,255,0.28);
+
+      font-size: 9px;
+
+      font-weight: 700;
+
+      letter-spacing: 4px;
+    }
+
+
+    .titulo-bloco {
+
+      margin:
+        0 0 14px;
+
+      color:
+        rgba(255,255,255,0.91);
+
+      font-size:
+        clamp(22px, 3vw, 30px);
+
+      letter-spacing: -0.5px;
+    }
+
+
+    .texto-bloco {
+
+      max-width: 700px;
+
+      margin: 0;
+
+      color:
+        rgba(255,255,255,0.43);
+
+      font-size: 13px;
+
+      line-height: 1.8;
+    }
+
+
+    /* ======================================================
+       EM BREVE
+    ====================================================== */
+
+    .em-breve {
+
+      display: inline-block;
+
+      margin-top: 20px;
+
+      padding:
+        8px 11px;
+
+      border:
+        1px solid rgba(255,255,255,0.09);
+
+      border-radius: 3px;
+
+      color:
+        rgba(255,255,255,0.28);
+
+      font-size: 9px;
+
+      font-weight: 700;
+
+      letter-spacing: 2px;
+    }
+
+
+    /* ======================================================
+       CRÉDITOS
+    ====================================================== */
+
+    .creditos {
+
+      margin-top: 45px;
+    }
+
+
+    .cabecalho-creditos {
+
+      margin-bottom: 25px;
+    }
+
+
+    .credito-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 14px;
+    }
+
+
+    .credito {
+
+      position: relative;
+
+      min-height: 155px;
+
+      padding:
+        25px;
+
+      overflow: hidden;
+
+      border:
+        1px solid rgba(255,255,255,0.075);
+
+      border-radius: 5px;
+
+      background:
+        rgba(255,255,255,0.015);
+
+      transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease;
+    }
+
+
+    .credito:hover {
+
+      transform:
+        translateY(-3px);
+
+      border-color:
+        rgba(255,255,255,0.17);
+
+      background:
+        rgba(255,255,255,0.025);
+    }
+
+
+    .credito::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+
+      bottom: 0;
+
+      width: 100%;
+
+      height: 2px;
+
+      opacity: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(110,215,255,0.55),
+          rgba(255,255,255,0.12),
+          rgba(180,25,35,0.55)
+        );
+
+      transition:
+        opacity 0.35s ease;
+    }
+
+
+    .credito:hover::after {
+      opacity: 1;
+    }
+
+
+    .credito h3 {
+
+      margin:
+        0 0 12px;
+
+      color:
+        rgba(255,255,255,0.92);
+
+      font-size: 17px;
+    }
+
+
+    .credito p {
+
+      margin: 0;
+
+      color:
+        rgba(255,255,255,0.40);
+
+      font-size: 12px;
+
+      line-height: 1.7;
+    }
+
+
+    .credito.brinha h3 {
+
+      color: #dff6ff;
+
+      text-shadow:
+        0 0 15px
+        rgba(110,215,255,0.17);
+    }
+
+
+    .credito.nightmare h3 {
+
+      color: #c02d34;
+
+      text-shadow:
+        0 0 15px
+        rgba(200,30,40,0.18);
+    }
+
+
+    /* ======================================================
+       AVISO LEGAL
+    ====================================================== */
+
+    .aviso-creditos {
+
+      margin:
+        25px 0 0;
+
+      padding:
+        22px 25px;
+
+      border-left:
+        2px solid rgba(255,255,255,0.13);
+
+      color:
+        rgba(255,255,255,0.27);
+
+      background:
+        rgba(255,255,255,0.012);
+
+      font-size: 10px;
+
+      line-height: 1.8;
+
+      letter-spacing: 0.8px;
+    }
+
+
+    /* ======================================================
+       FINAL
+    ====================================================== */
+
+    .final {
+
+      margin-top: 80px;
+
+      padding-top: 40px;
+
+      border-top:
+        1px solid rgba(255,255,255,0.06);
+
+      text-align: center;
+    }
+
+
+    .final p {
+
+      margin: 0;
+
+      color:
+        rgba(255,255,255,0.18);
+
+      font-size: 9px;
+
+      line-height: 1.8;
+
+      letter-spacing: 2px;
+    }
+
+
+    .dualidade {
+
+      width: 150px;
+
+      height: 1px;
+
+      margin:
+        24px auto;
+
+      background:
+
+        linear-gradient(
+          90deg,
+          rgba(120,220,255,0.55),
+          rgba(255,255,255,0.20),
+          rgba(180,30,40,0.55)
+        );
+    }
+
+
+    /* ======================================================
+       CELULAR
+    ====================================================== */
+
+    @media (max-width: 700px) {
+
+      .topo {
+
+        min-height: 70px;
+      }
+
+
+      .projeto {
+
+        display: none;
+      }
+
+
+      .cabecalho {
+
+        margin:
+          60px auto 48px;
+      }
+
+
+      h1 {
+
+        font-size:
+          clamp(42px, 15vw, 62px);
+      }
+
+
+      .descricao {
+
+        font-size: 13px;
+      }
+
+
+      .bloco {
+
+        padding:
+          28px 23px;
+      }
+
+
+      .credito-grid {
+
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .credito {
+
+        min-height: auto;
+      }
+
+
+      .titulo-bloco {
+
+        font-size: 23px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- ======================================================
+       TOPO
+  ======================================================= -->
+
+  <header class="topo">
+
+    <a
+      href="index.html"
+      class="voltar"
+    >
+      ← VOLTAR
+    </a>
+
+    <span class="projeto">
+      JUDGMENT RONIN & NIGHTMARE
+    </span>
+
+  </header>
+
+
+  <!-- ======================================================
+       CABEÇALHO
+  ======================================================= -->
+
+  <section class="cabecalho">
+
+    <p class="categoria">
+      ARQUIVOS DO PROJETO
     </p>
 
-  </div>
+    <h1>
 
+      <span class="azul">
+        EX
+      </span>
 
-  <div class="credito">
+      TRAS
 
-    <h3>Nightmare</h3>
+      <span class="vermelho">
+        .
+      </span>
 
-    <p>
-      Criador do personagem Nightmare e responsável
-      pela trilha sonora original do projeto.
+    </h1>
+
+    <p class="descricao">
+      Bastidores, curiosidades, créditos e pequenas partes
+      do projeto que existem além da história principal.
     </p>
 
-  </div>
+  </section>
 
 
-  <div class="credito">
+  <!-- ======================================================
+       CONTEÚDO
+  ======================================================= -->
 
-    <h3>Vox — ChatGPT / OpenAI</h3>
-
-    <p>
-      Assistência na escrita, revisão, organização da lore,
-      continuidade da história e desenvolvimento do site.
-    </p>
-
-  </div>
+  <main class="conteudo">
 
 
-  <div class="credito">
+    <!-- ====================================================
+         SOBRE
+    ===================================================== -->
 
-    <h3>Toby Fox — UNDERTALE</h3>
+    <section class="bloco">
 
-    <p>
-      Criador de UNDERTALE, universo que inspirou este projeto.
-    </p>
+      <div class="bloco-conteudo">
 
-  </div>
+        <p class="rotulo">
+          SOBRE O PROJETO
+        </p>
+
+        <h2 class="titulo-bloco">
+          Como tudo começou?
+        </h2>
+
+        <p class="texto-bloco">
+          A origem de Judgment Ronin, a chegada de Nightmare
+          e toda a história por trás da criação deste projeto
+          serão reunidas aqui.
+        </p>
+
+        <span class="em-breve">
+          EM BREVE
+        </span>
+
+      </div>
+
+    </section>
 
 
-  <p class="aviso-creditos">
-    Judgment Ronin & Nightmare é um projeto de fã não oficial
-    de UNDERTALE. Não possui afiliação com Toby Fox ou com
-    a equipe oficial de UNDERTALE.
-  </p>
+    <!-- ====================================================
+         INTERAJA
+    ===================================================== -->
 
-</section>
+    <section class="bloco">
+
+      <div class="bloco-conteudo">
+
+        <p class="rotulo">
+          INTERAJA
+        </p>
+
+        <h2 class="titulo-bloco">
+          Algo também espera por você.
+        </h2>
+
+        <p class="texto-bloco">
+          Testes, pequenos segredos, curiosidades e outras
+          formas de explorar Judgment Ronin & Nightmare
+          chegarão nesta área.
+        </p>
+
+        <span class="em-breve">
+          EM BREVE
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- ====================================================
+         CRÉDITOS
+    ===================================================== -->
+
+    <section class="creditos">
+
+      <div class="cabecalho-creditos">
+
+        <p class="rotulo">
+          CRÉDITOS
+        </p>
+
+        <h2 class="titulo-bloco">
+          Quem fez este projeto acontecer.
+        </h2>
+
+      </div>
+
+
+      <div class="credito-grid">
+
+
+        <!-- BRINHA -->
+
+        <article class="credito brinha">
+
+          <h3>
+            Brinha
+          </h3>
+
+          <p>
+            Criador de Judgment Ronin, história, roteiro,
+            direção criativa e desenvolvimento do projeto.
+          </p>
+
+        </article>
+
+
+        <!-- NIGHTMARE -->
+
+        <article class="credito nightmare">
+
+          <h3>
+            Nightmare
+          </h3>
+
+          <p>
+            Criador do personagem Nightmare e responsável
+            pela trilha sonora original do projeto.
+          </p>
+
+        </article>
+
+
+        <!-- VOX -->
+
+        <article class="credito">
+
+          <h3>
+            Vox — ChatGPT / OpenAI
+          </h3>
+
+          <p>
+            Assistência na escrita, revisão, organização da lore,
+            continuidade da história e desenvolvimento do site.
+          </p>
+
+        </article>
+
+
+        <!-- TOBY FOX -->
+
+        <article class="credito">
+
+          <h3>
+            Toby Fox — UNDERTALE
+          </h3>
+
+          <p>
+            Criador de UNDERTALE, universo que inspirou
+            este projeto.
+          </p>
+
+        </article>
+
+
+      </div>
+
+
+      <p class="aviso-creditos">
+
+        Judgment Ronin & Nightmare é um projeto de fã não oficial
+        de UNDERTALE. Não possui afiliação com Toby Fox ou com
+        a equipe oficial de UNDERTALE.
+
+      </p>
+
+    </section>
+
+
+    <!-- ====================================================
+         FINAL
+    ===================================================== -->
+
+    <footer class="final">
+
+      <div class="dualidade"></div>
+
+      <p>
+        JUDGMENT RONIN & NIGHTMARE
+        <br>
+        VERSÃO 1.0
+      </p>
+
+    </footer>
+
+
+  </main>
+
+
+</body>
+
+</html>
