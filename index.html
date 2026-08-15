@@ -1,172 +1,221 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+  <title>Judgment Ronin & Nightmare</title>
 
-    <title>Judgment Ronin & Nightmare</title>
+  <!-- CSS geral do site -->
+  <link rel="stylesheet" href="style.css">
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+  <!-- CSS exclusivo da Home -->
+  <link rel="stylesheet" href="home.css">
 </head>
 
+<body class="home tema-sans entrada-pendente">
 
-<body class="home tema-sans">
+  <!-- =====================================
+       TELA DE ENTRADA
+  ====================================== -->
 
+  <div
+    class="tela-entrada"
+    id="tela-entrada"
+    aria-label="Entrada do projeto"
+  >
 
-    <!-- FUNDO -->
+    <div class="entrada-conteudo">
 
-    <div class="fundo-estrelas"></div>
+      <p class="entrada-selo">
+        JUDGMENT RONIN & NIGHTMARE
+      </p>
 
-    <div class="aura aura-sans"></div>
+      <button
+        class="entrada-principal"
+        id="entrar-com-som"
+        type="button"
+      >
+        CLIQUE PARA ENTRAR
+      </button>
 
-    <div class="aura aura-nightmare"></div>
+      <p class="entrada-audio">
+        ♪ A trilha sonora começará suavemente
+      </p>
 
-    <div id="cursor-glow"></div>
+      <button
+        class="entrada-sem-som"
+        id="entrar-sem-som"
+        type="button"
+      >
+        ENTRAR SEM SOM
+      </button>
 
+    </div>
 
-    <!-- TOPO -->
-
-    <header class="topo">
-
-        <span>
-            UNDERTALE FAN PROJECT
-        </span>
-
-
-        <span class="status">
-
-            <span class="status-ponto"></span>
-
-            EM DESENVOLVIMENTO
-
-        </span>
-
-    </header>
-
-
-    <!-- HOME -->
-
-    <main class="inicio">
-
-
-        <p class="selo">
-            JUSTIÇA &nbsp;//&nbsp; VAZIO
-        </p>
+  </div>
 
 
-        <h1 class="titulo">
+  <!-- =====================================
+       FUNDO
+  ====================================== -->
 
-            <span class="sans">
-                Judgment Ronin
-            </span>
+  <div class="fundo-estrelas"></div>
 
-            <span class="e">
-                &
-            </span>
+  <div class="aura aura-sans"></div>
 
-            <span class="nightmare">
-                Nightmare
-            </span>
+  <div class="aura aura-nightmare"></div>
 
-        </h1>
+  <div id="cursor-glow"></div>
 
 
-        <div class="dualidade">
+  <!-- =====================================
+       TOPO
+  ====================================== -->
 
-            <span class="linha-sans"></span>
+  <header class="topo">
 
-            <span class="centro-dualidade"></span>
+    <span>
+      UNDERTALE FAN PROJECT
+    </span>
 
-            <span class="linha-nightmare"></span>
+    <span class="status">
 
-        </div>
+      <span class="status-ponto"></span>
 
+      VERSÃO 1.0
 
-        <p
-            class="frase fala-sans"
-            id="frase-destaque"
-        >
-            "Seu erro? Demorar para perceber que eu não desistiria..."
-        </p>
+    </span>
 
-
-        <p class="subtitulo">
-            UMA HISTÓRIA SOBRE JUSTIÇA, VAZIO E ESCOLHAS
-        </p>
+  </header>
 
 
-        <nav class="menu">
+  <!-- =====================================
+       HOME
+  ====================================== -->
 
-            <a href="historia.html">
-                História
-            </a>
+  <main class="inicio">
 
-            <a href="personagens.html">
-                Personagens
-            </a>
-
-            <button
-                class="menu-em-breve"
-                type="button"
-                disabled
-            >
-                Músicas
-            </button>
-
-            <button
-                class="menu-em-breve"
-                type="button"
-                disabled
-            >
-                Galeria
-            </button>
-
-        </nav>
+    <p class="selo">
+      JUSTIÇA &nbsp;//&nbsp; VAZIO
+    </p>
 
 
-        <a
-            class="entrar"
-            href="historia.html"
-        >
-            COMEÇAR A HISTÓRIA
-        </a>
+    <h1 class="titulo">
 
-    </main>
+      <span class="sans">
+        Judgment Ronin
+      </span>
+
+      <span class="e">
+        &
+      </span>
+
+      <span class="nightmare">
+        Nightmare
+      </span>
+
+    </h1>
 
 
-    <!-- PLAYER -->
+    <div
+      class="dualidade"
+      aria-hidden="true"
+    >
 
-    <div class="player-musica">
+      <span class="linha-sans"></span>
 
-        <span class="tocando-agora">
-            TOCANDO AGORA
-        </span>
+      <span class="centro-dualidade"></span>
 
-        <button
-            id="botao-musica"
-            type="button"
-        >
-            ▶ The Duo
-        </button>
-
-        <audio
-            id="musica-fundo"
-            preload="metadata"
-        ></audio>
+      <span class="linha-nightmare"></span>
 
     </div>
 
 
-    <script src="script.js"></script>
+    <!--
+      EXISTE APENAS UMA FRASE.
+      O JavaScript troca o conteúdo dela.
+    -->
+
+    <p
+      class="frase fala-sans"
+      id="frase-destaque"
+    >
+      "Seu erro? Demorar para perceber que eu não desistiria..."
+    </p>
+
+
+    <p class="subtitulo">
+      UMA HISTÓRIA SOBRE JUSTIÇA, VAZIO E ESCOLHAS
+    </p>
+
+
+    <nav
+      class="menu"
+      aria-label="Navegação principal"
+    >
+
+      <a href="historia.html">
+        História
+      </a>
+
+      <a href="personagens.html">
+        Personagens
+      </a>
+
+      <a href="musicas.html">
+        Músicas
+      </a>
+
+      <a href="extras.html">
+        Extras
+      </a>
+
+    </nav>
+
+
+    <a
+      class="entrar"
+      href="historia.html"
+    >
+      COMEÇAR A HISTÓRIA
+    </a>
+
+  </main>
+
+
+  <!-- =====================================
+       PLAYER
+  ====================================== -->
+
+  <div class="player-musica">
+
+    <span class="tocando-agora">
+      TOCANDO AGORA
+    </span>
+
+    <button
+      id="botao-musica"
+      type="button"
+    >
+      ▶ The Duo
+    </button>
+
+    <audio
+      id="musica-fundo"
+      preload="metadata"
+    ></audio>
+
+  </div>
+
+
+  <!--
+    IMPORTANTE:
+    A HOME agora usa home.js.
+    O script.js continua sendo usado pelas outras páginas.
+  -->
+
+  <script src="home.js"></script>
 
 </body>
-
 </html>
