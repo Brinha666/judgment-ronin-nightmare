@@ -1,0 +1,2094 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Músicas — Judgment Ronin & Nightmare
+  </title>
+
+
+  <style>
+
+    /* ======================================================
+       BASE
+    ====================================================== */
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      margin: 0;
+
+      min-height: 100vh;
+
+      padding-bottom: 150px;
+
+      color: #f4f4f4;
+
+      background:
+        radial-gradient(
+          circle at 10% 40%,
+          rgba(80, 190, 230, 0.09),
+          transparent 32%
+        ),
+
+        radial-gradient(
+          circle at 90% 45%,
+          rgba(180, 20, 30, 0.08),
+          transparent 32%
+        ),
+
+        #050505;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      overflow-x: hidden;
+    }
+
+
+    /* ======================================================
+       ESTRELAS
+    ====================================================== */
+
+    body::before {
+
+      content: "";
+
+      position: fixed;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      opacity: 0.35;
+
+      background-image:
+
+        radial-gradient(
+          circle,
+          rgba(210, 245, 255, 0.7) 1px,
+          transparent 1px
+        ),
+
+        radial-gradient(
+          circle,
+          rgba(190, 40, 50, 0.45) 1px,
+          transparent 1px
+        );
+
+      background-size:
+        140px 140px,
+        210px 210px;
+
+      background-position:
+        20px 30px,
+        80px 100px;
+
+      z-index: -1;
+    }
+
+
+    /* ======================================================
+       TOPO
+    ====================================================== */
+
+    .topo {
+
+      width:
+        min(1100px, calc(100% - 40px));
+
+      margin:
+        0 auto;
+
+      min-height:
+        82px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.08);
+    }
+
+
+    .voltar {
+
+      color:
+        rgba(255,255,255,0.65);
+
+      text-decoration:
+        none;
+
+      font-size:
+        12px;
+
+      font-weight:
+        700;
+
+      letter-spacing:
+        2px;
+
+      transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+    }
+
+
+    .voltar:hover {
+
+      color:
+        #dff6ff;
+
+      transform:
+        translateX(-3px);
+    }
+
+
+    .projeto {
+
+      color:
+        rgba(255,255,255,0.25);
+
+      font-size:
+        10px;
+
+      letter-spacing:
+        3px;
+    }
+
+
+    /* ======================================================
+       CABEÇALHO
+    ====================================================== */
+
+    .cabecalho {
+
+      width:
+        min(900px, calc(100% - 40px));
+
+      margin:
+        85px auto 60px;
+
+      text-align: center;
+    }
+
+
+    .categoria {
+
+      margin:
+        0 0 15px;
+
+      color:
+        rgba(255,255,255,0.30);
+
+      font-size:
+        10px;
+
+      font-weight:
+        700;
+
+      letter-spacing:
+        5px;
+    }
+
+
+    h1 {
+
+      margin:
+        0;
+
+      font-size:
+        clamp(36px, 7vw, 76px);
+
+      letter-spacing:
+        -2px;
+
+      color:
+        #f5f5f5;
+
+      text-shadow:
+        0 0 28px rgba(255,255,255,0.08);
+    }
+
+
+    .azul {
+
+      color:
+        #dff6ff;
+
+      text-shadow:
+        0 0 22px rgba(100,210,255,0.22);
+    }
+
+
+    .vermelho {
+
+      color:
+        #b42b32;
+
+      text-shadow:
+        0 0 22px rgba(200,20,30,0.22);
+    }
+
+
+    .descricao {
+
+      max-width:
+        650px;
+
+      margin:
+        24px auto 0;
+
+      color:
+        rgba(255,255,255,0.45);
+
+      line-height:
+        1.8;
+
+      font-size:
+        14px;
+    }
+
+
+    .aviso {
+
+      display:
+        inline-block;
+
+      margin-top:
+        22px;
+
+      padding:
+        8px 12px;
+
+      border:
+        1px solid rgba(255,255,255,0.09);
+
+      border-radius:
+        4px;
+
+      color:
+        rgba(255,255,255,0.35);
+
+      font-size:
+        10px;
+
+      letter-spacing:
+        2px;
+    }
+
+
+    /* ======================================================
+       LISTA
+    ====================================================== */
+
+    .lista {
+
+      width:
+        min(900px, calc(100% - 40px));
+
+      margin:
+        0 auto;
+
+      display:
+        grid;
+
+      gap:
+        14px;
+    }
+
+
+    /* ======================================================
+       FAIXA
+    ====================================================== */
+
+    .faixa {
+
+      position: relative;
+
+      min-height:
+        118px;
+
+      padding:
+        24px 26px;
+
+      display:
+        grid;
+
+      grid-template-columns:
+        65px 1fr auto;
+
+      align-items:
+        center;
+
+      gap:
+        20px;
+
+      overflow:
+        hidden;
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+
+      border-radius:
+        5px;
+
+      background:
+        rgba(255,255,255,0.018);
+
+      transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+    }
+
+
+    .faixa::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      transition:
+        opacity 0.5s ease;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(100,210,255,0.055),
+          transparent 40%,
+          rgba(180,20,30,0.055)
+        );
+    }
+
+
+    .faixa:hover {
+
+      transform:
+        translateY(-2px);
+
+      border-color:
+        rgba(255,255,255,0.18);
+
+      background:
+        rgba(255,255,255,0.025);
+    }
+
+
+    .faixa:hover::before,
+    .faixa.ativa::before {
+
+      opacity: 1;
+    }
+
+
+    .faixa.ativa {
+
+      border-color:
+        rgba(210,245,255,0.25);
+
+      box-shadow:
+        0 0 40px rgba(100,210,255,0.035);
+    }
+
+
+    /* ======================================================
+       NÚMERO
+    ====================================================== */
+
+    .numero {
+
+      position: relative;
+
+      z-index: 1;
+
+      color:
+        rgba(255,255,255,0.16);
+
+      font-size:
+        27px;
+
+      font-weight:
+        700;
+
+      letter-spacing:
+        -1px;
+    }
+
+
+    /* ======================================================
+       INFORMAÇÕES
+    ====================================================== */
+
+    .info {
+
+      position: relative;
+
+      z-index: 1;
+    }
+
+
+    .nome {
+
+      margin:
+        0 0 7px;
+
+      font-size:
+        18px;
+
+      font-weight:
+        700;
+
+      color:
+        rgba(255,255,255,0.90);
+    }
+
+
+    .momento {
+
+      margin: 0;
+
+      color:
+        rgba(255,255,255,0.36);
+
+      font-size:
+        12px;
+
+      line-height:
+        1.5;
+    }
+
+
+    /* ======================================================
+       BOTÃO
+    ====================================================== */
+
+    .ouvir {
+
+      position: relative;
+
+      z-index: 1;
+
+      min-width:
+        105px;
+
+      padding:
+        12px 17px;
+
+      border:
+        1px solid rgba(255,255,255,0.14);
+
+      border-radius:
+        3px;
+
+      color:
+        rgba(255,255,255,0.70);
+
+      background:
+        rgba(0,0,0,0.28);
+
+      font:
+        inherit;
+
+      font-size:
+        10px;
+
+      font-weight:
+        700;
+
+      letter-spacing:
+        1.4px;
+
+      cursor:
+        pointer;
+
+      transition:
+        color 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+    }
+
+
+    .ouvir:hover {
+
+      color:
+        white;
+
+      border-color:
+        rgba(255,255,255,0.32);
+
+      background:
+        rgba(255,255,255,0.035);
+    }
+
+
+    .faixa.ativa .ouvir {
+
+      color:
+        #dff6ff;
+
+      border-color:
+        rgba(150,220,255,0.28);
+    }
+
+
+    /* ======================================================
+       EQUALIZADOR
+    ====================================================== */
+
+    .equalizador {
+
+      display:
+        inline-flex;
+
+      align-items:
+        end;
+
+      gap:
+        2px;
+
+      height:
+        12px;
+
+      margin-left:
+        8px;
+
+      opacity:
+        0;
+
+      transition:
+        opacity 0.3s ease;
+    }
+
+
+    .faixa.tocando .equalizador {
+
+      opacity: 1;
+    }
+
+
+    .equalizador span {
+
+      width:
+        2px;
+
+      height:
+        5px;
+
+      background:
+        #dff6ff;
+
+      animation:
+        eq 0.65s infinite alternate ease-in-out;
+    }
+
+
+    .equalizador span:nth-child(2) {
+
+      animation-delay:
+        0.18s;
+    }
+
+
+    .equalizador span:nth-child(3) {
+
+      animation-delay:
+        0.36s;
+    }
+
+
+    @keyframes eq {
+
+      from {
+        height: 3px;
+      }
+
+      to {
+        height: 12px;
+      }
+    }
+
+
+    /* ======================================================
+       PLAYER FIXO
+    ====================================================== */
+
+    .player {
+
+      position: fixed;
+
+      left: 50%;
+
+      bottom: 18px;
+
+      transform:
+        translateX(-50%);
+
+      width:
+        min(900px, calc(100% - 32px));
+
+      min-height:
+        88px;
+
+      padding:
+        15px 20px;
+
+      display:
+        grid;
+
+      grid-template-columns:
+        minmax(160px, 1fr)
+        auto
+        minmax(220px, 1.2fr);
+
+      align-items:
+        center;
+
+      gap:
+        20px;
+
+      z-index:
+        50;
+
+      border:
+        1px solid rgba(255,255,255,0.12);
+
+      border-radius:
+        6px;
+
+      background:
+        rgba(7,7,7,0.91);
+
+      backdrop-filter:
+        blur(18px);
+
+      box-shadow:
+        0 12px 50px rgba(0,0,0,0.50);
+    }
+
+
+    .agora-titulo {
+
+      display: block;
+
+      margin-bottom:
+        5px;
+
+      color:
+        rgba(255,255,255,0.22);
+
+      font-size:
+        8px;
+
+      letter-spacing:
+        2.5px;
+    }
+
+
+    #nomeAtual {
+
+      display: block;
+
+      overflow:
+        hidden;
+
+      white-space:
+        nowrap;
+
+      text-overflow:
+        ellipsis;
+
+      color:
+        rgba(255,255,255,0.75);
+
+      font-size:
+        12px;
+
+      font-weight:
+        700;
+    }
+
+
+    /* ======================================================
+       CONTROLES
+    ====================================================== */
+
+    .controles {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        7px;
+    }
+
+
+    .controle {
+
+      width:
+        36px;
+
+      height:
+        36px;
+
+      border:
+        1px solid rgba(255,255,255,0.11);
+
+      border-radius:
+        50%;
+
+      color:
+        rgba(255,255,255,0.70);
+
+      background:
+        transparent;
+
+      cursor:
+        pointer;
+
+      transition:
+        background 0.25s ease,
+        color 0.25s ease;
+    }
+
+
+    .controle:hover {
+
+      color:
+        white;
+
+      background:
+        rgba(255,255,255,0.06);
+    }
+
+
+    .controle.principal {
+
+      width:
+        44px;
+
+      height:
+        44px;
+
+      font-size:
+        15px;
+    }
+
+
+    /* ======================================================
+       PROGRESSO
+    ====================================================== */
+
+    .linha-player {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        38px 1fr 38px;
+
+      align-items:
+        center;
+
+      gap:
+        8px;
+    }
+
+
+    .tempo {
+
+      color:
+        rgba(255,255,255,0.28);
+
+      font-size:
+        9px;
+
+      text-align:
+        center;
+    }
+
+
+    input[type="range"] {
+
+      width:
+        100%;
+
+      height:
+        3px;
+
+      accent-color:
+        #dff6ff;
+
+      cursor:
+        pointer;
+    }
+
+
+    .volume {
+
+      margin-top:
+        7px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        flex-end;
+
+      gap:
+        8px;
+
+      color:
+        rgba(255,255,255,0.25);
+
+      font-size:
+        9px;
+    }
+
+
+    #volume {
+
+      max-width:
+        90px;
+    }
+
+
+    /* ======================================================
+       RODAPÉ
+    ====================================================== */
+
+    .rodape {
+
+      width:
+        min(900px, calc(100% - 40px));
+
+      margin:
+        70px auto 20px;
+
+      padding-top:
+        35px;
+
+      border-top:
+        1px solid rgba(255,255,255,0.06);
+
+      text-align:
+        center;
+
+      color:
+        rgba(255,255,255,0.20);
+
+      font-size:
+        9px;
+
+      line-height:
+        1.8;
+
+      letter-spacing:
+        2px;
+    }
+
+
+    /* ======================================================
+       MOBILE
+    ====================================================== */
+
+    @media (max-width: 700px) {
+
+      body {
+
+        padding-bottom:
+          195px;
+      }
+
+
+      .topo {
+
+        min-height:
+          70px;
+      }
+
+
+      .projeto {
+
+        display:
+          none;
+      }
+
+
+      .cabecalho {
+
+        margin-top:
+          60px;
+
+        margin-bottom:
+          40px;
+      }
+
+
+      h1 {
+
+        font-size:
+          clamp(38px, 13vw, 58px);
+      }
+
+
+      .descricao {
+
+        font-size:
+          13px;
+      }
+
+
+      .faixa {
+
+        grid-template-columns:
+          42px 1fr;
+
+        gap:
+          14px;
+
+        padding:
+          20px;
+      }
+
+
+      .numero {
+
+        font-size:
+          22px;
+      }
+
+
+      .nome {
+
+        font-size:
+          16px;
+      }
+
+
+      .momento {
+
+        font-size:
+          11px;
+      }
+
+
+      .ouvir {
+
+        grid-column:
+          1 / -1;
+
+        width:
+          100%;
+
+        margin-top:
+          5px;
+      }
+
+
+      .player {
+
+        bottom:
+          10px;
+
+        min-height:
+          160px;
+
+        padding:
+          14px;
+
+        grid-template-columns:
+          1fr;
+
+        gap:
+          11px;
+      }
+
+
+      .agora {
+
+        text-align:
+          center;
+      }
+
+
+      .controles {
+
+        justify-content:
+          center;
+      }
+
+
+      .volume {
+
+        display:
+          none;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- ==============================================
+       TOPO
+  =============================================== -->
+
+  <header class="topo">
+
+    <a
+      href="index.html"
+      class="voltar"
+    >
+      ← VOLTAR
+    </a>
+
+    <span class="projeto">
+      JUDGMENT RONIN & NIGHTMARE
+    </span>
+
+  </header>
+
+
+  <!-- ==============================================
+       INTRODUÇÃO
+  =============================================== -->
+
+  <section class="cabecalho">
+
+    <p class="categoria">
+      TRILHA SONORA
+    </p>
+
+    <h1>
+      <span class="azul">MÚ</span>SICAS<span class="vermelho">.</span>
+    </h1>
+
+    <p class="descricao">
+      As músicas que acompanham Judgment Ronin & Nightmare.
+      Cada faixa representa uma parte, personagem ou sentimento
+      importante do projeto.
+    </p>
+
+    <span class="aviso">
+      ALGUNS TÍTULOS E DESCRIÇÕES PODEM CONTER SPOILERS
+    </span>
+
+  </section>
+
+
+  <!-- ==============================================
+       FAIXAS
+  =============================================== -->
+
+  <main
+    class="lista"
+    id="lista"
+  >
+
+
+    <!-- 01 -->
+
+    <article
+      class="faixa"
+      data-nome="The Duo"
+      data-src="Assets/The_duo.wav"
+    >
+
+      <span class="numero">
+        01
+      </span>
+
+      <div class="info">
+
+        <h2 class="nome">
+
+          The Duo
+
+          <span class="equalizador">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+
+        </h2>
+
+        <p class="momento">
+          O tema de Judgment Ronin e Nightmare juntos.
+        </p>
+
+      </div>
+
+      <button
+        class="ouvir"
+        type="button"
+      >
+        ▶ OUVIR
+      </button>
+
+    </article>
+
+
+    <!-- 02 -->
+
+    <article
+      class="faixa"
+      data-nome="Double Danger"
+      data-src="Assets/Double_Danger.wav"
+    >
+
+      <span class="numero">
+        02
+      </span>
+
+      <div class="info">
+
+        <h2 class="nome">
+
+          Double Danger
+
+          <span class="equalizador">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+
+        </h2>
+
+        <p class="momento">
+          Uma versão mais intensa da presença da dupla.
+        </p>
+
+      </div>
+
+      <button
+        class="ouvir"
+        type="button"
+      >
+        ▶ OUVIR
+      </button>
+
+    </article>
+
+
+    <!-- 03 -->
+
+    <article
+      class="faixa"
+      data-nome="Vazio"
+      data-src="Assets/Vazio.mp3"
+    >
+
+      <span class="numero">
+        03
+      </span>
+
+      <div class="info">
+
+        <h2 class="nome">
+
+          Vazio
+
+          <span class="equalizador">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+
+        </h2>
+
+        <p class="momento">
+          Tema de Nightmare — aquilo que nasceu do medo do nada.
+        </p>
+
+      </div>
+
+      <button
+        class="ouvir"
+        type="button"
+      >
+        ▶ OUVIR
+      </button>
+
+    </article>
+
+
+    <!-- 04 -->
+
+    <article
+      class="faixa"
+      data-nome="Bone and Darkness"
+      data-src="Assets/Bone_and_darkness.wav"
+    >
+
+      <span class="numero">
+        04
+      </span>
+
+      <div class="info">
+
+        <h2 class="nome">
+
+          Bone and Darkness
+
+          <span class="equalizador">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+
+        </h2>
+
+        <p class="momento">
+          Ossos e vazio contra Determinação.
+        </p>
+
+      </div>
+
+      <button
+        class="ouvir"
+        type="button"
+      >
+        ▶ OUVIR
+      </button>
+
+    </article>
+
+
+    <!-- 05 -->
+
+    <article
+      class="faixa"
+      data-nome="Sem Nome"
+      data-src="Assets/Sem_nome%20(1).wav"
+    >
+
+      <span class="numero">
+        05
+      </span>
+
+      <div class="info">
+
+        <h2 class="nome">
+
+          Sem Nome
+
+          <span class="equalizador">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+
+        </h2>
+
+        <p class="momento">
+          O momento em que a batalha final deixa de ser apenas uma luta.
+        </p>
+
+      </div>
+
+      <button
+        class="ouvir"
+        type="button"
+      >
+        ▶ OUVIR
+      </button>
+
+    </article>
+
+
+  </main>
+
+
+  <!-- ==============================================
+       RODAPÉ
+  =============================================== -->
+
+  <footer class="rodape">
+
+    TRILHA SONORA ORIGINAL DO PROJETO
+    <br>
+
+    JUDGMENT RONIN & NIGHTMARE — VERSÃO 1.0
+
+  </footer>
+
+
+  <!-- ==============================================
+       PLAYER FIXO
+  =============================================== -->
+
+  <section class="player">
+
+    <div class="agora">
+
+      <span class="agora-titulo">
+        TOCANDO AGORA
+      </span>
+
+      <span id="nomeAtual">
+        Selecione uma faixa
+      </span>
+
+    </div>
+
+
+    <div class="controles">
+
+      <button
+        class="controle"
+        id="anterior"
+        type="button"
+        title="Faixa anterior"
+      >
+        ◀
+      </button>
+
+      <button
+        class="controle principal"
+        id="playPause"
+        type="button"
+        title="Tocar ou pausar"
+      >
+        ▶
+      </button>
+
+      <button
+        class="controle"
+        id="proxima"
+        type="button"
+        title="Próxima faixa"
+      >
+        ▶
+      </button>
+
+    </div>
+
+
+    <div>
+
+      <div class="linha-player">
+
+        <span
+          class="tempo"
+          id="tempoAtual"
+        >
+          0:00
+        </span>
+
+        <input
+          type="range"
+          id="progresso"
+          min="0"
+          max="100"
+          value="0"
+        >
+
+        <span
+          class="tempo"
+          id="duracao"
+        >
+          0:00
+        </span>
+
+      </div>
+
+
+      <div class="volume">
+
+        <span>
+          VOL
+        </span>
+
+        <input
+          type="range"
+          id="volume"
+          min="0"
+          max="1"
+          value="0.55"
+          step="0.01"
+        >
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Um único áudio controla a página inteira -->
+
+  <audio
+    id="audioPlayer"
+    preload="metadata"
+  ></audio>
+
+
+  <script>
+
+    /* ======================================================
+       ELEMENTOS
+    ====================================================== */
+
+    const audio =
+      document.getElementById("audioPlayer");
+
+
+    const faixas =
+      Array.from(
+        document.querySelectorAll(".faixa")
+      );
+
+
+    const nomeAtual =
+      document.getElementById("nomeAtual");
+
+
+    const playPause =
+      document.getElementById("playPause");
+
+
+    const anterior =
+      document.getElementById("anterior");
+
+
+    const proxima =
+      document.getElementById("proxima");
+
+
+    const progresso =
+      document.getElementById("progresso");
+
+
+    const tempoAtual =
+      document.getElementById("tempoAtual");
+
+
+    const duracao =
+      document.getElementById("duracao");
+
+
+    const volume =
+      document.getElementById("volume");
+
+
+    let indiceAtual =
+      -1;
+
+
+
+    /* ======================================================
+       TEMPO
+    ====================================================== */
+
+    function formatarTempo(segundos) {
+
+      if (
+        !Number.isFinite(segundos)
+      ) {
+
+        return "0:00";
+
+      }
+
+
+      const minutos =
+        Math.floor(
+          segundos / 60
+        );
+
+
+      const segundosRestantes =
+        Math.floor(
+          segundos % 60
+        )
+        .toString()
+        .padStart(2, "0");
+
+
+      return `${minutos}:${segundosRestantes}`;
+
+    }
+
+
+
+    /* ======================================================
+       VISUAL
+    ====================================================== */
+
+    function atualizarVisual() {
+
+      faixas.forEach(
+
+        (faixa, indice) => {
+
+          const botao =
+            faixa.querySelector(".ouvir");
+
+
+          const ativa =
+            indice === indiceAtual;
+
+
+          faixa.classList.toggle(
+            "ativa",
+            ativa
+          );
+
+
+          faixa.classList.toggle(
+            "tocando",
+            ativa && !audio.paused
+          );
+
+
+          if (
+            ativa && !audio.paused
+          ) {
+
+            botao.textContent =
+              "❚❚ PAUSAR";
+
+          }
+
+          else {
+
+            botao.textContent =
+              "▶ OUVIR";
+
+          }
+
+        }
+
+      );
+
+
+      playPause.textContent =
+
+        audio.paused
+
+        ?
+
+        "▶"
+
+        :
+
+        "❚❚";
+
+    }
+
+
+
+    /* ======================================================
+       CARREGAR FAIXA
+    ====================================================== */
+
+    async function tocarFaixa(indice) {
+
+      if (
+        indice < 0 ||
+        indice >= faixas.length
+      ) {
+
+        return;
+
+      }
+
+
+      /*
+        Se clicou na música que já está selecionada,
+        apenas pausa ou continua.
+      */
+
+      if (
+        indiceAtual === indice
+      ) {
+
+        if (
+          audio.paused
+        ) {
+
+          try {
+
+            await audio.play();
+
+          }
+
+          catch (erro) {
+
+            console.log(erro);
+
+          }
+
+        }
+
+        else {
+
+          audio.pause();
+
+        }
+
+
+        atualizarVisual();
+
+        return;
+
+      }
+
+
+      indiceAtual =
+        indice;
+
+
+      const faixa =
+        faixas[indice];
+
+
+      audio.src =
+        faixa.dataset.src;
+
+
+      audio.volume =
+        Number(
+          volume.value
+        );
+
+
+      nomeAtual.textContent =
+        faixa.dataset.nome;
+
+
+      progresso.value =
+        0;
+
+
+      tempoAtual.textContent =
+        "0:00";
+
+
+      duracao.textContent =
+        "0:00";
+
+
+      try {
+
+        await audio.play();
+
+      }
+
+      catch (erro) {
+
+        console.log(
+          "Não foi possível iniciar a faixa:",
+          erro
+        );
+
+      }
+
+
+      atualizarVisual();
+
+    }
+
+
+
+    /* ======================================================
+       BOTÕES DAS FAIXAS
+    ====================================================== */
+
+    faixas.forEach(
+
+      (faixa, indice) => {
+
+        const botao =
+          faixa.querySelector(".ouvir");
+
+
+        botao.addEventListener(
+
+          "click",
+
+          () => {
+
+            tocarFaixa(indice);
+
+          }
+
+        );
+
+      }
+
+    );
+
+
+
+    /* ======================================================
+       PLAY / PAUSE
+    ====================================================== */
+
+    playPause.addEventListener(
+
+      "click",
+
+      async () => {
+
+        /*
+          Se ainda não selecionou nenhuma,
+          começa pela primeira.
+        */
+
+        if (
+          indiceAtual === -1
+        ) {
+
+          tocarFaixa(0);
+
+          return;
+
+        }
+
+
+        if (
+          audio.paused
+        ) {
+
+          try {
+
+            await audio.play();
+
+          }
+
+          catch (erro) {
+
+            console.log(erro);
+
+          }
+
+        }
+
+        else {
+
+          audio.pause();
+
+        }
+
+
+        atualizarVisual();
+
+      }
+
+    );
+
+
+
+    /* ======================================================
+       ANTERIOR
+    ====================================================== */
+
+    anterior.addEventListener(
+
+      "click",
+
+      () => {
+
+        if (
+          indiceAtual === -1
+        ) {
+
+          tocarFaixa(
+            faixas.length - 1
+          );
+
+          return;
+
+        }
+
+
+        const novoIndice =
+
+          (
+            indiceAtual - 1
+            + faixas.length
+          )
+
+          %
+
+          faixas.length;
+
+
+        tocarFaixa(
+          novoIndice
+        );
+
+      }
+
+    );
+
+
+
+    /* ======================================================
+       PRÓXIMA
+    ====================================================== */
+
+    proxima.addEventListener(
+
+      "click",
+
+      () => {
+
+        if (
+          indiceAtual === -1
+        ) {
+
+          tocarFaixa(0);
+
+          return;
+
+        }
+
+
+        const novoIndice =
+
+          (
+            indiceAtual + 1
+          )
+
+          %
+
+          faixas.length;
+
+
+        tocarFaixa(
+          novoIndice
+        );
+
+      }
+
+    );
+
+
+
+    /* ======================================================
+       PROGRESSO
+    ====================================================== */
+
+    audio.addEventListener(
+
+      "timeupdate",
+
+      () => {
+
+        tempoAtual.textContent =
+          formatarTempo(
+            audio.currentTime
+          );
+
+
+        if (
+          Number.isFinite(
+            audio.duration
+          )
+          &&
+          audio.duration > 0
+        ) {
+
+          progresso.value =
+
+            (
+              audio.currentTime
+              /
+              audio.duration
+            )
+
+            *
+
+            100;
+
+        }
+
+      }
+
+    );
+
+
+
+    audio.addEventListener(
+
+      "loadedmetadata",
+
+      () => {
+
+        duracao.textContent =
+          formatarTempo(
+            audio.duration
+          );
+
+      }
+
+    );
+
+
+
+    progresso.addEventListener(
+
+      "input",
+
+      () => {
+
+        if (
+          Number.isFinite(
+            audio.duration
+          )
+        ) {
+
+          audio.currentTime =
+
+            (
+              Number(
+                progresso.value
+              )
+
+              /
+
+              100
+            )
+
+            *
+
+            audio.duration;
+
+        }
+
+      }
+
+    );
+
+
+
+    /* ======================================================
+       VOLUME
+    ====================================================== */
+
+    volume.addEventListener(
+
+      "input",
+
+      () => {
+
+        audio.volume =
+          Number(
+            volume.value
+          );
+
+      }
+
+    );
+
+
+
+    /* ======================================================
+       FIM DA MÚSICA
+
+       Vai automaticamente para a próxima.
+    ====================================================== */
+
+    audio.addEventListener(
+
+      "ended",
+
+      () => {
+
+        const novoIndice =
+
+          (
+            indiceAtual + 1
+          )
+
+          %
+
+          faixas.length;
+
+
+        tocarFaixa(
+          novoIndice
+        );
+
+      }
+
+    );
+
+
+
+    audio.addEventListener(
+
+      "play",
+
+      atualizarVisual
+
+    );
+
+
+    audio.addEventListener(
+
+      "pause",
+
+      atualizarVisual
+
+    );
+
+
+    /*
+      Volume inicial:
+      55%
+    */
+
+    audio.volume =
+      0.55;
+
+  </script>
+
+</body>
+
+</html>
