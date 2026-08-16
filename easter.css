@@ -1,0 +1,827 @@
+/* =========================================================
+   JUDGMENT RONIN & NIGHTMARE
+   EASTER EGGS / INTERAÇÕES
+========================================================= */
+
+
+/* =========================================================
+   BARRA DE PROGRESSO DE LEITURA
+========================================================= */
+
+.jr-read-progress {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    z-index: 9998;
+
+    pointer-events: none;
+
+    background:
+        rgba(255,255,255,0.025);
+}
+
+
+.jr-read-progress-bar {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    height: 100%;
+    width: 100%;
+
+    transform:
+        scaleX(0);
+
+    transform-origin:
+        left center;
+
+    background:
+        linear-gradient(
+            90deg,
+            #83dfff 0%,
+            #eafaff 50%,
+            #b62631 100%
+        );
+
+    box-shadow:
+        0 0 12px rgba(130,220,255,0.25);
+
+    will-change:
+        transform;
+}
+
+
+.jr-progress-dot {
+    position: absolute;
+
+    top: 50%;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        var(--jr-progress-color, #83dfff);
+
+    box-shadow:
+        0 0 12px
+        var(--jr-progress-color, #83dfff);
+
+    transition:
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   TOAST / MENSAGEM SECRETA
+========================================================= */
+
+.jr-toast {
+    position: fixed;
+
+    left: 50%;
+    bottom: 38px;
+
+    transform:
+        translate(-50%, 12px);
+
+    width:
+        min(520px, calc(100% - 34px));
+
+    padding:
+        15px 19px;
+
+    z-index: 10050;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    color:
+        rgba(240,248,255,0.90);
+
+    background:
+        rgba(4,4,6,0.94);
+
+    border:
+        1px solid rgba(170,220,255,0.17);
+
+    border-radius:
+        4px;
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,0.50);
+
+    backdrop-filter:
+        blur(10px);
+
+    text-align: center;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.7;
+
+    letter-spacing:
+        1px;
+
+    transition:
+        opacity 0.45s ease,
+        transform 0.45s ease;
+}
+
+
+.jr-toast.visible {
+    opacity: 1;
+
+    transform:
+        translate(-50%, 0);
+}
+
+
+/* =========================================================
+   NIGHTMARE OBSERVANDO
+========================================================= */
+
+.jr-nightmare-head {
+    position: fixed;
+
+    right: 18px;
+    top: 26%;
+
+    width: 52px;
+    height: 52px;
+
+    z-index: 450;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    transform:
+        translateX(20px)
+        scale(0.85);
+
+    background:
+        radial-gradient(
+            circle at 50% 42%,
+            #090909,
+            #000 72%
+        );
+
+    border:
+        1px solid
+        rgba(170,20,30,0.22);
+
+    box-shadow:
+        0 0 24px
+        rgba(140,0,10,0.10);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+
+.jr-nightmare-head.visible {
+    opacity: 0.82;
+
+    transform:
+        translateX(0)
+        scale(1);
+}
+
+
+.jr-nightmare-head.hiding {
+    opacity: 0;
+
+    transform:
+        translateX(24px)
+        scale(0.7);
+}
+
+
+.jr-nightmare-eye {
+    position: absolute;
+
+    top: 19px;
+
+    width: 8px;
+    height: 5px;
+
+    border-radius:
+        50%;
+
+    background:
+        #d3232d;
+
+    box-shadow:
+        0 0 8px #a20d16;
+
+    transition:
+        transform 0.12s linear;
+}
+
+
+.jr-nightmare-eye.left {
+    left: 12px;
+}
+
+
+.jr-nightmare-eye.right {
+    right: 12px;
+}
+
+
+/* =========================================================
+   GASTER
+========================================================= */
+
+.jr-gaster-mark {
+    display: block;
+
+    width: max-content;
+
+    max-width:
+        calc(100% - 20px);
+
+    margin:
+        42px auto;
+
+    padding:
+        8px 12px;
+
+    border: 0;
+
+    color:
+        rgba(255,255,255,0.10);
+
+    background:
+        transparent;
+
+    font-size:
+        15px;
+
+    letter-spacing:
+        7px;
+
+    cursor:
+        pointer;
+
+    transition:
+        color 0.5s ease,
+        text-shadow 0.5s ease,
+        letter-spacing 0.5s ease;
+}
+
+
+.jr-gaster-mark:hover {
+    color:
+        rgba(220,240,255,0.44);
+
+    letter-spacing:
+        9px;
+
+    text-shadow:
+        0 0 14px
+        rgba(180,215,255,0.20);
+}
+
+
+/* =========================================================
+   ECHO FLOWERS
+========================================================= */
+
+.jr-echo-garden {
+    margin:
+        50px 0;
+
+    padding:
+        24px;
+
+    border-top:
+        1px solid rgba(110,210,255,0.055);
+
+    border-bottom:
+        1px solid rgba(110,210,255,0.055);
+
+    text-align: center;
+}
+
+
+.jr-echo-label {
+    margin:
+        0 0 18px;
+
+    color:
+        rgba(160,220,255,0.26);
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        4px;
+}
+
+
+.jr-echo-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 13px;
+
+    flex-wrap: wrap;
+}
+
+
+.jr-echo {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(100,210,255,0.13);
+
+    color:
+        rgba(150,225,255,0.50);
+
+    background:
+        rgba(70,180,230,0.025);
+
+    cursor: pointer;
+
+    font-size: 19px;
+
+    transition:
+        transform 0.35s ease,
+        color 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.jr-echo:hover {
+    transform:
+        translateY(-3px);
+
+    color:
+        #bcecff;
+
+    background:
+        rgba(80,190,235,0.075);
+
+    box-shadow:
+        0 0 22px
+        rgba(80,190,235,0.08);
+}
+
+
+.jr-echo-text {
+    min-height: 30px;
+
+    margin:
+        20px auto 0;
+
+    max-width: 620px;
+
+    color:
+        rgba(195,235,255,0.58);
+
+    font-style: italic;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.5s ease;
+}
+
+
+.jr-echo-text.visible {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   SAVE STAR
+========================================================= */
+
+.jr-save-star {
+    position: fixed;
+
+    left: 20px;
+    bottom: 25px;
+
+    z-index: 350;
+
+    border: 0;
+
+    color:
+        #ffe35a;
+
+    background:
+        transparent;
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    opacity: 0.28;
+
+    filter:
+        drop-shadow(
+            0 0 7px
+            rgba(255,220,70,0.18)
+        );
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease,
+        filter 0.35s ease;
+}
+
+
+.jr-save-star:hover {
+    opacity: 0.85;
+
+    transform:
+        rotate(12deg)
+        scale(1.15);
+
+    filter:
+        drop-shadow(
+            0 0 10px
+            rgba(255,220,70,0.45)
+        );
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.jr-timeline {
+    position: fixed;
+
+    left: 22px;
+    bottom: 58px;
+
+    z-index: 300;
+
+    color:
+        rgba(255,255,255,0.13);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TRILHA DO CAPÍTULO
+========================================================= */
+
+.jr-chapter-music {
+    position: fixed;
+
+    right: 20px;
+    bottom: 22px;
+
+    z-index: 400;
+
+    min-width: 43px;
+    height: 39px;
+
+    padding:
+        0 13px;
+
+    border:
+        1px solid rgba(255,255,255,0.10);
+
+    border-radius:
+        3px;
+
+    color:
+        rgba(255,255,255,0.48);
+
+    background:
+        rgba(5,5,5,0.85);
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    backdrop-filter:
+        blur(8px);
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.jr-chapter-music:hover,
+.jr-chapter-music.playing {
+    color:
+        #dff6ff;
+
+    border-color:
+        rgba(130,215,255,0.25);
+
+    background:
+        rgba(15,20,24,0.92);
+}
+
+
+/* =========================================================
+   EXTRAS DESBLOQUEADOS
+========================================================= */
+
+.jr-unlocks {
+    margin:
+        45px 0;
+}
+
+
+.jr-unlocks-title {
+    margin:
+        0 0 18px;
+
+    color:
+        rgba(255,255,255,0.34);
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        4px;
+}
+
+
+.jr-unlock-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+}
+
+
+.jr-unlock {
+    padding:
+        22px;
+
+    border:
+        1px solid rgba(255,255,255,0.07);
+
+    border-radius:
+        4px;
+
+    background:
+        rgba(255,255,255,0.012);
+}
+
+
+.jr-unlock span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color:
+        rgba(110,210,255,0.36);
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        3px;
+}
+
+
+.jr-unlock strong {
+    color:
+        rgba(255,255,255,0.78);
+
+    font-size:
+        14px;
+}
+
+
+/* =========================================================
+   CHARA — FUTURO PÓS-FINAL
+========================================================= */
+
+.jr-chara-head {
+    position: fixed;
+
+    right: 17px;
+    bottom: 18px;
+
+    width: 50px;
+    height: 50px;
+
+    z-index: 500;
+
+    border-radius: 50%;
+
+    background:
+        #020202;
+
+    border:
+        1px solid rgba(190,20,30,0.20);
+
+    box-shadow:
+        0 0 22px rgba(180,0,15,0.09);
+}
+
+
+.jr-chara-head::before {
+    content: "";
+
+    position: absolute;
+
+    left: 11px;
+    top: 17px;
+
+    width: 7px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: #bc2028;
+
+    box-shadow:
+        21px 0 0 #bc2028;
+}
+
+
+.jr-chara-head::after {
+    content: "⌣";
+
+    position: absolute;
+
+    left: 50%;
+    top: 20px;
+
+    transform:
+        translateX(-50%);
+
+    color:
+        #cc2630;
+
+    font-size: 22px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   KONAMI / MODO ???
+========================================================= */
+
+.jr-secret-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 10020;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    background:
+
+        radial-gradient(
+            circle at 25% 50%,
+            rgba(180,20,30,0.10),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(80,210,255,0.10),
+            transparent 35%
+        );
+
+    transition:
+        opacity 0.6s ease;
+}
+
+
+.jr-secret-overlay.visible {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   MOBILE / PERFORMANCE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .jr-nightmare-head {
+        width: 42px;
+        height: 42px;
+
+        right: 10px;
+    }
+
+
+    .jr-nightmare-eye {
+        top: 15px;
+
+        width: 6px;
+        height: 4px;
+    }
+
+
+    .jr-nightmare-eye.left {
+        left: 10px;
+    }
+
+
+    .jr-nightmare-eye.right {
+        right: 10px;
+    }
+
+
+    .jr-toast {
+        bottom: 23px;
+
+        font-size: 11px;
+
+        backdrop-filter: none;
+    }
+
+
+    .jr-chapter-music {
+        right: 12px;
+
+        bottom: 12px;
+
+        backdrop-filter: none;
+    }
+
+
+    .jr-save-star {
+        left: 11px;
+
+        bottom: 15px;
+    }
+
+
+    .jr-timeline {
+        display: none;
+    }
+
+
+    .jr-unlock-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .jr-gaster-mark {
+        font-size: 12px;
+
+        letter-spacing: 5px;
+    }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .jr-nightmare-head,
+    .jr-toast,
+    .jr-echo,
+    .jr-gaster-mark,
+    .jr-save-star {
+        transition: none !important;
+    }
+
+}
