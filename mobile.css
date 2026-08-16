@@ -1,0 +1,578 @@
+/* =========================================================
+   JUDGMENT RONIN & NIGHTMARE
+   MOBILE PERFORMANCE MODE
+
+   Este arquivo só altera telas pequenas.
+   O visual do PC permanece intacto.
+========================================================= */
+
+
+/*
+   Celulares + tablets pequenos com toque
+*/
+
+@media
+(max-width: 800px),
+(pointer: coarse) and (max-width: 1000px) {
+
+
+    /* =====================================================
+       BASE
+    ===================================================== */
+
+    html {
+        /*
+           Smooth scroll pode exigir mais trabalho
+           durante páginas muito grandes.
+        */
+        scroll-behavior: auto !important;
+    }
+
+
+    body {
+        /*
+           Evita alguns repaints desnecessários.
+        */
+        text-rendering: optimizeSpeed;
+    }
+
+
+
+    /* =====================================================
+       ESTRELAS
+
+       Mantemos as estrelas,
+       mas desenhamos bem menos delas.
+    ===================================================== */
+
+    body::before {
+
+        opacity:
+            0.18 !important;
+
+        background-size:
+            230px 230px,
+            350px 350px !important;
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+
+        will-change:
+            auto !important;
+    }
+
+
+    .fundo-estrelas {
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+
+        will-change:
+            auto !important;
+    }
+
+
+
+    /* =====================================================
+       AURAS
+
+       BLUR gigante é uma das coisas mais pesadas
+       para GPU de celular.
+
+       Não removemos.
+       Só diminuímos bastante.
+    ===================================================== */
+
+    .aura {
+
+        filter:
+            blur(24px) !important;
+
+        will-change:
+            auto !important;
+
+        transition:
+            opacity 0.65s ease !important;
+    }
+
+
+
+    /*
+       HOME
+
+       Continua:
+       Sans = azul
+       Nightmare = vermelho
+
+       Só fica um pouco mais leve.
+    */
+
+    body.home.tema-sans .aura-sans {
+
+        opacity:
+            0.20 !important;
+    }
+
+
+    body.home.tema-sans .aura-nightmare {
+
+        opacity:
+            0.035 !important;
+    }
+
+
+    body.home.tema-nightmare .aura-sans {
+
+        opacity:
+            0.035 !important;
+    }
+
+
+    body.home.tema-nightmare .aura-nightmare {
+
+        opacity:
+            0.20 !important;
+    }
+
+
+
+    /*
+       PÁGINAS DE HISTÓRIA
+    */
+
+    body.pagina-historia .aura {
+
+        opacity:
+            0.11 !important;
+
+        filter:
+            blur(22px) !important;
+    }
+
+
+
+    /* =====================================================
+       TELA DE ENTRADA DA HOME
+
+       O backdrop-filter é bonito,
+       mas relativamente pesado no celular.
+
+       Retiramos SOMENTE no mobile.
+    ===================================================== */
+
+    body.home .tela-entrada {
+
+        backdrop-filter:
+            none !important;
+
+        -webkit-backdrop-filter:
+            none !important;
+    }
+
+
+
+    /*
+       Antes, o conteúdo atrás da entrada
+       recebia blur.
+
+       No celular deixamos apenas escuro.
+    */
+
+    body.home.entrada-pendente .topo,
+    body.home.entrada-pendente .inicio,
+    body.home.entrada-pendente .player-musica {
+
+        filter:
+            none !important;
+
+        transform:
+            none !important;
+
+        opacity:
+            0.16 !important;
+    }
+
+
+
+    /* =====================================================
+       CURSOR
+
+       Celular não precisa disso.
+    ===================================================== */
+
+    #cursor-glow {
+
+        display:
+            none !important;
+    }
+
+
+
+    /* =====================================================
+       PLAYERS
+
+       Vidro fosco é uma das coisas que mais
+       pesa em alguns celulares.
+    ===================================================== */
+
+    .player,
+    .player-musica,
+    .jr-chapter-music {
+
+        backdrop-filter:
+            none !important;
+
+        -webkit-backdrop-filter:
+            none !important;
+    }
+
+
+    .player {
+
+        box-shadow:
+            0 8px 25px
+            rgba(0, 0, 0, 0.28) !important;
+    }
+
+
+
+    /* =====================================================
+       CARDS
+
+       No celular removemos sombras e movimentos
+       desnecessários ao tocar.
+    ===================================================== */
+
+    .faixa,
+    .bloco,
+    .credito,
+    .botao-capitulo,
+    .capitulo-selecionado,
+    .capitulo-indisponivel,
+    .jr-unlock,
+    .jr-room666-link {
+
+        box-shadow:
+            none !important;
+    }
+
+
+    .faixa:hover,
+    .bloco:hover,
+    .credito:hover,
+    .botao-capitulo:hover,
+    .jr-room666-link:hover {
+
+        transform:
+            none !important;
+
+        box-shadow:
+            none !important;
+    }
+
+
+
+    /* =====================================================
+       GRADIENTES DOS CARDS
+
+       Mantemos, mas sem animações pesadas.
+    ===================================================== */
+
+    .faixa::before,
+    .bloco::before,
+    .credito::after {
+
+        transition:
+            opacity 0.25s ease !important;
+    }
+
+
+
+    /* =====================================================
+       NIGHTMARE HEADS
+
+       Continua aparecendo a cada 10 segundos.
+       Continua podendo ter quatro.
+       Continua observando.
+
+       Só retiramos efeitos gráficos pesados.
+    ===================================================== */
+
+    .jr-nightmare-head {
+
+        box-shadow:
+            none !important;
+
+        transition:
+            opacity 0.40s ease,
+            transform 0.40s ease !important;
+
+        will-change:
+            auto !important;
+    }
+
+
+    .jr-nightmare-eye {
+
+        box-shadow:
+            none !important;
+
+        transition:
+            transform 0.15s linear !important;
+    }
+
+
+
+    /* =====================================================
+       ECHO FLOWERS
+    ===================================================== */
+
+    .jr-echo {
+
+        box-shadow:
+            none !important;
+    }
+
+
+    .jr-echo:hover {
+
+        box-shadow:
+            none !important;
+
+        transform:
+            none !important;
+    }
+
+
+
+    /* =====================================================
+       SAVE STAR
+
+       Drop-shadow também usa filtros.
+    ===================================================== */
+
+    .jr-save-star {
+
+        filter:
+            none !important;
+    }
+
+
+    .jr-save-star:hover {
+
+        filter:
+            none !important;
+    }
+
+
+
+    /* =====================================================
+       TOASTS / MENSAGENS SECRETAS
+    ===================================================== */
+
+    .jr-toast {
+
+        backdrop-filter:
+            none !important;
+
+        -webkit-backdrop-filter:
+            none !important;
+
+        box-shadow:
+            0 8px 25px
+            rgba(0, 0, 0, 0.35) !important;
+    }
+
+
+
+    /* =====================================================
+       BARRA DE LEITURA
+
+       Continua funcionando normalmente,
+       mas sem forçar otimização permanente.
+    ===================================================== */
+
+    .jr-read-progress-bar,
+    .jr-progress-dot {
+
+        will-change:
+            auto !important;
+    }
+
+
+    .jr-progress-dot {
+
+        box-shadow:
+            none !important;
+    }
+
+
+
+    /* =====================================================
+       FRASES SECRETAS
+    ===================================================== */
+
+    .jr-end-whisper {
+
+        transform:
+            none !important;
+
+        transition:
+            opacity 0.8s ease !important;
+    }
+
+
+
+    /* =====================================================
+       SALA 666
+    ===================================================== */
+
+    .room-six {
+
+        box-shadow:
+            none !important;
+    }
+
+
+    .room-six:hover {
+
+        transform:
+            none !important;
+    }
+
+
+    .room-six.active {
+
+        text-shadow:
+            none !important;
+    }
+
+
+
+    /* =====================================================
+       TOQUES
+
+       Evita aquele flash azul/cinza padrão do navegador
+       quando toca nos elementos.
+    ===================================================== */
+
+    button,
+    a {
+
+        -webkit-tap-highlight-color:
+            transparent;
+    }
+
+
+
+    /* =====================================================
+       REDUZ ANIMAÇÕES QUE NÃO SÃO IMPORTANTES
+
+       NÃO removemos:
+       - frases
+       - cabeça do Nightmare
+       - Echo Flowers
+       - Easter Eggs
+       - barra de leitura
+
+       Só reduzimos decorações secundárias.
+    ===================================================== */
+
+    .equalizador span {
+
+        animation-duration:
+            0.9s !important;
+    }
+
+
+
+    /* =====================================================
+       IMAGENS
+
+       Evita processamento além do necessário.
+    ===================================================== */
+
+    img {
+
+        image-rendering:
+            auto;
+
+        backface-visibility:
+            hidden;
+    }
+
+}
+
+
+
+/* =========================================================
+   CELULARES PEQUENOS
+
+   Mais uma redução para aparelhos fracos.
+========================================================= */
+
+@media (max-width: 500px) {
+
+
+    body::before {
+
+        opacity:
+            0.14 !important;
+
+        background-size:
+            280px 280px,
+            430px 430px !important;
+    }
+
+
+    .aura {
+
+        filter:
+            blur(18px) !important;
+    }
+
+
+    body.home.tema-sans .aura-sans,
+    body.home.tema-nightmare .aura-nightmare {
+
+        opacity:
+            0.16 !important;
+    }
+
+
+    body.home.tema-sans .aura-nightmare,
+    body.home.tema-nightmare .aura-sans {
+
+        opacity:
+            0.025 !important;
+    }
+
+
+    body.pagina-historia .aura {
+
+        opacity:
+            0.08 !important;
+    }
+
+
+    /*
+       Nada de sombras em aparelhos pequenos.
+    */
+
+    .player,
+    .jr-toast,
+    .faixa,
+    .bloco,
+    .credito {
+
+        box-shadow:
+            none !important;
+    }
+
+}
