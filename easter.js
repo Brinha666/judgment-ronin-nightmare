@@ -4,7 +4,7 @@
 
 
     /* =====================================================
-       PÁGINA ATUAL
+       CONFIGURAÇÃO
     ===================================================== */
 
     const page =
@@ -37,12 +37,110 @@
         page === "musicas.html";
 
 
+    const isRoom666 =
+        page === "room666.html";
+
+
+    /*
+       Mensagens que antes seriam muito rápidas
+       agora ficam tempo suficiente para ler.
+    */
+
+    const TEMPO_CURTO =
+        2500;
+
+
+    const TEMPO_NORMAL =
+        4500;
+
+
+    const TEMPO_LONGO =
+        6000;
+
+
+    /* =====================================================
+       SEGREDOS DESCOBERTOS
+    ===================================================== */
+
+    function unlockSecret(id) {
+
+        localStorage.setItem(
+            `jr_secret_${id}`,
+            "true"
+        );
+
+
+        updateSecretCounter();
+
+    }
+
+
+    function countSecrets() {
+
+        let total =
+            0;
+
+
+        for (
+            let i = 0;
+            i < localStorage.length;
+            i++
+        ) {
+
+            const key =
+                localStorage.key(i);
+
+
+            if (
+                key
+                &&
+                key.startsWith(
+                    "jr_secret_"
+                )
+                &&
+                localStorage.getItem(key)
+                ===
+                "true"
+            ) {
+
+                total++;
+
+            }
+
+        }
+
+
+        return total;
+
+    }
+
+
+    function updateSecretCounter() {
+
+        const counter =
+            document.querySelector(
+                ".jr-secret-counter"
+            );
+
+
+        if (counter) {
+
+            counter.textContent =
+                `SEGREDOS ENCONTRADOS: ${countSecrets()} / ??`;
+
+        }
+
+    }
+
+
     /* =====================================================
        TOAST
     ===================================================== */
 
     const toast =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
 
     toast.className =
@@ -54,18 +152,21 @@
     );
 
 
-    let toastTimer = null;
+    let toastTimer =
+        null;
 
 
     function showToast(
         text,
-        duration = 3400
+        duration = TEMPO_NORMAL
     ) {
 
         if (toastTimer) {
+
             clearTimeout(
                 toastTimer
             );
+
         }
 
 
@@ -94,7 +195,7 @@
 
 
     /* =====================================================
-       INTERPOLAÇÃO DE COR
+       CORES DA BARRA
     ===================================================== */
 
     function mixColor(
@@ -214,7 +315,7 @@
             );
 
 
-        let scrollQueued =
+        let queued =
             false;
 
 
@@ -266,7 +367,7 @@
             );
 
 
-            scrollQueued =
+            queued =
                 false;
 
         }
@@ -276,15 +377,15 @@
             "scroll",
             () => {
 
-                if (!scrollQueued) {
+                if (!queued) {
+
+                    queued =
+                        true;
+
 
                     requestAnimationFrame(
                         updateProgress
                     );
-
-
-                    scrollQueued =
-                        true;
 
                 }
 
@@ -302,6 +403,8 @@
 
     /* =====================================================
        TIMELINE
+
+       NOSSA TIMELINE É 666.
     ===================================================== */
 
     if (isStory) {
@@ -327,9 +430,9 @@
         timeline.textContent =
             completed
             ?
-            "TIMELINE: FINAL"
+            "TIMELINE 666: FINAL"
             :
-            "TIMELINE: ???";
+            "TIMELINE: 666";
 
 
         document.body.appendChild(
@@ -340,7 +443,7 @@
 
 
     /* =====================================================
-       MARCAR CAPÍTULO COMO LIDO
+       MARCAR CAPÍTULOS COMO LIDOS
     ===================================================== */
 
     const readKeys = {
@@ -423,7 +526,7 @@
 
 
     /* =====================================================
-       MENSAGEM AO VOLTAR PARA HOME
+       VOLTAR PARA HOME
     ===================================================== */
 
     if (isHome) {
@@ -455,7 +558,8 @@
                     ) {
 
                         showToast(
-                            "Voltou? Interessante."
+                            "Voltou? Interessante.",
+                            TEMPO_NORMAL
                         );
 
                     }
@@ -463,7 +567,8 @@
                     else {
 
                         showToast(
-                            "ainda aqui? heh."
+                            "ainda aqui? heh.",
+                            TEMPO_NORMAL
                         );
 
                     }
@@ -475,7 +580,7 @@
                     );
 
                 },
-                2800
+                TEMPO_CURTO
             );
 
         }
@@ -484,7 +589,7 @@
 
 
     /* =====================================================
-       TRILHA RECOMENDADA
+       MÚSICAS RECOMENDADAS DOS CAPÍTULOS
     ===================================================== */
 
     const chapterTracks = {
@@ -582,9 +687,7 @@
             "click",
             async () => {
 
-                if (
-                    audio.paused
-                ) {
+                if (audio.paused) {
 
                     try {
 
@@ -601,7 +704,8 @@
 
 
                         showToast(
-                            `♪ ${track.name}`
+                            `♪ ${track.name}`,
+                            TEMPO_CURTO
                         );
 
                     }
@@ -609,7 +713,8 @@
                     catch {
 
                         showToast(
-                            "O navegador bloqueou o áudio."
+                            "O navegador bloqueou o áudio.",
+                            TEMPO_NORMAL
                         );
 
                     }
@@ -654,7 +759,7 @@
 
 
     /* =====================================================
-       SAVE STAR
+       SAVE
     ===================================================== */
 
     if (isStory) {
@@ -686,9 +791,16 @@
         );
 
 
+        let saveClicks =
+            0;
+
+
         star.addEventListener(
             "click",
             () => {
+
+                saveClicks++;
+
 
                 const finished =
                     localStorage.getItem(
@@ -701,18 +813,38 @@
                 if (finished) {
 
                     showToast(
-                        "Não há nada para salvar aqui."
+                        "Não há nada para salvar aqui.",
+                        TEMPO_NORMAL
                     );
 
+
+                    return;
                 }
 
-                else {
+
+                if (
+                    saveClicks === 6
+                ) {
 
                     showToast(
-                        "Nada aconteceu."
+                        "Você insiste bastante.",
+                        TEMPO_LONGO
                     );
 
+
+                    unlockSecret(
+                        "save_6"
+                    );
+
+
+                    return;
                 }
+
+
+                showToast(
+                    "Nada aconteceu.",
+                    TEMPO_CURTO
+                );
 
             }
         );
@@ -721,7 +853,9 @@
 
 
     /* =====================================================
-       ECHO FLOWERS — CAPÍTULO 02
+       ECHO FLOWERS
+
+       AGORA APENAS FRASES MAIS TRISTES.
     ===================================================== */
 
     if (
@@ -764,7 +898,8 @@
                     <button
                         class="jr-echo"
                         type="button"
-                        data-echo="Eu quero saber."
+                        data-secret="echo_papyrus"
+                        data-echo="pelo menos... eu ainda acredito que você pode ser melhor."
                     >
                         ✿
                     </button>
@@ -772,7 +907,8 @@
                     <button
                         class="jr-echo"
                         type="button"
-                        data-echo="Porque é assim que eu faço novas amizades."
+                        data-secret="echo_chara"
+                        data-echo="Por favor... não me deixa sozinha de novo."
                     >
                         ✿
                     </button>
@@ -780,7 +916,8 @@
                     <button
                         class="jr-echo"
                         type="button"
-                        data-echo="Porque é assim que eu faço novas memórias."
+                        data-secret="echo_nightmare"
+                        data-echo="Eles sentiam medo de mim."
                     >
                         ✿
                     </button>
@@ -804,6 +941,10 @@
                 );
 
 
+            let echoTimer =
+                null;
+
+
             garden
                 .querySelectorAll(
                     ".jr-echo"
@@ -815,12 +956,47 @@
                             "click",
                             () => {
 
-                                echoText.textContent =
-                                    `“${flower.dataset.echo}”`;
+                                clearTimeout(
+                                    echoTimer
+                                );
 
 
-                                echoText.classList.add(
+                                echoText.classList.remove(
                                     "visible"
+                                );
+
+
+                                setTimeout(
+                                    () => {
+
+                                        echoText.textContent =
+                                            `“${flower.dataset.echo}”`;
+
+
+                                        echoText.classList.add(
+                                            "visible"
+                                        );
+
+
+                                        unlockSecret(
+                                            flower.dataset.secret
+                                        );
+
+
+                                        echoTimer =
+                                            setTimeout(
+                                                () => {
+
+                                                    echoText.classList.remove(
+                                                        "visible"
+                                                    );
+
+                                                },
+                                                6500
+                                            );
+
+                                    },
+                                    180
                                 );
 
                             }
@@ -835,7 +1011,10 @@
 
 
     /* =====================================================
-       GASTER — MENSAGENS ESCONDIDAS
+       GASTER
+
+       MANTEMOS APENAS O QUE JÁ EXISTIA.
+       NADA NOVO POR ENQUANTO.
     ===================================================== */
 
     const gasterMessages = {
@@ -986,7 +1165,12 @@
 
                 showToast(
                     `${message.symbols}  (${message.translation})`,
-                    5200
+                    TEMPO_LONGO
+                );
+
+
+                unlockSecret(
+                    `gaster_${page}`
                 );
 
             }
@@ -996,22 +1180,124 @@
 
 
     /* =====================================================
-       CABEÇA DO NIGHTMARE
+       NIGHTMARE
+
+       UMA NOVA CABEÇA A CADA 10 SEGUNDOS.
+       MÁXIMO DE 4.
+
+       QUANDO A QUINTA CHEGAR,
+       A MAIS ANTIGA SOME.
     ===================================================== */
 
-    if (
-        (
-            page ===
-            "capitulo1.html"
-            ||
-            page ===
-            "capitulo2.html"
-        )
-        &&
-        !sessionStorage.getItem(
-            "jr_nightmare_head_seen"
-        )
+    const nightmareHeads =
+        [];
+
+
+    const finePointer =
+        window.matchMedia(
+            "(pointer: fine)"
+        ).matches;
+
+
+    function randomHeadTop() {
+
+        const positions = [
+            14,
+            23,
+            34,
+            48,
+            62,
+            74,
+            83
+        ];
+
+
+        return positions[
+            Math.floor(
+                Math.random()
+                *
+                positions.length
+            )
+        ];
+
+    }
+
+
+    function removeHead(
+        head
     ) {
+
+        if (
+            !head
+            ||
+            !head.isConnected
+        ) {
+            return;
+        }
+
+
+        head.classList.add(
+            "hiding"
+        );
+
+
+        const index =
+            nightmareHeads.indexOf(
+                head
+            );
+
+
+        if (
+            index !== -1
+        ) {
+
+            nightmareHeads.splice(
+                index,
+                1
+            );
+
+        }
+
+
+        setTimeout(
+            () => {
+
+                head.remove();
+
+            },
+            850
+        );
+
+    }
+
+
+    function spawnNightmareHead(
+        forcedSide = null,
+        canFake = true
+    ) {
+
+        if (
+            nightmareHeads.length >= 4
+        ) {
+
+            removeHead(
+                nightmareHeads[0]
+            );
+
+        }
+
+
+        const side =
+            forcedSide
+            ||
+            (
+                Math.random() < 0.5
+                ?
+                "left"
+                :
+                "right"
+            );
+
 
         const head =
             document.createElement(
@@ -1020,7 +1306,19 @@
 
 
         head.className =
-            "jr-nightmare-head";
+            `jr-nightmare-head ${side}`;
+
+
+        head.style.top =
+            `${randomHeadTop()}vh`;
+
+
+        head.innerHTML = `
+
+            <span class="jr-nightmare-eye left-eye"></span>
+            <span class="jr-nightmare-eye right-eye"></span>
+
+        `;
 
 
         head.setAttribute(
@@ -1035,159 +1333,221 @@
         );
 
 
-        head.innerHTML = `
-
-            <span class="jr-nightmare-eye left"></span>
-            <span class="jr-nightmare-eye right"></span>
-
-        `;
-
-
         document.body.appendChild(
             head
         );
 
 
-        const delay =
-            10000
-            +
-            Math.random()
-            *
-            7000;
-
-
-        setTimeout(
-            () => {
-
-                head.classList.add(
-                    "visible"
-                );
-
-
-                sessionStorage.setItem(
-                    "jr_nightmare_head_seen",
-                    "true"
-                );
-
-            },
-            delay
+        nightmareHeads.push(
+            head
         );
 
 
-        function hideHead() {
+        requestAnimationFrame(
+            () => {
 
-            head.classList.add(
-                "hiding"
+                requestAnimationFrame(
+                    () => {
+
+                        head.classList.add(
+                            "visible"
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+        unlockSecret(
+            "nightmare_seen"
+        );
+
+
+        function scareAway() {
+
+            if (
+                head.dataset.gone ===
+                "true"
+            ) {
+                return;
+            }
+
+
+            head.dataset.gone =
+                "true";
+
+
+            removeHead(
+                head
             );
 
 
-            setTimeout(
-                () => {
+            /*
+               CABEÇA FALSA.
 
-                    head.remove();
+               Em algumas vezes você acha
+               que fez ela desaparecer...
 
-                },
-                850
-            );
+               e outra surge do outro lado.
+            */
+
+            if (
+                canFake
+                &&
+                Math.random() < 0.40
+            ) {
+
+                const opposite =
+                    side === "left"
+                    ?
+                    "right"
+                    :
+                    "left";
+
+
+                setTimeout(
+                    () => {
+
+                        spawnNightmareHead(
+                            opposite,
+                            false
+                        );
+
+
+                        unlockSecret(
+                            "nightmare_fake"
+                        );
+
+                    },
+                    1500
+                );
+
+            }
 
         }
 
 
         head.addEventListener(
             "mouseenter",
-            hideHead
+            scareAway
         );
 
 
         head.addEventListener(
             "click",
-            hideHead
+            scareAway
         );
 
-
-        if (
-            window.matchMedia(
-                "(pointer: fine)"
-            ).matches
-        ) {
-
-            const eyes =
-                head.querySelectorAll(
-                    ".jr-nightmare-eye"
-                );
+    }
 
 
-            document.addEventListener(
-                "pointermove",
-                event => {
+    /*
+       Primeira cabeça:
+       exatamente 10 segundos.
 
-                    if (
-                        !head.isConnected
-                    ) {
-                        return;
-                    }
+       Depois:
+       uma nova a cada 10 segundos.
+    */
 
+    setTimeout(
+        () => {
 
-                    const rect =
-                        head.getBoundingClientRect();
-
-
-                    const centerX =
-                        rect.left
-                        +
-                        rect.width / 2;
+            spawnNightmareHead();
 
 
-                    const centerY =
-                        rect.top
-                        +
-                        rect.height / 2;
-
-
-                    const angle =
-                        Math.atan2(
-                            event.clientY
-                            -
-                            centerY,
-
-                            event.clientX
-                            -
-                            centerX
-                        );
-
-
-                    const x =
-                        Math.cos(
-                            angle
-                        )
-                        *
-                        2;
-
-
-                    const y =
-                        Math.sin(
-                            angle
-                        )
-                        *
-                        2;
-
-
-                    eyes.forEach(
-                        eye => {
-
-                            eye.style.transform =
-                                `translate(${x}px, ${y}px)`;
-
-                        }
-                    );
-
-                },
-                {
-                    passive: true
-                }
+            setInterval(
+                spawnNightmareHead,
+                10000
             );
 
-        }
+        },
+        10000
+    );
+
+
+    /*
+       OLHOS ACOMPANHANDO O MOUSE
+    */
+
+    if (finePointer) {
+
+        document.addEventListener(
+            "pointermove",
+            event => {
+
+                nightmareHeads.forEach(
+                    head => {
+
+                        if (
+                            !head.isConnected
+                        ) {
+                            return;
+                        }
+
+
+                        const rect =
+                            head.getBoundingClientRect();
+
+
+                        const centerX =
+                            rect.left
+                            +
+                            rect.width / 2;
+
+
+                        const centerY =
+                            rect.top
+                            +
+                            rect.height / 2;
+
+
+                        const angle =
+                            Math.atan2(
+                                event.clientY
+                                -
+                                centerY,
+
+                                event.clientX
+                                -
+                                centerX
+                            );
+
+
+                        const x =
+                            Math.cos(angle)
+                            *
+                            2.4;
+
+
+                        const y =
+                            Math.sin(angle)
+                            *
+                            2.4;
+
+
+                        head
+                            .querySelectorAll(
+                                ".jr-nightmare-eye"
+                            )
+                            .forEach(
+                                eye => {
+
+                                    eye.style.transform =
+                                        `translate(${x}px, ${y}px)`;
+
+                                }
+                            );
+
+                    }
+                );
+
+            },
+            {
+                passive: true
+            }
+        );
 
     }
 
@@ -1210,12 +1570,8 @@
                 0;
 
 
-            let clickReset =
+            let resetTimer =
                 null;
-
-
-            seal.style.cursor =
-                "default";
 
 
             seal.addEventListener(
@@ -1226,11 +1582,11 @@
 
 
                     clearTimeout(
-                        clickReset
+                        resetTimer
                     );
 
 
-                    clickReset =
+                    resetTimer =
                         setTimeout(
                             () => {
 
@@ -1238,7 +1594,7 @@
                                     0;
 
                             },
-                            2500
+                            3000
                         );
 
 
@@ -1251,7 +1607,13 @@
 
 
                         showToast(
-                            "Não há mais RESET."
+                            "Não há mais RESET.",
+                            TEMPO_LONGO
+                        );
+
+
+                        unlockSecret(
+                            "no_reset"
                         );
 
                     }
@@ -1265,70 +1627,7 @@
 
 
     /* =====================================================
-       HOME — CENTRO ENTRE JUSTIÇA E VAZIO
-    ===================================================== */
-
-    if (isHome) {
-
-        const center =
-            document.querySelector(
-                ".centro-dualidade"
-            );
-
-
-        if (center) {
-
-            let timer =
-                null;
-
-
-            function activate() {
-
-                timer =
-                    setTimeout(
-                        () => {
-
-                            showToast(
-                                "Entre justiça e vazio, ainda existe escolha."
-                            );
-
-
-                            secretFlash();
-
-                        },
-                        2600
-                    );
-
-            }
-
-
-            function cancel() {
-
-                clearTimeout(
-                    timer
-                );
-
-            }
-
-
-            center.addEventListener(
-                "mouseenter",
-                activate
-            );
-
-
-            center.addEventListener(
-                "mouseleave",
-                cancel
-            );
-
-        }
-
-    }
-
-
-    /* =====================================================
-       OVERLAY SECRETO
+       CENTRO JUSTIÇA / VAZIO
     ===================================================== */
 
     const overlay =
@@ -1361,15 +1660,73 @@
                 );
 
             },
-            3600
+            TEMPO_CURTO
         );
+
+    }
+
+
+    if (isHome) {
+
+        const center =
+            document.querySelector(
+                ".centro-dualidade"
+            );
+
+
+        if (center) {
+
+            let centerTimer =
+                null;
+
+
+            center.addEventListener(
+                "mouseenter",
+                () => {
+
+                    centerTimer =
+                        setTimeout(
+                            () => {
+
+                                secretFlash();
+
+
+                                showToast(
+                                    "Entre justiça e vazio, ainda existe escolha.",
+                                    TEMPO_LONGO
+                                );
+
+
+                                unlockSecret(
+                                    "center"
+                                );
+
+                            },
+                            TEMPO_CURTO
+                        );
+
+                }
+            );
+
+
+            center.addEventListener(
+                "mouseleave",
+                () => {
+
+                    clearTimeout(
+                        centerTimer
+                    );
+
+                }
+            );
+
+        }
 
     }
 
 
     /* =====================================================
        KONAMI CODE
-       ↑ ↑ ↓ ↓ ← → ← → B A
     ===================================================== */
 
     if (isHome) {
@@ -1427,7 +1784,13 @@
 
 
                         showToast(
-                            "Você realmente tentou isso?"
+                            "Você realmente tentou isso?",
+                            TEMPO_LONGO
+                        );
+
+
+                        unlockSecret(
+                            "konami"
                         );
 
                     }
@@ -1448,63 +1811,62 @@
 
 
     /* =====================================================
-       CRÉDITOS SECRETOS
+       TROCAR DE ABA — CAPÍTULO 02
     ===================================================== */
 
-    if (isExtras) {
+    if (
+        page ===
+        "capitulo2.html"
+    ) {
 
-        const creditSecrets = [
-
-            [
-                ".credito.brinha",
-                "Ainda escrevendo o próprio caminho."
-            ],
-
-            [
-                ".credito.nightmare",
-                "Hah... encontrou alguma coisa?"
-            ],
-
-            [
-                ".credito.vox",
-                "Ainda organizando o caos."
-            ],
-
-            [
-                ".credito.toby",
-                "Obrigado por criar UNDERTALE."
-            ]
-
-        ];
+        const normalTitle =
+            document.title;
 
 
-        creditSecrets.forEach(
-            ([
-                selector,
-                text
-            ]) => {
+        let titleTimer =
+            null;
 
-                const card =
-                    document.querySelector(
-                        selector
+
+        document.addEventListener(
+            "visibilitychange",
+            () => {
+
+                if (
+                    document.hidden
+                ) {
+
+                    titleTimer =
+                        setTimeout(
+                            () => {
+
+                                document.title =
+                                    "Eu ainda estou aqui.";
+
+                                unlockSecret(
+                                    "tab_watch"
+                                );
+
+                            },
+                            1500
+                        );
+
+                }
+
+                else {
+
+                    clearTimeout(
+                        titleTimer
                     );
 
 
-                if (card) {
-
-                    card.style.cursor =
-                        "pointer";
-
-
-                    card.addEventListener(
-                        "click",
+                    setTimeout(
                         () => {
 
-                            showToast(
-                                text
-                            );
+                            document.title =
+                                normalTitle;
 
-                        }
+                        },
+                        1500
                     );
 
                 }
@@ -1516,7 +1878,145 @@
 
 
     /* =====================================================
-       SEGREDOS NA PÁGINA DE MÚSICAS
+       PAPYRUS — 6 CLIQUES
+    ===================================================== */
+
+    if (
+        page ===
+        "historia.html"
+    ) {
+
+        const papyrusLines =
+            document.querySelectorAll(
+                ".papyrus-texto, .papyrus-fraco"
+            );
+
+
+        let papyrusClicks =
+            0;
+
+
+        papyrusLines.forEach(
+            line => {
+
+                line.style.cursor =
+                    "pointer";
+
+
+                line.addEventListener(
+                    "click",
+                    () => {
+
+                        papyrusClicks++;
+
+
+                        if (
+                            papyrusClicks === 6
+                        ) {
+
+                            showToast(
+                                "NYEH HEH HEH!",
+                                TEMPO_LONGO
+                            );
+
+
+                            unlockSecret(
+                                "papyrus_6"
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       CRÉDITOS SECRETOS
+    ===================================================== */
+
+    if (isExtras) {
+
+        const credits = [
+
+            [
+                ".credito.brinha",
+                "Ainda escrevendo o próprio caminho.",
+                "credit_brinha"
+            ],
+
+            [
+                ".credito.nightmare",
+                "Hah... encontrou alguma coisa?",
+                "credit_nightmare"
+            ],
+
+            [
+                ".credito.vox",
+                "Ainda organizando o caos.",
+                "credit_vox"
+            ],
+
+            [
+                ".credito.toby",
+                "Obrigado por criar UNDERTALE.",
+                "credit_toby"
+            ]
+
+        ];
+
+
+        credits.forEach(
+            ([
+                selector,
+                text,
+                id
+            ]) => {
+
+                const card =
+                    document.querySelector(
+                        selector
+                    );
+
+
+                if (!card) {
+                    return;
+                }
+
+
+                card.style.cursor =
+                    "pointer";
+
+
+                card.addEventListener(
+                    "click",
+                    () => {
+
+                        showToast(
+                            text,
+                            TEMPO_NORMAL
+                        );
+
+
+                        unlockSecret(
+                            id
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       MÚSICAS — SEGREDOS NORMAIS
     ===================================================== */
 
     if (isMusic) {
@@ -1588,7 +2088,13 @@
                                 showToast(
                                     secrets[name]
                                     ||
-                                    "Alguma coisa está escondida nesta faixa."
+                                    "Alguma coisa está escondida nesta faixa.",
+                                    TEMPO_LONGO
+                                );
+
+
+                                unlockSecret(
+                                    `music_${name}`
                                 );
 
                             }
@@ -1598,6 +2104,162 @@
 
                 }
             );
+
+    }
+
+
+    /* =====================================================
+       0:06 — TIMELINE 666
+
+       ESCUTE TRÊS MÚSICAS DIFERENTES
+       PASSANDO POR 0:06.
+
+       6
+       6 6
+       6 6 6
+
+       A SALA É DESBLOQUEADA.
+    ===================================================== */
+
+    if (isMusic) {
+
+        const audio =
+            document.getElementById(
+                "audioPlayer"
+            );
+
+
+        if (audio) {
+
+            let sixTracks = [];
+
+
+            try {
+
+                sixTracks =
+                    JSON.parse(
+                        localStorage.getItem(
+                            "jr_666_tracks"
+                        )
+                    )
+                    ||
+                    [];
+
+            }
+
+            catch {
+
+                sixTracks =
+                    [];
+
+            }
+
+
+            function checkSix() {
+
+                if (
+                    audio.currentTime < 5.85
+                    ||
+                    audio.currentTime > 7.0
+                ) {
+                    return;
+                }
+
+
+                const source =
+                    audio.currentSrc
+                    ||
+                    audio.src;
+
+
+                if (!source) {
+                    return;
+                }
+
+
+                if (
+                    sixTracks.includes(
+                        source
+                    )
+                ) {
+                    return;
+                }
+
+
+                sixTracks.push(
+                    source
+                );
+
+
+                localStorage.setItem(
+                    "jr_666_tracks",
+                    JSON.stringify(
+                        sixTracks
+                    )
+                );
+
+
+                if (
+                    sixTracks.length === 1
+                ) {
+
+                    showToast(
+                        "6",
+                        TEMPO_CURTO
+                    );
+
+                }
+
+
+                else if (
+                    sixTracks.length === 2
+                ) {
+
+                    showToast(
+                        "6  6",
+                        TEMPO_NORMAL
+                    );
+
+                }
+
+
+                else if (
+                    sixTracks.length >= 3
+                ) {
+
+                    localStorage.setItem(
+                        "jr_room666_unlocked",
+                        "true"
+                    );
+
+
+                    showToast(
+                        "6   6   6 — Uma porta apareceu em Extras.",
+                        TEMPO_LONGO
+                    );
+
+
+                    unlockSecret(
+                        "room666"
+                    );
+
+                }
+
+            }
+
+
+            audio.addEventListener(
+                "timeupdate",
+                checkSix
+            );
+
+
+            audio.addEventListener(
+                "seeked",
+                checkSix
+            );
+
+        }
 
     }
 
@@ -1715,19 +2377,243 @@
 
         }
 
+
+        /*
+           SALA 666
+        */
+
+        if (
+            localStorage.getItem(
+                "jr_room666_unlocked"
+            )
+            ===
+            "true"
+        ) {
+
+            const door =
+                document.createElement(
+                    "a"
+                );
+
+
+            door.href =
+                "room666.html";
+
+
+            door.className =
+                "jr-room666-link";
+
+
+            door.innerHTML = `
+
+                <small>
+                    ARQUIVO 666
+                </small>
+
+                <strong>
+                    SALA 6-6-6
+                </strong>
+
+            `;
+
+
+            const credits =
+                document.querySelector(
+                    ".creditos"
+                );
+
+
+            if (credits) {
+
+                credits.parentNode.insertBefore(
+                    door,
+                    credits
+                );
+
+            }
+
+        }
+
+
+        /*
+           CONTADOR DE SEGREDOS
+
+           O TOTAL REAL CONTINUA ESCONDIDO.
+        */
+
+        const counter =
+            document.createElement(
+                "p"
+            );
+
+
+        counter.className =
+            "jr-secret-counter";
+
+
+        counter.textContent =
+            `SEGREDOS ENCONTRADOS: ${countSecrets()} / ??`;
+
+
+        const final =
+            document.querySelector(
+                ".final"
+            );
+
+
+        if (final) {
+
+            final.insertAdjacentElement(
+                "beforebegin",
+                counter
+            );
+
+        }
+
     }
 
 
     /* =====================================================
-       CHARA — SOMENTE DEPOIS DO FINAL
+       FRASES DE FINAL DE CAPÍTULO
 
-       Futuramente basta usar:
+       FIQUE 8 SEGUNDOS NO FIM.
+    ===================================================== */
 
-       localStorage.setItem(
-           "jr_story_complete",
-           "true"
-       );
+    if (isStory) {
 
+        const whispers = {
+
+            "historia.html":
+                "Alguns presentes chegam tarde demais.",
+
+            "capitulo1.html":
+                "Uma trégua não deveria significar tanto.",
+
+            "capitulo2.html":
+                "Algumas frases continuam ecoando depois que ninguém mais está falando."
+        };
+
+
+        const ending =
+            document.querySelector(
+                ".fim-leitura"
+            );
+
+
+        if (
+            ending
+            &&
+            whispers[page]
+            &&
+            "IntersectionObserver"
+            in window
+        ) {
+
+            let whisperTimer =
+                null;
+
+
+            let alreadyShown =
+                false;
+
+
+            const observer =
+                new IntersectionObserver(
+                    entries => {
+
+                        entries.forEach(
+                            entry => {
+
+                                if (
+                                    entry.isIntersecting
+                                    &&
+                                    !alreadyShown
+                                ) {
+
+                                    whisperTimer =
+                                        setTimeout(
+                                            () => {
+
+                                                alreadyShown =
+                                                    true;
+
+
+                                                const whisper =
+                                                    document.createElement(
+                                                        "p"
+                                                    );
+
+
+                                                whisper.className =
+                                                    "jr-end-whisper";
+
+
+                                                whisper.textContent =
+                                                    whispers[page];
+
+
+                                                ending.insertAdjacentElement(
+                                                    "afterend",
+                                                    whisper
+                                                );
+
+
+                                                requestAnimationFrame(
+                                                    () => {
+
+                                                        requestAnimationFrame(
+                                                            () => {
+
+                                                                whisper.classList.add(
+                                                                    "visible"
+                                                                );
+
+                                                            }
+                                                        );
+
+                                                    }
+                                                );
+
+
+                                                unlockSecret(
+                                                    `ending_${page}`
+                                                );
+
+                                            },
+                                            8000
+                                        );
+
+                                }
+
+                                else {
+
+                                    clearTimeout(
+                                        whisperTimer
+                                    );
+
+                                }
+
+                            }
+                        );
+
+                    },
+                    {
+                        threshold: 0.4
+                    }
+                );
+
+
+            observer.observe(
+                ending
+            );
+
+        }
+
+    }
+
+
+    /* =====================================================
+       CHARA — DEPOIS DO FINAL
     ===================================================== */
 
     if (
@@ -1759,5 +2645,98 @@
         );
 
     }
+
+
+    /* =====================================================
+       SALA 666
+    ===================================================== */
+
+    if (isRoom666) {
+
+        const sixes =
+            document.querySelectorAll(
+                ".room-six"
+            );
+
+
+        let roomClicks =
+            0;
+
+
+        sixes.forEach(
+            six => {
+
+                six.addEventListener(
+                    "click",
+                    () => {
+
+                        if (
+                            six.dataset.clicked
+                            ===
+                            "true"
+                        ) {
+                            return;
+                        }
+
+
+                        six.dataset.clicked =
+                            "true";
+
+
+                        six.classList.add(
+                            "active"
+                        );
+
+
+                        roomClicks++;
+
+
+                        if (
+                            roomClicks === 3
+                        ) {
+
+                            showToast(
+                                "TIMELINE 666 — UMA ÚNICA CHANCE.",
+                                TEMPO_LONGO
+                            );
+
+
+                            unlockSecret(
+                                "room666_complete"
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       CONSOLE
+
+       PRA QUEM FOR FUÇAR DEMAIS >:3
+    ===================================================== */
+
+    console.log(
+        "%cJUDGMENT RONIN & NIGHTMARE",
+        "color:#dff6ff;font-size:16px;font-weight:bold;"
+    );
+
+
+    console.log(
+        "%cVocê foi longe demais.",
+        "color:#a92929;font-size:13px;"
+    );
+
+
+    console.log(
+        "%cTIMELINE: 666",
+        "color:#777;font-size:11px;letter-spacing:2px;"
+    );
 
 })();
