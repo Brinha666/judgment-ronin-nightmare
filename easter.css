@@ -1,11 +1,11 @@
 /* =========================================================
    JUDGMENT RONIN & NIGHTMARE
-   EASTER EGGS / INTERAÇÕES
+   EASTER EGGS — TIMELINE 666
 ========================================================= */
 
 
 /* =========================================================
-   BARRA DE PROGRESSO DE LEITURA
+   PROGRESSO DE LEITURA
 ========================================================= */
 
 .jr-read-progress {
@@ -22,18 +22,14 @@
     pointer-events: none;
 
     background:
-        rgba(255,255,255,0.025);
+        rgba(255, 255, 255, 0.025);
 }
 
 
 .jr-read-progress-bar {
     position: absolute;
 
-    left: 0;
-    top: 0;
-
-    height: 100%;
-    width: 100%;
+    inset: 0;
 
     transform:
         scaleX(0);
@@ -45,12 +41,9 @@
         linear-gradient(
             90deg,
             #83dfff 0%,
-            #eafaff 50%,
+            #f0fbff 50%,
             #b62631 100%
         );
-
-    box-shadow:
-        0 0 12px rgba(130,220,255,0.25);
 
     will-change:
         transform;
@@ -61,9 +54,10 @@
     position: absolute;
 
     top: 50%;
+    left: 0;
 
-    width: 7px;
-    height: 7px;
+    width: 8px;
+    height: 8px;
 
     border-radius: 50%;
 
@@ -74,33 +68,31 @@
         var(--jr-progress-color, #83dfff);
 
     box-shadow:
-        0 0 12px
+        0 0 13px
         var(--jr-progress-color, #83dfff);
-
-    transition:
-        background 0.25s ease,
-        box-shadow 0.25s ease;
 }
 
 
 /* =========================================================
-   TOAST / MENSAGEM SECRETA
+   MENSAGENS
+
+   AGORA MAIORES E MAIS FÁCEIS DE LER
 ========================================================= */
 
 .jr-toast {
     position: fixed;
 
     left: 50%;
-    bottom: 38px;
+    bottom: 42px;
 
     transform:
-        translate(-50%, 12px);
+        translate(-50%, 15px);
 
     width:
-        min(520px, calc(100% - 34px));
+        min(600px, calc(100% - 34px));
 
     padding:
-        15px 19px;
+        18px 22px;
 
     z-index: 10050;
 
@@ -109,37 +101,32 @@
     opacity: 0;
 
     color:
-        rgba(240,248,255,0.90);
+        rgba(240, 248, 255, 0.94);
 
     background:
-        rgba(4,4,6,0.94);
+        rgba(4, 4, 6, 0.96);
 
     border:
-        1px solid rgba(170,220,255,0.17);
+        1px solid
+        rgba(170, 220, 255, 0.20);
 
-    border-radius:
-        4px;
+    border-radius: 5px;
 
     box-shadow:
-        0 15px 50px rgba(0,0,0,0.50);
-
-    backdrop-filter:
-        blur(10px);
+        0 18px 55px
+        rgba(0, 0, 0, 0.56);
 
     text-align: center;
 
-    font-size:
-        12px;
+    font-size: 15px;
 
-    line-height:
-        1.7;
+    line-height: 1.75;
 
-    letter-spacing:
-        1px;
+    letter-spacing: 0.8px;
 
     transition:
-        opacity 0.45s ease,
-        transform 0.45s ease;
+        opacity 0.55s ease,
+        transform 0.55s ease;
 }
 
 
@@ -152,19 +139,16 @@
 
 
 /* =========================================================
-   NIGHTMARE OBSERVANDO
+   CABEÇAS DO NIGHTMARE
 ========================================================= */
 
 .jr-nightmare-head {
     position: fixed;
 
-    right: 18px;
-    top: 26%;
+    width: 50px;
+    height: 50px;
 
-    width: 52px;
-    height: 52px;
-
-    z-index: 450;
+    z-index: 600;
 
     border-radius: 50%;
 
@@ -172,24 +156,20 @@
 
     opacity: 0;
 
-    transform:
-        translateX(20px)
-        scale(0.85);
-
     background:
         radial-gradient(
             circle at 50% 42%,
             #090909,
-            #000 72%
+            #000000 74%
         );
 
     border:
         1px solid
-        rgba(170,20,30,0.22);
+        rgba(180, 22, 32, 0.27);
 
     box-shadow:
-        0 0 24px
-        rgba(140,0,10,0.10);
+        0 0 25px
+        rgba(150, 0, 10, 0.11);
 
     transition:
         opacity 0.8s ease,
@@ -197,8 +177,27 @@
 }
 
 
-.jr-nightmare-head.visible {
-    opacity: 0.82;
+.jr-nightmare-head.left {
+    left: -9px;
+
+    transform:
+        translateX(-20px)
+        scale(0.82);
+}
+
+
+.jr-nightmare-head.right {
+    right: -9px;
+
+    transform:
+        translateX(20px)
+        scale(0.82);
+}
+
+
+.jr-nightmare-head.visible.left,
+.jr-nightmare-head.visible.right {
+    opacity: 0.86;
 
     transform:
         translateX(0)
@@ -206,49 +205,60 @@
 }
 
 
-.jr-nightmare-head.hiding {
+.jr-nightmare-head.hiding.left {
     opacity: 0;
 
     transform:
-        translateX(24px)
-        scale(0.7);
+        translateX(-25px)
+        scale(0.68);
+}
+
+
+.jr-nightmare-head.hiding.right {
+    opacity: 0;
+
+    transform:
+        translateX(25px)
+        scale(0.68);
 }
 
 
 .jr-nightmare-eye {
     position: absolute;
 
-    top: 19px;
+    top: 18px;
 
     width: 8px;
     height: 5px;
 
-    border-radius:
-        50%;
+    border-radius: 50%;
 
     background:
-        #d3232d;
+        #dc2630;
 
     box-shadow:
-        0 0 8px #a20d16;
+        0 0 9px
+        rgba(220, 25, 35, 0.82);
 
     transition:
         transform 0.12s linear;
 }
 
 
-.jr-nightmare-eye.left {
-    left: 12px;
+.jr-nightmare-eye.left-eye {
+    left: 11px;
 }
 
 
-.jr-nightmare-eye.right {
-    right: 12px;
+.jr-nightmare-eye.right-eye {
+    right: 11px;
 }
 
 
 /* =========================================================
-   GASTER
+   GASTER JÁ EXISTENTE
+
+   NÃO ADICIONAMOS NADA NOVO A ELE AINDA.
 ========================================================= */
 
 .jr-gaster-mark {
@@ -260,27 +270,24 @@
         calc(100% - 20px);
 
     margin:
-        42px auto;
+        48px auto;
 
     padding:
-        8px 12px;
+        10px 14px;
 
     border: 0;
 
     color:
-        rgba(255,255,255,0.10);
+        rgba(255, 255, 255, 0.11);
 
     background:
         transparent;
 
-    font-size:
-        15px;
+    font-size: 16px;
 
-    letter-spacing:
-        7px;
+    letter-spacing: 7px;
 
-    cursor:
-        pointer;
+    cursor: pointer;
 
     transition:
         color 0.5s ease,
@@ -291,14 +298,13 @@
 
 .jr-gaster-mark:hover {
     color:
-        rgba(220,240,255,0.44);
+        rgba(220, 240, 255, 0.46);
 
-    letter-spacing:
-        9px;
+    letter-spacing: 9px;
 
     text-shadow:
         0 0 14px
-        rgba(180,215,255,0.20);
+        rgba(180, 215, 255, 0.20);
 }
 
 
@@ -308,16 +314,18 @@
 
 .jr-echo-garden {
     margin:
-        50px 0;
+        55px 0;
 
     padding:
-        24px;
+        28px 24px;
 
     border-top:
-        1px solid rgba(110,210,255,0.055);
+        1px solid
+        rgba(110, 210, 255, 0.065);
 
     border-bottom:
-        1px solid rgba(110,210,255,0.055);
+        1px solid
+        rgba(110, 210, 255, 0.065);
 
     text-align: center;
 }
@@ -325,16 +333,14 @@
 
 .jr-echo-label {
     margin:
-        0 0 18px;
+        0 0 20px;
 
     color:
-        rgba(160,220,255,0.26);
+        rgba(150, 220, 255, 0.38);
 
-    font-size:
-        9px;
+    font-size: 11px;
 
-    letter-spacing:
-        4px;
+    letter-spacing: 5px;
 }
 
 
@@ -343,31 +349,31 @@
 
     justify-content: center;
 
-    gap: 13px;
-
     flex-wrap: wrap;
+
+    gap: 13px;
 }
 
 
 .jr-echo {
-    width: 44px;
-    height: 44px;
+    width: 46px;
+    height: 46px;
 
     border-radius: 50%;
 
     border:
         1px solid
-        rgba(100,210,255,0.13);
+        rgba(100, 210, 255, 0.16);
 
     color:
-        rgba(150,225,255,0.50);
+        rgba(150, 225, 255, 0.58);
 
     background:
-        rgba(70,180,230,0.025);
+        rgba(70, 180, 230, 0.03);
 
     cursor: pointer;
 
-    font-size: 19px;
+    font-size: 20px;
 
     transition:
         transform 0.35s ease,
@@ -382,38 +388,38 @@
         translateY(-3px);
 
     color:
-        #bcecff;
+        #c7efff;
 
     background:
-        rgba(80,190,235,0.075);
+        rgba(80, 190, 235, 0.08);
 
     box-shadow:
-        0 0 22px
-        rgba(80,190,235,0.08);
+        0 0 24px
+        rgba(80, 190, 235, 0.10);
 }
 
 
 .jr-echo-text {
-    min-height: 30px;
+    min-height: 36px;
+
+    max-width: 670px;
 
     margin:
-        20px auto 0;
-
-    max-width: 620px;
+        22px auto 0;
 
     color:
-        rgba(195,235,255,0.58);
+        rgba(195, 235, 255, 0.66);
 
     font-style: italic;
 
-    font-size: 13px;
+    font-size: 15px;
 
-    line-height: 1.7;
+    line-height: 1.75;
 
     opacity: 0;
 
     transition:
-        opacity 0.5s ease;
+        opacity 0.6s ease;
 }
 
 
@@ -423,7 +429,7 @@
 
 
 /* =========================================================
-   SAVE STAR
+   SAVE
 ========================================================= */
 
 .jr-save-star {
@@ -444,14 +450,14 @@
 
     cursor: pointer;
 
-    font-size: 20px;
+    font-size: 22px;
 
-    opacity: 0.28;
+    opacity: 0.32;
 
     filter:
         drop-shadow(
             0 0 7px
-            rgba(255,220,70,0.18)
+            rgba(255, 220, 70, 0.20)
         );
 
     transition:
@@ -462,7 +468,7 @@
 
 
 .jr-save-star:hover {
-    opacity: 0.85;
+    opacity: 0.9;
 
     transform:
         rotate(12deg)
@@ -470,28 +476,28 @@
 
     filter:
         drop-shadow(
-            0 0 10px
-            rgba(255,220,70,0.45)
+            0 0 11px
+            rgba(255, 220, 70, 0.50)
         );
 }
 
 
 /* =========================================================
-   TIMELINE
+   TIMELINE 666
 ========================================================= */
 
 .jr-timeline {
     position: fixed;
 
     left: 22px;
-    bottom: 58px;
+    bottom: 61px;
 
     z-index: 300;
 
     color:
-        rgba(255,255,255,0.13);
+        rgba(255, 255, 255, 0.18);
 
-    font-size: 8px;
+    font-size: 10px;
 
     letter-spacing: 2px;
 
@@ -500,7 +506,7 @@
 
 
 /* =========================================================
-   TRILHA DO CAPÍTULO
+   MÚSICA DO CAPÍTULO
 ========================================================= */
 
 .jr-chapter-music {
@@ -511,30 +517,27 @@
 
     z-index: 400;
 
-    min-width: 43px;
-    height: 39px;
+    min-width: 44px;
+    height: 40px;
 
     padding:
         0 13px;
 
     border:
-        1px solid rgba(255,255,255,0.10);
+        1px solid
+        rgba(255, 255, 255, 0.11);
 
-    border-radius:
-        3px;
+    border-radius: 3px;
 
     color:
-        rgba(255,255,255,0.48);
+        rgba(255, 255, 255, 0.52);
 
     background:
-        rgba(5,5,5,0.85);
+        rgba(5, 5, 5, 0.90);
 
     cursor: pointer;
 
-    font-size: 11px;
-
-    backdrop-filter:
-        blur(8px);
+    font-size: 12px;
 
     transition:
         color 0.3s ease,
@@ -545,39 +548,36 @@
 
 .jr-chapter-music:hover,
 .jr-chapter-music.playing {
-    color:
-        #dff6ff;
+    color: #dff6ff;
 
     border-color:
-        rgba(130,215,255,0.25);
+        rgba(130, 215, 255, 0.27);
 
     background:
-        rgba(15,20,24,0.92);
+        rgba(15, 20, 24, 0.95);
 }
 
 
 /* =========================================================
-   EXTRAS DESBLOQUEADOS
+   ARQUIVOS DESBLOQUEADOS
 ========================================================= */
 
 .jr-unlocks {
     margin:
-        45px 0;
+        48px 0;
 }
 
 
 .jr-unlocks-title {
     margin:
-        0 0 18px;
+        0 0 19px;
 
     color:
-        rgba(255,255,255,0.34);
+        rgba(255, 255, 255, 0.42);
 
-    font-size:
-        10px;
+    font-size: 12px;
 
-    letter-spacing:
-        4px;
+    letter-spacing: 4px;
 }
 
 
@@ -592,47 +592,168 @@
 
 
 .jr-unlock {
-    padding:
-        22px;
+    padding: 23px;
 
     border:
-        1px solid rgba(255,255,255,0.07);
+        1px solid
+        rgba(255, 255, 255, 0.075);
 
-    border-radius:
-        4px;
+    border-radius: 4px;
 
     background:
-        rgba(255,255,255,0.012);
+        rgba(255, 255, 255, 0.014);
 }
 
 
 .jr-unlock span {
     display: block;
 
-    margin-bottom: 8px;
+    margin-bottom: 9px;
 
     color:
-        rgba(110,210,255,0.36);
+        rgba(110, 210, 255, 0.45);
 
-    font-size:
-        9px;
+    font-size: 10px;
 
-    letter-spacing:
-        3px;
+    letter-spacing: 3px;
 }
 
 
 .jr-unlock strong {
     color:
-        rgba(255,255,255,0.78);
+        rgba(255, 255, 255, 0.82);
 
-    font-size:
-        14px;
+    font-size: 15px;
 }
 
 
 /* =========================================================
-   CHARA — FUTURO PÓS-FINAL
+   SALA 666
+========================================================= */
+
+.jr-room666-link {
+    display: block;
+
+    margin:
+        22px 0 45px;
+
+    padding:
+        28px;
+
+    color:
+        rgba(255, 255, 255, 0.80);
+
+    text-decoration: none;
+
+    border:
+        1px solid
+        rgba(180, 25, 35, 0.16);
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            100deg,
+            rgba(100, 210, 255, 0.025),
+            rgba(255, 255, 255, 0.01),
+            rgba(180, 25, 35, 0.045)
+        );
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+.jr-room666-link:hover {
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(190, 35, 45, 0.36);
+}
+
+
+.jr-room666-link small {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color:
+        rgba(190, 45, 55, 0.50);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+}
+
+
+.jr-room666-link strong {
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   SEGREDOS ENCONTRADOS
+========================================================= */
+
+.jr-secret-counter {
+    margin:
+        22px 0 0;
+
+    color:
+        rgba(255, 255, 255, 0.20);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   FRASE FINAL ESCONDIDA
+========================================================= */
+
+.jr-end-whisper {
+    margin:
+        35px auto;
+
+    max-width: 680px;
+
+    color:
+        rgba(210, 235, 245, 0.50);
+
+    font-size: 14px;
+
+    font-style: italic;
+
+    line-height: 1.8;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transform:
+        translateY(5px);
+
+    transition:
+        opacity 1.5s ease,
+        transform 1.5s ease;
+}
+
+
+.jr-end-whisper.visible {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   CHARA — PÓS-FINAL
 ========================================================= */
 
 .jr-chara-head {
@@ -652,10 +773,12 @@
         #020202;
 
     border:
-        1px solid rgba(190,20,30,0.20);
+        1px solid
+        rgba(190, 20, 30, 0.20);
 
     box-shadow:
-        0 0 22px rgba(180,0,15,0.09);
+        0 0 22px
+        rgba(180, 0, 15, 0.09);
 }
 
 
@@ -672,10 +795,12 @@
 
     border-radius: 50%;
 
-    background: #bc2028;
+    background:
+        #bc2028;
 
     box-shadow:
-        21px 0 0 #bc2028;
+        21px 0 0
+        #bc2028;
 }
 
 
@@ -700,7 +825,7 @@
 
 
 /* =========================================================
-   KONAMI / MODO ???
+   OVERLAY SECRETO
 ========================================================= */
 
 .jr-secret-overlay {
@@ -715,21 +840,19 @@
     opacity: 0;
 
     background:
-
         radial-gradient(
             circle at 25% 50%,
-            rgba(180,20,30,0.10),
+            rgba(180, 20, 30, 0.10),
             transparent 35%
         ),
-
         radial-gradient(
             circle at 75% 50%,
-            rgba(80,210,255,0.10),
+            rgba(80, 210, 255, 0.10),
             transparent 35%
         );
 
     transition:
-        opacity 0.6s ease;
+        opacity 0.7s ease;
 }
 
 
@@ -739,16 +862,34 @@
 
 
 /* =========================================================
-   MOBILE / PERFORMANCE
+   MOBILE
 ========================================================= */
 
 @media (max-width: 700px) {
 
+    .jr-toast {
+        bottom: 25px;
+
+        padding:
+            16px 18px;
+
+        font-size: 14px;
+    }
+
+
     .jr-nightmare-head {
         width: 42px;
         height: 42px;
+    }
 
-        right: 10px;
+
+    .jr-nightmare-head.left {
+        left: -10px;
+    }
+
+
+    .jr-nightmare-head.right {
+        right: -10px;
     }
 
 
@@ -760,43 +901,35 @@
     }
 
 
-    .jr-nightmare-eye.left {
+    .jr-nightmare-eye.left-eye {
         left: 10px;
     }
 
 
-    .jr-nightmare-eye.right {
+    .jr-nightmare-eye.right-eye {
         right: 10px;
     }
 
 
-    .jr-toast {
-        bottom: 23px;
-
-        font-size: 11px;
-
-        backdrop-filter: none;
-    }
-
-
-    .jr-chapter-music {
-        right: 12px;
-
-        bottom: 12px;
-
-        backdrop-filter: none;
-    }
-
-
-    .jr-save-star {
-        left: 11px;
-
-        bottom: 15px;
+    .jr-echo-text {
+        font-size: 14px;
     }
 
 
     .jr-timeline {
         display: none;
+    }
+
+
+    .jr-save-star {
+        left: 10px;
+        bottom: 14px;
+    }
+
+
+    .jr-chapter-music {
+        right: 11px;
+        bottom: 12px;
     }
 
 
@@ -806,7 +939,7 @@
 
 
     .jr-gaster-mark {
-        font-size: 12px;
+        font-size: 13px;
 
         letter-spacing: 5px;
     }
@@ -819,8 +952,8 @@
     .jr-nightmare-head,
     .jr-toast,
     .jr-echo,
-    .jr-gaster-mark,
-    .jr-save-star {
+    .jr-save-star,
+    .jr-secret-overlay {
         transition: none !important;
     }
 
