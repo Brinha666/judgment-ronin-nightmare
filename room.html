@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Sala 666 | Judgment Ronin & Nightmare
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="easter.css"
+    >
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            margin: 0;
+
+            min-height: 100svh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 30px;
+
+            color: white;
+
+            background:
+
+                radial-gradient(
+                    circle at 25% 50%,
+                    rgba(80, 205, 255, 0.07),
+                    transparent 35%
+                ),
+
+                radial-gradient(
+                    circle at 75% 50%,
+                    rgba(180, 15, 25, 0.08),
+                    transparent 35%
+                ),
+
+                #020202;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            text-align: center;
+        }
+
+
+        main {
+            width:
+                min(700px, 100%);
+        }
+
+
+        .arquivo {
+            margin: 0 0 15px;
+
+            color:
+                rgba(255, 255, 255, 0.22);
+
+            font-size: 11px;
+
+            letter-spacing: 5px;
+        }
+
+
+        h1 {
+            margin:
+                0;
+
+            font-size:
+                clamp(42px, 9vw, 86px);
+
+            letter-spacing:
+                -2px;
+        }
+
+
+        .timeline {
+            margin:
+                22px 0 50px;
+
+            color:
+                rgba(255, 255, 255, 0.35);
+
+            font-size:
+                12px;
+
+            letter-spacing:
+                4px;
+        }
+
+
+        .sixes {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 22px;
+
+            margin:
+                45px 0;
+        }
+
+
+        .room-six {
+            width:
+                90px;
+
+            height:
+                110px;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.08);
+
+            border-radius:
+                5px;
+
+            color:
+                rgba(255, 255, 255, 0.20);
+
+            background:
+                rgba(255, 255, 255, 0.012);
+
+            font:
+                inherit;
+
+            font-size:
+                58px;
+
+            font-weight:
+                700;
+
+            cursor:
+                pointer;
+
+            transition:
+                color 0.5s ease,
+                border-color 0.5s ease,
+                transform 0.5s ease,
+                text-shadow 0.5s ease;
+        }
+
+
+        .room-six:hover {
+            transform:
+                translateY(-4px);
+
+            color:
+                rgba(255, 255, 255, 0.55);
+        }
+
+
+        .room-six.active {
+            color:
+                #dff6ff;
+
+            border-color:
+                rgba(160, 220, 255, 0.30);
+
+            text-shadow:
+                0 0 20px
+                rgba(120, 210, 255, 0.25);
+        }
+
+
+        .texto {
+            max-width:
+                560px;
+
+            margin:
+                0 auto;
+
+            color:
+                rgba(255, 255, 255, 0.34);
+
+            font-size:
+                14px;
+
+            line-height:
+                1.9;
+        }
+
+
+        .voltar {
+            display:
+                inline-block;
+
+            margin-top:
+                45px;
+
+            padding:
+                12px 17px;
+
+            color:
+                rgba(255, 255, 255, 0.48);
+
+            text-decoration:
+                none;
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.09);
+
+            border-radius:
+                3px;
+
+            font-size:
+                11px;
+
+            letter-spacing:
+                2px;
+        }
+
+
+        .voltar:hover {
+            color:
+                white;
+        }
+
+
+        @media (max-width: 600px) {
+
+            .sixes {
+                gap: 10px;
+            }
+
+
+            .room-six {
+                width:
+                    74px;
+
+                height:
+                    90px;
+
+                font-size:
+                    47px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <main>
+
+        <p class="arquivo">
+            ARQUIVO RESTRITO
+        </p>
+
+        <h1>
+            SALA 6-6-6
+        </h1>
+
+        <p class="timeline">
+            TIMELINE 666
+        </p>
+
+
+        <div class="sixes">
+
+            <button
+                class="room-six"
+                type="button"
+            >
+                6
+            </button>
+
+            <button
+                class="room-six"
+                type="button"
+            >
+                6
+            </button>
+
+            <button
+                class="room-six"
+                type="button"
+            >
+                6
+            </button>
+
+        </div>
+
+
+        <p class="texto">
+            Algumas timelines são apagadas.
+            Outras são reescritas.
+            Algumas conseguem chegar ao fim.
+            <br><br>
+            Esta recebeu apenas uma chance.
+        </p>
+
+
+        <a
+            href="extras.html"
+            class="voltar"
+        >
+            ← VOLTAR
+        </a>
+
+    </main>
+
+
+    <script src="easter.js"></script>
+
+</body>
+
+</html>
