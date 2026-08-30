@@ -11,31 +11,105 @@
     >
 
     <title>
-        Capítulo 04 — A Chama Abandonada
+        A Chama Abandonada | Judgment Ronin & Nightmare
     </title>
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="easter.css">
     <link rel="stylesheet" href="mobile.css">
 
+    <style>
+
+        .nightmare-texto {
+            color: #b42b32 !important;
+        }
+
+        .alphys-texto {
+            color: #e8d87a !important;
+        }
+
+        .gaster-traducao {
+            color: rgba(255, 255, 255, 0.82);
+            font-style: italic;
+        }
+
+        .gaster-simbolos {
+            color: #ffffff;
+            text-shadow:
+                0 0 8px rgba(180, 220, 255, 0.20);
+        }
+
+        .sans-texto,
+        .nightmare-texto,
+        .alphys-texto {
+            padding-left: 18px;
+
+            border-left:
+                1px solid rgba(255,255,255,0.10);
+        }
+
+        .gaster-fala {
+            margin-bottom: 23px;
+        }
+
+        .gaster-fala .gaster-simbolos {
+            margin:
+                0 0 10px;
+
+            padding-left: 18px;
+
+            border-left:
+                1px solid rgba(255,255,255,0.10);
+
+            font-size: 17px;
+            line-height: 1.9;
+        }
+
+        .gaster-fala .gaster-traducao {
+            margin: 0;
+
+            font-size: 17px;
+            line-height: 1.9;
+        }
+
+        .botao-capitulo {
+            cursor: pointer;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .botao-capitulo:hover {
+            transform: translateY(-2px);
+
+            border-color:
+                rgba(255,255,255,0.20) !important;
+
+            background:
+                rgba(255,255,255,0.025) !important;
+        }
+
+    </style>
+
 </head>
 
 
-<body>
+<body class="pagina-historia">
 
 
     <!-- FUNDO -->
 
-    <div class="estrelas"></div>
+    <div class="fundo-estrelas"></div>
 
-    <div class="aura aura-azul"></div>
-    <div class="aura aura-vermelha"></div>
+    <div class="aura aura-sans"></div>
+    <div class="aura aura-nightmare"></div>
 
 
+    <!-- CABEÇALHO -->
 
-    <!-- TOPO -->
-
-    <header class="topo-historia">
+    <header class="cabecalho-pagina">
 
         <a
             href="historia.html"
@@ -44,36 +118,16 @@
             ← VOLTAR
         </a>
 
-        <span class="nome-projeto">
+        <span>
             JUDGMENT RONIN & NIGHTMARE
         </span>
 
     </header>
 
 
+    <!-- ÁREA DE LEITURA -->
 
-    <main class="pagina-historia">
-
-
-        <!-- CABEÇALHO -->
-
-        <section class="cabecalho-historia">
-
-            <span class="categoria">
-                HISTÓRIA
-            </span>
-
-            <h1>
-                Arquivos da Timeline
-            </h1>
-
-            <p>
-                Cada capítulo acompanha os acontecimentos desta linha do tempo
-                e as escolhas que fizeram uma rota aparentemente comum sair
-                completamente do esperado.
-            </p>
-
-        </section>
+    <main class="historia-container">
 
 
 
@@ -81,109 +135,60 @@
 
         <nav class="lista-capitulos">
 
+    <button
+        class="botao-capitulo"
+        type="button"
+        onclick="window.location.href='historia.html'"
+    >
+        <span>PRÓLOGO</span>
+        <strong>O Último Presente</strong>
+    </button>
 
-            <button
-                type="button"
-                onclick="window.location.href='historia.html'"
-                style="cursor: pointer;"
-            >
+    <button
+        class="botao-capitulo"
+        type="button"
+        onclick="window.location.href='capitulo1.html'"
+    >
+        <span>CAPÍTULO 01</span>
+        <strong>O Vazio que Sorria</strong>
+    </button>
 
-                <span>
-                    PRÓLOGO
-                </span>
+    <button
+        class="botao-capitulo"
+        type="button"
+        onclick="window.location.href='capitulo2.html'"
+    >
+        <span>CAPÍTULO 02</span>
+        <strong>Aquilo que Veio do Nada</strong>
+    </button>
 
-                <strong>
-                    O Último Presente
-                </strong>
+    <button
+        class="botao-capitulo"
+        type="button"
+        onclick="window.location.href='capitulo3.html'"
+    >
+        <span>CAPÍTULO 03</span>
+        <strong>A Porta que Não Devia Abrir</strong>
+    </button>
 
-            </button>
+    <button
+        class="capitulo-selecionado"
+        type="button"
+    >
+        <span>CAPÍTULO 04</span>
+        <strong>A Chama Abandonada</strong>
+    </button>
 
+    <button
+        class="botao-capitulo"
+        type="button"
+        onclick="window.location.href='capitulo5.html'"
+    >
+        <span>CAPÍTULO 05</span>
+        <strong>Sem Segunda Chance</strong>
+    </button>
 
-
-            <button
-                type="button"
-                onclick="window.location.href='capitulo1.html'"
-                style="cursor: pointer;"
-            >
-
-                <span>
-                    CAPÍTULO 01
-                </span>
-
-                <strong>
-                    O Vazio que Sorria
-                </strong>
-
-            </button>
-
-
-
-            <button
-                type="button"
-                onclick="window.location.href='capitulo2.html'"
-                style="cursor: pointer;"
-            >
-
-                <span>
-                    CAPÍTULO 02
-                </span>
-
-                <strong>
-                    Aquilo que Veio do Nada
-                </strong>
-
-            </button>
-
-
-
-            <button
-                type="button"
-                onclick="window.location.href='capitulo3.html'"
-                style="cursor: pointer;"
-            >
-
-                <span>
-                    CAPÍTULO 03
-                </span>
-
-                <strong>
-                    A Porta que Não Devia Abrir
-                </strong>
-
-            </button>
-
-
-
-            <button
-                class="capitulo-selecionado"
-                type="button"
-            >
-
-                <span>
-                    CAPÍTULO 04
-                </span>
-
-                <strong>
-                    A Chama Abandonada
-                </strong>
-
-            </button>
-
-            <button
-    type="button"
-    onclick="window.location.href='capitulo5.html'"
-    style="cursor: pointer;"
->
-    <span>
-        CAPÍTULO 05
-    </span>
-
-    <strong>
-        Sem Segunda Chance
-    </strong>
-</button>
-
-        </nav>
+</nav>
 
 
 
