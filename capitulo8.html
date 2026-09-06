@@ -1,0 +1,3358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Capítulo 08 — Além da Barreira | Judgment Ronin & Nightmare
+    </title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="easter.css">
+    <link rel="stylesheet" href="mobile.css">
+
+
+    <style>
+
+        /* ==========================================
+           CORES DE DIÁLOGO
+        ========================================== */
+
+        .sans-texto {
+            color: #9cecff;
+        }
+
+        .nightmare-texto {
+            color: #b42b32;
+        }
+
+        .frisk-texto {
+            color: rgba(255, 255, 255, 0.94);
+        }
+
+        .asgore-texto {
+            color: #f2d88f;
+        }
+
+        .alphys-texto {
+            color: #e6d878;
+        }
+
+        .undyne-texto {
+            color: #8fe6ff;
+        }
+
+        .mettaton-texto {
+            color: #ff8fd8;
+        }
+
+
+        .dialogo {
+
+            padding-left: 18px;
+
+            border-left:
+                1px solid rgba(255,255,255,0.10);
+
+        }
+
+
+        /* ==========================================
+           ALMAS
+        ========================================== */
+
+        .fala-alma {
+
+            margin:
+                28px 0;
+
+            padding:
+                18px 22px;
+
+            border-left:
+                2px solid currentColor;
+
+            font-style:
+                italic;
+
+            font-weight:
+                600;
+
+            letter-spacing:
+                0.2px;
+
+        }
+
+
+        .alma-paciencia {
+            color: #57e7ef;
+        }
+
+        .alma-bravura {
+            color: #ff8b32;
+        }
+
+        .alma-integridade {
+            color: #4c74ff;
+        }
+
+        .alma-perseveranca {
+            color: #b169ff;
+        }
+
+        .alma-bondade {
+            color: #55df75;
+        }
+
+        .alma-justica {
+            color: #ffe35d;
+        }
+
+        .alma-determinacao {
+            color: #ff4747;
+        }
+
+
+        /* ==========================================
+           BOTÕES
+        ========================================== */
+
+        .botao-capitulo {
+
+            cursor:
+                pointer;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease;
+
+        }
+
+        .botao-capitulo:hover {
+
+            transform:
+                translateY(-2px);
+
+            border-color:
+                rgba(255,255,255,0.20);
+
+            background:
+                rgba(255,255,255,0.025);
+
+        }
+
+
+        /* ==========================================
+           FINAL
+        ========================================== */
+
+        .titulo-final {
+
+            margin:
+                90px 0 30px;
+
+            text-align:
+                center;
+
+        }
+
+
+        .titulo-final span {
+
+            display:
+                block;
+
+            margin-bottom:
+                12px;
+
+            font-size:
+                11px;
+
+            letter-spacing:
+                6px;
+
+            color:
+                rgba(255,255,255,0.42);
+
+        }
+
+
+        .titulo-final strong {
+
+            display:
+                block;
+
+            font-size:
+                clamp(30px, 5vw, 58px);
+
+            color:
+                #ffffff;
+
+        }
+
+
+        .ultima-frase {
+
+            margin-top:
+                70px !important;
+
+            text-align:
+                center;
+
+            font-style:
+                italic;
+
+            color:
+                rgba(255,255,255,0.65);
+
+        }
+
+    </style>
+
+
+</head>
+
+
+<body class="pagina-historia">
+
+
+    <!-- ==========================================
+         FUNDO
+    =========================================== -->
+
+    <div class="fundo-estrelas"></div>
+
+    <div class="aura aura-sans"></div>
+
+    <div class="aura aura-nightmare"></div>
+
+
+
+    <!-- ==========================================
+         CABEÇALHO
+    =========================================== -->
+
+    <header class="cabecalho-pagina">
+
+        <a
+            href="historia.html"
+            class="voltar"
+        >
+            ← VOLTAR
+        </a>
+
+        <span>
+            JUDGMENT RONIN & NIGHTMARE
+        </span>
+
+    </header>
+
+
+
+    <!-- ==========================================
+         CONTEÚDO
+    =========================================== -->
+
+    <main class="historia-container">
+
+
+
+        <!-- ======================================
+             INTRODUÇÃO DA HISTÓRIA
+        ======================================= -->
+
+        <section class="cabecalho-historia">
+
+            <span class="categoria">
+                HISTÓRIA
+            </span>
+
+            <h1>
+                Arquivos da Timeline
+            </h1>
+
+            <p>
+                Cada capítulo acompanha os acontecimentos desta linha do tempo
+                e as escolhas que fizeram uma rota aparentemente comum sair
+                completamente do esperado.
+            </p>
+
+        </section>
+
+
+
+        <!-- ======================================
+             LISTA DE CAPÍTULOS
+        ======================================= -->
+
+        <nav class="lista-capitulos">
+
+
+            <button
+                class="botao-capitulo"
+                type="button"
+                onclick="window.location.href='historia.html'"
+            >
+
+                <span>
+                    PRÓLOGO
+                </span>
+
+                <strong>
+                    O Último Presente
+                </strong>
+
+            </button>
+
+
+
+            <button
+                class="botao-capitulo"
+                type="button"
+                onclick="window.location.href='capitulo1.html'"
+            >
+
+                <span>
+                    CAPÍTULO 01
+                </span>
+
+                <strong>
+                    O Vazio que Sorria
+                </strong>
+
+            </button>
+
+
+
+            <button
+                class="botao-capitulo"
+                type="button"
+                onclick="window.location.href='capitulo2.html'"
+            >
+
+                <span>
+                    CAPÍTULO 02
+                </span>
+
+                <strong>
+                    Aquilo que Veio do Nada
+                </strong>
+
+            </button>
+
+
+
+            <button
+                class="botao-capitulo"
+                type="button"
+                onclick="window.location.href='capitulo3.html'"
+            >
+
+                <span>
+                    CAPÍTULO 03
+                </span>
+
+                <strong>
+                    A Porta que Não Devia Abrir
+                </strong>
+
+            </button>
+
+
+
+            <button
+                class="botao-capitulo"
+                type="button"
+                onclick="window.location.href='capitulo4.html'"
+            >
+
+                <span>
+                    CAPÍTULO 04
+                </span>
+
+                <strong>
+                    A Chama Abandonada
+                </strong>
+
+            </button>
+
+
+
+            <button
+                class="botao-capitulo"
+                type="button"
+                onclick="window.location.href='capitulo5.html'"
+            >
+
+                <span>
+                    CAPÍTULO 05
+                </span>
+
+                <strong>
+                    Sem Segunda Chance
+                </strong>
+
+            </button>
+
+
+
+            <button
+                class="botao-capitulo"
+                type="button"
+                onclick="window.location.href='capitulo6.html'"
+            >
+
+                <span>
+                    CAPÍTULO 06
+                </span>
+
+                <strong>
+                    A Última Brecha
+                </strong>
+
+            </button>
+
+
+
+            <button
+                class="botao-capitulo"
+                type="button"
+                onclick="window.location.href='capitulo7.html'"
+            >
+
+                <span>
+                    CAPÍTULO 07
+                </span>
+
+                <strong>
+                    O Julgamento Ronin
+                </strong>
+
+            </button>
+
+
+
+            <button
+                class="capitulo-selecionado"
+                type="button"
+            >
+
+                <span>
+                    CAPÍTULO 08
+                </span>
+
+                <strong>
+                    Além da Barreira
+                </strong>
+
+            </button>
+
+
+        </nav>
+
+
+
+        <!-- ======================================
+             CAPÍTULO
+        ======================================= -->
+
+        <article class="leitura">
+
+
+            <header class="cabecalho-capitulo">
+
+                <span>
+                    CAPÍTULO 08
+                </span>
+
+                <h2>
+                    Além da Barreira
+                </h2>
+
+                <div class="linha-capitulo"></div>
+
+            </header>
+
+
+
+            <p>
+                O corredor finalmente ficou quieto.
+            </p>
+
+            <p>
+                Sem magia.
+            </p>
+
+            <p>
+                Sem ataques.
+            </p>
+
+            <p>
+                Sem ordens.
+            </p>
+
+            <p>
+                Por alguns segundos, Sans, Nightmare e Frisk apenas olharam
+                uns para os outros.
+            </p>
+
+            <p>
+                Ninguém parecia saber muito bem o que dizer.
+            </p>
+
+            <p>
+                Sans foi o primeiro a quebrar o silêncio.
+            </p>
+
+            <p>
+                Ele abaixou os olhos.
+            </p>
+
+            <p>
+                Sua jaqueta estava atravessada por um enorme rasgo diagonal.
+            </p>
+
+            <p>
+                Alguns dos pacotinhos de ketchup que carregava haviam sofrido
+                um destino ainda pior.
+            </p>
+
+            <p>
+                O vermelho havia se espalhado pelo tecido.
+            </p>
+
+            <p>
+                Sans puxou um deles do bolso.
+            </p>
+
+            <p>
+                Vazio.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “éh...”
+            </p>
+
+
+            <p>
+                Nightmare olhou para ele.
+            </p>
+
+            <p>
+                Frisk também.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “vai ser osso limpar tudo isso.”
+            </p>
+
+
+            <p>
+                Silêncio.
+            </p>
+
+            <p>
+                Frisk tentou segurar.
+            </p>
+
+            <p>
+                De verdade.
+            </p>
+
+            <p>
+                Mas uma risada curta escapou.
+            </p>
+
+            <p>
+                Ela imediatamente cobriu a boca.
+            </p>
+
+            <p>
+                Sans levantou os olhos.
+            </p>
+
+            <p>
+                Nightmare começou a rir também.
+            </p>
+
+            <p>
+                Frisk olhou para ele.
+            </p>
+
+            <p>
+                E isso só piorou.
+            </p>
+
+            <p>
+                Em poucos segundos, os dois estavam rindo.
+            </p>
+
+            <p>
+                Sans permaneceu encarando.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “obrigado pelo apoio emocional.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Depois de tudo aquilo, essa foi a primeira coisa que você pensou?”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “meu casaco não vai se lavar sozinho.”
+            </p>
+
+
+            <p>
+                Frisk soltou outra risada.
+            </p>
+
+            <p>
+                Por alguns segundos, aquilo parececeu impossível.
+            </p>
+
+            <p>
+                Depois de tudo que tinha acontecido...
+            </p>
+
+            <p>
+                eles estavam rindo.
+            </p>
+
+            <p>
+                Sans observou Frisk.
+            </p>
+
+            <p>
+                Ainda havia cansaço em seu rosto.
+            </p>
+
+            <p>
+                Os olhos estavam vermelhos.
+            </p>
+
+            <p>
+                Mas aquele pequeno sorriso era dela.
+            </p>
+
+            <p>
+                Só dela.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “bom.”
+            </p>
+
+
+            <p>
+                Frisk levantou os olhos.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “ainda temos uma coisa pra fazer.”
+            </p>
+
+
+            <p>
+                O sorriso dela desapareceu lentamente.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “...Asgore.”
+            </p>
+
+
+            <p>
+                Sans assentiu.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “seis almas já estão lá.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “falta alguém disposto a ajudar.”
+            </p>
+
+
+            <p>
+                Frisk permaneceu parada.
+            </p>
+
+            <p>
+                Sans percebeu.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “criança?”
+            </p>
+
+
+            <p>
+                Ela demorou para responder.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Sans...”
+            </p>
+
+
+            <p>
+                Ele esperou.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu sinto muito.”
+            </p>
+
+
+            <p>
+                Uma lágrima escorreu pelo rosto dela.
+            </p>
+
+            <p>
+                Depois outra.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Por Papyrus.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Por Undyne.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Por todo mundo.”
+            </p>
+
+
+            <p>
+                A voz começou a falhar.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu sei que falar isso não conserta nada.”
+            </p>
+
+
+            <p>
+                Sans abaixou um pouco a cabeça.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “não.”
+            </p>
+
+
+            <p>
+                Frisk apertou as próprias mãos.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu queria poder voltar e—”
+            </p>
+
+
+            <p>
+                Ela parou.
+            </p>
+
+            <p>
+                A frase adquiriu outro significado antes mesmo que terminasse.
+            </p>
+
+            <p>
+                Não havia mais como voltar.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu queria ter escolhido diferente.”
+            </p>
+
+
+            <p>
+                Sans permaneceu em silêncio por alguns segundos.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “isso eu acredito.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Vai ficar tudo bem?”
+            </p>
+
+
+            <p>
+                Sans pensou antes de responder.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “agora?”
+            </p>
+
+
+            <p>
+                Um pequeno sorriso apareceu.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “vai.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “acabou.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “você não precisa continuar lutando.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “não precisa desaparecer pra libertar ninguém.”
+            </p>
+
+
+            <p>
+                Frisk abaixou os olhos.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “mas...”
+            </p>
+
+
+            <p>
+                A voz dele ficou séria.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “você vai crescer lembrando do que fez.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “não tem botão pra apagar isso.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “mas também vai crescer podendo escolher fazer alguma coisa diferente.”
+            </p>
+
+
+            <p>
+                Frisk enxugou o rosto.
+            </p>
+
+            <p>
+                Os olhos ainda estavam levemente inchados.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu aceito.”
+            </p>
+
+
+            <p>
+                Sans assentiu.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “então tá bom.”
+            </p>
+
+
+            <p>
+                Nightmare observava os dois.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “sabe...”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “antes de tudo isso, eu provavelmente viveria normalmente
+                até o fim da minha vida aqui embaixo.”
+            </p>
+
+
+            <p>
+                Nightmare inclinou a cabeça.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “se é que existe um fim pra um esqueleto.”
+            </p>
+
+
+            <p>
+                Frisk quase sorriu novamente.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “eu nunca pensei muito em sair.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “era casa.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “Snowdin.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “Grillby's.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “os corredores.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “as mesmas piadas.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “as mesmas pessoas.”
+            </p>
+
+
+            <p>
+                A mão tocou o cachecol vermelho.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “meu irmão.”
+            </p>
+
+
+            <p>
+                Por alguns segundos, Sans ficou quieto.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “mas viver cada momento de agonia preso aqui...”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “me fez perceber uma coisa.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “eu quero sair.”
+            </p>
+
+
+            <p>
+                A chama azul do capacete permaneceu firme.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “o mais rápido possível.”
+            </p>
+
+
+            <p>
+                Frisk sorriu.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu também.”
+            </p>
+
+
+            <p>
+                Sans estendeu a mão.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “então vamo abrir a porta.”
+            </p>
+
+
+            <p>
+                Frisk segurou.
+            </p>
+
+            <p>
+                E os três desapareceram.
+            </p>
+
+
+
+            <div class="quebra-cena">
+                ✦
+            </div>
+
+
+
+            <p>
+                Eles reapareceram diante de uma grande porta.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “É aqui?”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “é.”
+            </p>
+
+
+            <p>
+                Sans soltou a mão de Frisk.
+            </p>
+
+            <p>
+                Depois apontou para Nightmare.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “você fica.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “O quê?”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “fica aqui.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Por quê?”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “porque eu acho que apresentar pro rei uma entidade feita de
+                vazio, cheia de olhos vermelhos...”
+            </p>
+
+
+            <p>
+                Sans olhou para uma das cabeças atrás de Nightmare.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “...não vai ajudar muito.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Eu sei me comportar.”
+            </p>
+
+
+            <p>
+                Sans olhou para ele.
+            </p>
+
+            <p>
+                Depois para as cabeças.
+            </p>
+
+            <p>
+                Depois novamente para ele.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “claro.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Sans.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “não chora de saudade.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “EU NÃO VOU—”
+            </p>
+
+
+            <p>
+                Sans e Frisk desapareceram.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “...Idiota.”
+            </p>
+
+
+
+            <div class="quebra-cena">
+                ✦
+            </div>
+
+
+
+            <p>
+                Asgore regava as flores.
+            </p>
+
+            <p>
+                O rei estava de costas quando uma voz surgiu atrás dele.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “vosso rei...”
+            </p>
+
+
+            <p>
+                Asgore congelou.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “o humano chegou.”
+            </p>
+
+
+            <p>
+                O regador quase caiu.
+            </p>
+
+            <p>
+                Asgore virou rapidamente.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Sans?!”
+            </p>
+
+
+            <p>
+                Então viu Frisk.
+            </p>
+
+            <p>
+                Sua expressão mudou imediatamente.
+            </p>
+
+            <p>
+                Asgore largou o regador e invocou sua arma.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Humana!”
+            </p>
+
+
+            <p>
+                Frisk recuou assustada.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Afaste-se dele!”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “woah, woah.”
+            </p>
+
+
+            <p>
+                Sans colocou-se entre os dois.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “calma, majestade.”
+            </p>
+
+
+            <p>
+                Asgore olhou para Sans.
+            </p>
+
+            <p>
+                O rasgo atravessando a jaqueta.
+            </p>
+
+            <p>
+                O ketchup espalhado pelo tecido.
+            </p>
+
+            <p>
+                O capacete marcado pela batalha.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Sans...”
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “O que aconteceu com você?”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “dia complicado.”
+            </p>
+
+
+            <p>
+                Asgore olhou novamente para Frisk.
+            </p>
+
+            <p>
+                Sans levantou uma mão.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “não foi essa criança que fez isso comigo.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “ela veio libertar todo mundo.”
+            </p>
+
+
+            <p>
+                Asgore ficou imóvel.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Libertar...?”
+            </p>
+
+
+            <p>
+                Frisk finalmente ergueu a cabeça.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu quero ajudar.”
+            </p>
+
+
+            <p>
+                Asgore voltou sua atenção para Sans.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Mas você...”
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Sans, você deveria ter desaparecido com um ferimento desses.”
+            </p>
+
+
+            <p>
+                Sans tocou o próprio peito.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “alguém da família evitou isso.”
+            </p>
+
+
+            <p>
+                Asgore franziu o cenho.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Da família?”
+            </p>
+
+
+            <p>
+                Sans desviou os olhos.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “história pra outro dia.”
+            </p>
+
+
+            <p>
+                Asgore claramente ainda tinha muitas perguntas.
+            </p>
+
+            <p>
+                Mas olhou novamente para Frisk.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu não quero que mais ninguém fique preso.”
+            </p>
+
+
+            <p>
+                A arma de Asgore desapareceu.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Então...”
+            </p>
+
+
+            <p>
+                A voz saiu quase incrédula.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “finalmente chegou o dia.”
+            </p>
+
+
+            <p>
+                Sans sorriu.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “parece que sim.”
+            </p>
+
+
+
+            <div class="quebra-cena">
+                ✦
+            </div>
+
+
+
+            <p>
+                O caminho até a barreira foi silencioso.
+            </p>
+
+            <p>
+                Apenas Asgore e Frisk seguiram adiante.
+            </p>
+
+            <p>
+                Até finalmente chegarem.
+            </p>
+
+            <p>
+                A barreira se erguia diante deles.
+            </p>
+
+            <p>
+                Imensa.
+            </p>
+
+            <p>
+                Quase infinita.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Então é isso.”
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Sim.”
+            </p>
+
+
+            <p>
+                Asgore permaneceu observando a luz.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Durante muito tempo, achei que jamais veria este dia.”
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Nós já vivemos na superfície.”
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Antes da guerra.”
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Antes de sermos expulsos para cá.”
+            </p>
+
+
+            <p>
+                Sua expressão ficou pesada.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Quando os humanos começaram a cair...”
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “tomei decisões que ainda carrego comigo.”
+            </p>
+
+
+            <p>
+                Frisk abaixou os olhos.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Você não queria.”
+            </p>
+
+
+            <p>
+                Asgore demorou a responder.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Querer e fazer são coisas diferentes.”
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Às vezes acreditamos que não existe outra escolha.”
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Isso não significa que devemos fingir que nada aconteceu.”
+            </p>
+
+
+            <p>
+                Frisk permaneceu imóvel.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Sans disse algo parecido.”
+            </p>
+
+
+            <p>
+                Asgore sorriu levemente.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Ele é mais sábio do que gosta de aparentar.”
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Não conte a ele que eu disse isso.”
+            </p>
+
+
+            <p>
+                Frisk quase riu.
+            </p>
+
+            <p>
+                Asgore voltou a observar a barreira.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Perdi muitas coisas tentando chegar até este momento.”
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Toriel.”
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Asriel.”
+            </p>
+
+
+            <p>
+                Ele hesitou.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Chara.”
+            </p>
+
+
+            <p>
+                Frisk congelou.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Cha- Chara?”
+            </p>
+
+
+            <p>
+                Asgore olhou para ela.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Sim.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Quem era Chara?”
+            </p>
+
+
+            <p>
+                O rosto de Asgore mudou.
+            </p>
+
+            <p>
+                Não havia raiva.
+            </p>
+
+            <p>
+                Apenas saudade.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Minha filha adotiva.”
+            </p>
+
+
+            <p>
+                Frisk ficou imóvel.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Assim como você, ela era humana.”
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Caiu aqui muitos anos atrás.”
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Toriel e eu a acolhemos.”
+            </p>
+
+
+            <p>
+                Asgore olhou para a barreira.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Por algum tempo... éramos quatro.”
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Eu.”
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Toriel.”
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Asriel.”
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “E Chara.”
+            </p>
+
+
+            <p>
+                Um sorriso triste surgiu.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Uma família improvável.”
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Mas uma família linda.”
+            </p>
+
+
+            <p>
+                Frisk sentiu algo apertar dentro do peito.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Ela era feliz?”
+            </p>
+
+
+            <p>
+                Asgore demorou.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Eu gostaria de acreditar que sim.”
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Ela carregava coisas que uma criança nunca deveria precisar carregar.”
+            </p>
+
+
+            <p>
+                Frisk abaixou os olhos.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu conheci alguém com esse nome.”
+            </p>
+
+
+            <p>
+                Asgore virou para ela.
+            </p>
+
+            <p>
+                Frisk não continuou.
+            </p>
+
+            <p>
+                Ainda não.
+            </p>
+
+            <p>
+                Asgore percebeu.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Entendo.”
+            </p>
+
+
+            <p>
+                Frisk respirou fundo.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Como fazemos isso?”
+            </p>
+
+
+            <p>
+                Asgore aproximou-se da barreira.
+            </p>
+
+            <p>
+                Seis pequenas luzes começaram a surgir.
+            </p>
+
+            <p>
+                As almas humanas.
+            </p>
+
+
+            <p>
+                Asgore olhou para Frisk.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Não preciso de sua vida.”
+            </p>
+
+
+            <p>
+                Frisk levantou os olhos.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Só da sua escolha.”
+            </p>
+
+
+            <p>
+                Ela permaneceu quieta.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “Se sua Determinação responder às outras almas...”
+            </p>
+
+
+            <p>
+                Asgore estendeu a mão.
+            </p>
+
+
+            <p class="dialogo asgore-texto">
+                “talvez elas consigam completar juntas aquilo que nenhuma
+                conseguiu sozinha.”
+            </p>
+
+
+            <p>
+                Frisk olhou para a própria mão.
+            </p>
+
+            <p>
+                Depois para a barreira.
+            </p>
+
+            <p>
+                Para toda aquela luz.
+            </p>
+
+            <p>
+                Para tudo que tinha acontecido até ali.
+            </p>
+
+            <p>
+                Sua respiração tremeu.
+            </p>
+
+            <p>
+                Ela não sabia se era forte o bastante.
+            </p>
+
+            <p>
+                Não sozinha.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Por favor...”
+            </p>
+
+
+            <p>
+                Sua voz falhou.
+            </p>
+
+            <p>
+                Frisk fechou os olhos.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Me ajudem.”
+            </p>
+
+
+            <p>
+                O silêncio durou apenas um instante.
+            </p>
+
+            <p>
+                A primeira alma respondeu.
+            </p>
+
+
+            <p class="fala-alma alma-paciencia">
+                “Ainda pode existir Paciência em seu coração.”
+            </p>
+
+
+            <p>
+                Uma luz ciano brilhou diante dela.
+            </p>
+
+
+            <p class="fala-alma alma-bravura">
+                “Ainda pode existir Bravura em seu coração.”
+            </p>
+
+
+            <p>
+                O laranja surgiu junto à primeira.
+            </p>
+
+
+            <p class="fala-alma alma-integridade">
+                “Ainda pode existir Integridade em seu coração.”
+            </p>
+
+
+            <p>
+                A luz azul respondeu.
+            </p>
+
+
+            <p class="fala-alma alma-perseveranca">
+                “Ainda pode existir Perseverança em seu coração.”
+            </p>
+
+
+            <p>
+                O roxo brilhou.
+            </p>
+
+            <p>
+                As lágrimas começaram a cair sem que Frisk percebesse.
+            </p>
+
+
+            <p class="fala-alma alma-bondade">
+                “Ainda pode existir Bondade em seu coração.”
+            </p>
+
+
+            <p>
+                A luz verde se aproximou.
+            </p>
+
+
+            <p class="fala-alma alma-justica">
+                “Ainda pode existir Justiça em seu coração.”
+            </p>
+
+
+            <p>
+                A última das seis brilhou em amarelo.
+            </p>
+
+            <p>
+                Frisk ficou sem palavras.
+            </p>
+
+            <p>
+                As seis luzes passaram a girar ao redor dela.
+            </p>
+
+            <p>
+                Ciano.
+            </p>
+
+            <p>
+                Laranja.
+            </p>
+
+            <p>
+                Azul.
+            </p>
+
+            <p>
+                Roxo.
+            </p>
+
+            <p>
+                Verde.
+            </p>
+
+            <p>
+                Amarelo.
+            </p>
+
+            <p>
+                Todas ali.
+            </p>
+
+            <p>
+                Todas respondendo ao seu chamado.
+            </p>
+
+            <p>
+                Frisk olhou para Asgore.
+            </p>
+
+            <p>
+                Ele sorriu.
+            </p>
+
+            <p>
+                Então ela estendeu a mão.
+            </p>
+
+            <p>
+                E colocou-a junto à dele.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Então vamos.”
+            </p>
+
+
+            <p>
+                As seis almas iluminaram a barreira.
+            </p>
+
+            <p>
+                E, por último—
+            </p>
+
+
+            <p class="fala-alma alma-determinacao">
+                vermelho.
+            </p>
+
+
+            <p>
+                Frisk fechou os olhos.
+            </p>
+
+            <p>
+                Não havia Chara.
+            </p>
+
+            <p>
+                Não havia uma voz empurrando-a para frente.
+            </p>
+
+            <p>
+                Aquilo era dela.
+            </p>
+
+            <p>
+                Sua escolha.
+            </p>
+
+            <p>
+                Sua alma.
+            </p>
+
+
+            <p class="fala-alma alma-determinacao">
+                Sua Determinação.
+            </p>
+
+
+            <p>
+                A luz tomou todo o lugar.
+            </p>
+
+            <p>
+                A barreira começou a estremecer.
+            </p>
+
+            <p>
+                Depois a ceder.
+            </p>
+
+            <p>
+                E, pela primeira vez em incontáveis anos...
+            </p>
+
+            <p>
+                o caminho para fora começou a se abrir.
+            </p>
+
+
+
+            <div class="quebra-cena">
+                ✦
+            </div>
+
+
+
+            <p>
+                Sans e Nightmare reapareceram no laboratório.
+            </p>
+
+            <p>
+                Alphys quase derrubou o computador.
+            </p>
+
+
+            <p class="dialogo alphys-texto">
+                “Sans?!”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “oi.”
+            </p>
+
+
+            <p>
+                Ela imediatamente viu a roupa.
+            </p>
+
+
+            <p class="dialogo alphys-texto">
+                “SANS?!”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “essa reação de novo?”
+            </p>
+
+
+            <p>
+                Undyne virou.
+            </p>
+
+            <p>
+                Mettaton também.
+            </p>
+
+            <p>
+                Vários monstros estavam reunidos ali.
+            </p>
+
+            <p>
+                Nightmare ficou um pouco atrás.
+            </p>
+
+            <p>
+                Sans levantou uma mão.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “acabou.”
+            </p>
+
+
+            <p>
+                O laboratório ficou silencioso.
+            </p>
+
+
+            <p class="dialogo alphys-texto">
+                “Acabou?”
+            </p>
+
+
+            <p>
+                Sans assentiu.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “a humana finalmente desistiu.”
+            </p>
+
+
+            <p>
+                Alphys ficou imóvel.
+            </p>
+
+
+            <p class="dialogo undyne-texto">
+                “E ela?”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “com Asgore.”
+            </p>
+
+
+            <p>
+                Alphys ficou pálida.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “calma.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “ela foi ajudar.”
+            </p>
+
+
+            <p class="dialogo alphys-texto">
+                “Ajudar?”
+            </p>
+
+
+            <p>
+                Sans olhou para todos.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “o rei vai abrir a barreira.”
+            </p>
+
+
+            <p>
+                Ninguém respondeu.
+            </p>
+
+            <p>
+                Por um segundo.
+            </p>
+
+            <p>
+                Dois.
+            </p>
+
+            <p>
+                Três.
+            </p>
+
+            <p>
+                Então o laboratório explodiu em vozes.
+            </p>
+
+            <p>
+                Alphys começou a chorar.
+            </p>
+
+            <p>
+                Undyne a abraçou com força.
+            </p>
+
+            <p>
+                Mettaton ergueu os braços.
+            </p>
+
+
+            <p class="dialogo mettaton-texto">
+                “FINALMENTE UM FINAL DIGNO!”
+            </p>
+
+
+            <p>
+                Sans observou.
+            </p>
+
+            <p>
+                Nightmare ficou ao lado dele.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Eles estão felizes.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “é.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Você não vai comemorar?”
+            </p>
+
+
+            <p>
+                Sans sorriu.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “já volto.”
+            </p>
+
+
+
+            <div class="quebra-cena">
+                ✦
+            </div>
+
+
+
+            <p>
+                Snowdin estava silenciosa quando chegaram.
+            </p>
+
+            <p>
+                Sans abriu a porta de casa.
+            </p>
+
+            <p>
+                Nightmare entrou atrás dele.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Então você mora aqui.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “morava.”
+            </p>
+
+
+            <p>
+                A palavra saiu antes que Sans pensasse.
+            </p>
+
+            <p>
+                Ele ficou parado.
+            </p>
+
+            <p>
+                Nightmare não comentou.
+            </p>
+
+            <p>
+                A casa parecia exatamente como antes.
+            </p>
+
+            <p>
+                O sofá.
+            </p>
+
+            <p>
+                A televisão.
+            </p>
+
+            <p>
+                A cozinha.
+            </p>
+
+            <p>
+                Coisas espalhadas.
+            </p>
+
+            <p>
+                E uma quantidade quase inacreditável de objetos que só poderiam
+                pertencer a Papyrus.
+            </p>
+
+            <p>
+                Sans caminhou lentamente.
+            </p>
+
+            <p>
+                Parou diante do quarto do irmão.
+            </p>
+
+            <p>
+                A porta abriu.
+            </p>
+
+            <p>
+                Tudo ainda estava ali.
+            </p>
+
+            <p>
+                Livros.
+            </p>
+
+            <p>
+                Roupas.
+            </p>
+
+            <p>
+                Objetos que Papyrus provavelmente afirmaria que tinham algum
+                propósito extremamente importante.
+            </p>
+
+            <p>
+                Sans sorriu.
+            </p>
+
+            <p>
+                Depois o sorriso desapareceu.
+            </p>
+
+            <p>
+                A mão tocou o cachecol.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “a gente conseguiu, Paps...”
+            </p>
+
+
+            <p>
+                Nightmare ficou em silêncio atrás dele.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “a gente conseguiu.”
+            </p>
+
+
+            <p>
+                A voz saiu menor dessa vez.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “você nem tá aqui...”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “e mesmo assim conseguiu salvar todo mundo.”
+            </p>
+
+
+            <p>
+                Nightmare aproximou-se.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Se Papyrus não tivesse feito aquele presente...”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “o capacete não estaria com você.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Você talvez nunca tivesse chegado até mim.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “E Frisk não teria encontrado aquele pijama.”
+            </p>
+
+
+            <p>
+                Sans abaixou os olhos.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Seu irmão salvou o subterrâneo inteiro.”
+            </p>
+
+
+            <p>
+                Sans soltou uma pequena risada.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “heh.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “parece coisa dele.”
+            </p>
+
+
+            <p>
+                A visão ficou embaçada.
+            </p>
+
+            <p>
+                Sans tentou sorrir.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “o cara sempre gostou de chamar atenção.”
+            </p>
+
+
+            <p>
+                Nightmare não respondeu.
+            </p>
+
+            <p>
+                Uma última lágrima desceu.
+            </p>
+
+            <p>
+                Sans deixou.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “vou sentir falta de você, irmãozinho.”
+            </p>
+
+
+            <p>
+                Ele enxugou o rosto.
+            </p>
+
+            <p>
+                Olhou uma última vez para o quarto.
+            </p>
+
+            <p>
+                Então fechou a porta devagar.
+            </p>
+
+            <p>
+                Não como quem tentava esquecer.
+            </p>
+
+            <p>
+                Como quem finalmente conseguia seguir.
+            </p>
+
+
+
+            <div class="quebra-cena">
+                ✦
+            </div>
+
+
+
+            <p>
+                Sans caiu no sofá.
+            </p>
+
+            <p>
+                Literalmente.
+            </p>
+
+            <p>
+                Nightmare olhou.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Você está bem?”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “perfeitamente.”
+            </p>
+
+
+            <p>
+                Sans afundou ainda mais.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “vem.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “O quê?”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “experimenta.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Experimentar o quê?”
+            </p>
+
+
+            <p>
+                Sans bateu na parte vazia do sofá.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “preguiça.”
+            </p>
+
+
+            <p>
+                Nightmare permaneceu olhando.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Isso é uma atividade?”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “uma das melhores.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Você não faz nada.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “esse é o objetivo.”
+            </p>
+
+
+            <p>
+                Nightmare parecia desconfiado.
+            </p>
+
+            <p>
+                Mesmo assim, sentou.
+            </p>
+
+            <p>
+                Silêncio.
+            </p>
+
+            <p>
+                Cinco segundos.
+            </p>
+
+            <p>
+                Dez.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “E agora?”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “nada.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Por quanto tempo?”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “se fizer direito, horas.”
+            </p>
+
+
+            <p>
+                Nightmare ficou em silêncio.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Eu não entendo.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “vai aprender.”
+            </p>
+
+
+            <p>
+                Mais alguns segundos.
+            </p>
+
+            <p>
+                Sans começou lentamente a fechar os olhos.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “cara...”
+            </p>
+
+
+            <p>
+                Ele se ajeitou.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “fazia tempo que eu não fazia aquilo que faço melhor.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Piadas ruins?”
+            </p>
+
+
+            <p>
+                Sans abriu um olho.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “segunda coisa que faço melhor.”
+            </p>
+
+
+            <p>
+                Nightmare riu.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Dormir?”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “bingo.”
+            </p>
+
+
+            <p>
+                Sans fechou o olho novamente.
+            </p>
+
+            <p>
+                Nightmare ficou olhando para ele.
+            </p>
+
+            <p>
+                Então uma ideia surgiu.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Sans.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “hm.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Você disse que queria sair daqui.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “uhum.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “E se não fosse apenas daqui?”
+            </p>
+
+
+            <p>
+                Sans abriu um olho.
+            </p>
+
+            <p>
+                Nightmare levantou uma das mãos.
+            </p>
+
+            <p>
+                Um pequeno portal surgiu diante do sofá.
+            </p>
+
+            <p>
+                Do outro lado—
+            </p>
+
+            <p>
+                outro céu.
+            </p>
+
+            <p>
+                Outro lugar.
+            </p>
+
+            <p>
+                Outra realidade.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Eu posso fazer isso.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Posso levar você comigo.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Existem mundos que você nem consegue imaginar.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Lugares completamente diferentes.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Pessoas diferentes.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Histórias diferentes.”
+            </p>
+
+
+            <p>
+                Sans sentou um pouco melhor.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Você passou tanto tempo protegendo este mundo.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Talvez queira conhecer outros.”
+            </p>
+
+
+            <p>
+                Sans ficou quieto.
+            </p>
+
+            <p>
+                Olhou para o portal.
+            </p>
+
+            <p>
+                Depois para a casa.
+            </p>
+
+            <p>
+                Para a porta do quarto de Papyrus.
+            </p>
+
+            <p>
+                Para o cachecol.
+            </p>
+
+            <p>
+                Pensou em Alphys.
+            </p>
+
+            <p>
+                Undyne.
+            </p>
+
+            <p>
+                Asgore.
+            </p>
+
+            <p>
+                Frisk.
+            </p>
+
+            <p>
+                Todos juntos agora.
+            </p>
+
+            <p>
+                Sans sorriu.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “sabe...”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “acho que eu sempre fiquei porque tinha alguém pra proteger.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “Paps.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “Snowdin.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “todo mundo.”
+            </p>
+
+
+            <p>
+                Sans olhou novamente para o portal.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “mas eles têm uns aos outros agora.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “e eu acho que...”
+            </p>
+
+
+            <p>
+                Ele respirou fundo.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “se eu tiver que escolher o que fazer com o resto da minha vida...”
+            </p>
+
+
+            <p>
+                O sorriso aumentou.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “eu gostaria de começar uma nova.”
+            </p>
+
+
+            <p>
+                Nightmare abriu um enorme sorriso.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Então você aceita?”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “claro.”
+            </p>
+
+
+            <p>
+                Nightmare levantou-se imediatamente.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Perfeito!”
+            </p>
+
+
+            <p>
+                O portal cresceu.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Então escolha.”
+            </p>
+
+
+            <p>
+                Sans piscou.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “o quê?”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “O primeiro mundo.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Qualquer realidade.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Qualquer lugar.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Qualquer coisa que você queira conhecer.”
+            </p>
+
+
+            <p>
+                Sans ficou em silêncio.
+            </p>
+
+            <p>
+                Parecia pensar seriamente.
+            </p>
+
+            <p>
+                Nightmare esperou.
+            </p>
+
+            <p>
+                E esperou.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “já sei.”
+            </p>
+
+
+            <p>
+                Nightmare se aproximou, curioso.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Qual?”
+            </p>
+
+
+            <p>
+                Sans afundou novamente no sofá.
+            </p>
+
+            <p>
+                Puxou uma almofada.
+            </p>
+
+            <p>
+                Fechou os olhos.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “o mundo dos sonhos.”
+            </p>
+
+
+            <p>
+                Silêncio.
+            </p>
+
+            <p>
+                Nightmare piscou.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “...Sans.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “hm?”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “VOCÊ ACABOU DE ACEITAR VIAJAR ENTRE REALIDADES.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “uhum.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “EU ABRI UM PORTAL.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “bonito.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “E VOCÊ VAI DORMIR?!”
+            </p>
+
+
+            <p>
+                Sans virou para o outro lado.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “Night...”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “QUÊ?!”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “toda grande viagem começa com um bom des-canso.”
+            </p>
+
+
+            <p>
+                Nightmare ficou imóvel.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “pegou?”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “EU PEGUEI.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “heh.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “FOI HORRÍVEL.”
+            </p>
+
+
+            <p>
+                Sans se ajeitou ainda mais.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Amanhã eu vou jogar você dentro do PRIMEIRO portal que eu abrir!”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “aí eu viajo dormindo.”
+            </p>
+
+
+            <p>
+                Nightmare ficou sem resposta.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “eficiência.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Sans.”
+            </p>
+
+
+            <p>
+                Nada.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Sans?”
+            </p>
+
+
+            <p>
+                Uma pequena respiração tranquila.
+            </p>
+
+            <p>
+                Nightmare olhou para o portal.
+            </p>
+
+            <p>
+                Depois para Sans.
+            </p>
+
+            <p>
+                Depois novamente para o portal.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “...Inacreditável.”
+            </p>
+
+
+            <p>
+                Ele se sentou no outro lado do sofá.
+            </p>
+
+            <p>
+                A cabeça de Chara flutuou atrás dele.
+            </p>
+
+            <p>
+                Nightmare apontou para ela.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Não fala nada.”
+            </p>
+
+
+            <p>
+                Ela apenas sorriu.
+            </p>
+
+            <p>
+                Nightmare cruzou os braços.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Eu odeio esqueletos.”
+            </p>
+
+
+            <p>
+                Do sofá veio uma voz sonolenta.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “boa noite pra você também, Night.”
+            </p>
+
+
+            <p>
+                Nightmare congelou.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “EU ACHEI QUE VOCÊ ESTAVA DORMINDO!”
+            </p>
+
+
+            <p>
+                Dessa vez, nenhuma resposta.
+            </p>
+
+            <p>
+                Sans finalmente havia apagado.
+            </p>
+
+            <p>
+                Nightmare permaneceu irritado por mais alguns segundos.
+            </p>
+
+            <p>
+                Então olhou para o amigo.
+            </p>
+
+            <p>
+                E sorriu.
+            </p>
+
+            <p>
+                O portal continuou aberto diante dos dois.
+            </p>
+
+            <p>
+                Um mundo inteiro esperando do outro lado.
+            </p>
+
+            <p>
+                Não havia pressa.
+            </p>
+
+            <p>
+                Pela primeira vez...
+            </p>
+
+            <p>
+                não havia motivo para ter.
+            </p>
+
+            <p>
+                Sans dormia.
+            </p>
+
+            <p>
+                Sem esperar uma batalha.
+            </p>
+
+            <p>
+                Sem esperar outro julgamento.
+            </p>
+
+            <p>
+                Sem medo de abrir os olhos e descobrir que tudo havia começado outra vez.
+            </p>
+
+            <p>
+                Amanhã haveria outro mundo.
+            </p>
+
+            <p>
+                Depois outro.
+            </p>
+
+            <p>
+                E provavelmente outro depois daquele.
+            </p>
+
+            <p>
+                Mas, naquela noite...
+            </p>
+
+            <p>
+                o grande Judgment Ronin tinha uma missão muito mais importante.
+            </p>
+
+
+            <p class="ultima-frase">
+                Dormir até tarde.
+            </p>
+
+
+
+            <!-- ==================================
+                 FINAL DO PROJETO
+            =================================== -->
+
+            <div class="titulo-final">
+
+                <span>
+                    FIM
+                </span>
+
+                <strong>
+                    JUDGMENT RONIN & NIGHTMARE
+                </strong>
+
+            </div>
+
+
+            <footer class="fim-capitulo">
+
+                <span>
+                    FIM DO CAPÍTULO 08
+                </span>
+
+            </footer>
+
+
+        </article>
+
+
+    </main>
+
+
+
+    <!-- ==========================================
+         EASTER EGGS
+    =========================================== -->
+
+    <script src="easter.js"></script>
+
+
+</body>
+
+</html>
