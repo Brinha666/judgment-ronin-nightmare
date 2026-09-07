@@ -837,7 +837,91 @@ body.tema-nightmare #cursor-glow {
 
     font-style: italic;
 }
+.chara-texto {
+    color: #bd3737 !important;
 
+    font-style: italic;
+}
+
+
+/* COLE O BLOCO NOVO AQUI */
+
+.nightmare-texto {
+    color: #b42b32 !important;
+}
+
+.flowey-texto {
+    color: #e2c84f !important;
+}
+
+.frisk-texto {
+    color: rgba(255,255,255,0.82) !important;
+}
+
+.asgore-texto {
+    color: #e7c36a !important;
+}
+
+.alphys-texto {
+    color: #e6d878 !important;
+}
+
+.undyne-texto {
+    color: #73d9ff !important;
+}
+
+.mettaton-texto {
+    color: #ff8fd8 !important;
+}
+
+
+/* ALMAS HUMANAS */
+
+.fala-alma {
+    margin: 28px 0 !important;
+    padding: 18px 22px !important;
+
+    border-left:
+        2px solid currentColor !important;
+
+    font-style: italic;
+    font-weight: 600;
+}
+
+.alma-paciencia {
+    color: #57e7ef !important;
+}
+
+.alma-bravura {
+    color: #ff8b32 !important;
+}
+
+.alma-integridade {
+    color: #4c74ff !important;
+}
+
+.alma-perseveranca {
+    color: #b169ff !important;
+}
+
+.alma-bondade {
+    color: #55df75 !important;
+}
+
+.alma-justica {
+    color: #ffe35d !important;
+}
+
+.alma-determinacao {
+    color: #ff4747 !important;
+}
+
+
+/* O CÓDIGO ANTIGO CONTINUA DAQUI */
+
+.temmie-texto {
+    color: #e3c9ff !important;
+}
 
 .temmie-texto {
     color: #e3c9ff !important;
