@@ -1420,6 +1420,35 @@
 
 
     </main>
+    </main>
+
+<script>
+document.addEventListener("click", function (event) {
+
+    const botao = event.target.closest(
+        ".lista-capitulos button[onclick]"
+    );
+
+    if (!botao) return;
+
+    const destino = (
+        botao.getAttribute("onclick") || ""
+    ).match(/capitulo\d+\.html/);
+
+    if (!destino) return;
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+
+    window.location.replace(destino[0]);
+
+}, true);
+</script>
+
+<script src="easter.js"></script>
+
+</body>
+</html>
 <script src="easter.js"></script>
 
 </body>
