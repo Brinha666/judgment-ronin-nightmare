@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Avalie o site Judgment Ronin & Nightmare.">
+  <title>Avaliação da Timeline | Judgment Ronin & Nightmare</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="easter.css">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body.pagina-avaliar {
+      min-height: 100vh;
+      margin: 0;
+      color: #f2f5f7;
+      background:
+        radial-gradient(circle at 18% 30%, rgba(95,195,235,.07), transparent 34%),
+        radial-gradient(circle at 82% 30%, rgba(175,25,35,.08), transparent 34%),
+        #050607;
+    }
+
+    .avaliar-topo {
+      width: min(1100px, calc(100% - 40px));
+      min-height: 78px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .avaliar-topo .voltar {
+      color: rgba(255,255,255,.52);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      transition: color .3s ease, transform .3s ease;
+    }
+
+    .avaliar-topo .voltar:hover {
+      color: #dff6ff;
+      transform: translateX(-3px);
+    }
+
+    .avaliar-topo .projeto {
+      color: rgba(255,255,255,.25);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 4px;
+    }
+
+    .avaliar-container {
+      width: min(820px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 90px 0 110px;
+    }
+
+    .avaliar-intro {
+      text-align: center;
+      margin-bottom: 58px;
+    }
+
+    .avaliar-label {
+      margin: 0 0 16px;
+      color: rgba(255,255,255,.28);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 6px;
+    }
+
+    .avaliar-intro h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 64px);
+      line-height: 1.02;
+      letter-spacing: -2px;
+    }
+
+    .avaliar-intro h1 .azul { color: #dff6ff; }
+    .avaliar-intro h1 .vermelho { color: #b52a32; }
+
+    .avaliar-intro p {
+      max-width: 620px;
+      margin: 26px auto 0;
+      color: rgba(255,255,255,.46);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .avaliar-linha {
+      width: 220px;
+      height: 1px;
+      margin: 38px auto 0;
+      background: linear-gradient(
+        90deg,
+        rgba(110,215,255,.55),
+        rgba(255,255,255,.12),
+        rgba(185,30,40,.55)
+      );
+    }
+
+    .avaliacao-form {
+      display: grid;
+      gap: 22px;
+    }
+
+    .pergunta {
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,.075);
+      border-radius: 7px;
+      background: linear-gradient(
+        120deg,
+        rgba(105,205,245,.018),
+        rgba(255,255,255,.012),
+        rgba(180,25,35,.02)
+      );
+    }
+
+    .pergunta legend {
+      width: 100%;
+      padding: 0;
+      margin-bottom: 19px;
+      color: rgba(255,255,255,.9);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .pergunta .ajuda {
+      margin: -9px 0 18px;
+      color: rgba(255,255,255,.32);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .opcoes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .opcao {
+      position: relative;
+      display: inline-flex;
+    }
+
+    .opcao input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .opcao span {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 5px;
+      color: rgba(255,255,255,.58);
+      background: rgba(255,255,255,.018);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: .7px;
+      cursor: pointer;
+      transition:
+        transform .25s ease,
+        color .25s ease,
+        border-color .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .opcao:hover span {
+      transform: translateY(-2px);
+      color: rgba(255,255,255,.88);
+      border-color: rgba(255,255,255,.2);
+    }
+
+    .opcao input:checked + span {
+      color: #f5fbff;
+      border-color: rgba(160,225,250,.42);
+      background: linear-gradient(
+        90deg,
+        rgba(95,195,235,.09),
+        rgba(255,255,255,.035),
+        rgba(180,25,35,.08)
+      );
+      box-shadow:
+        -18px 0 45px rgba(80,190,235,.05),
+        18px 0 45px rgba(175,20,30,.05);
+    }
+
+    .opcao input:focus-visible + span {
+      outline: 1px solid rgba(220,247,255,.92);
+      outline-offset: 4px;
+    }
+
+    .estrelas { gap: 8px; }
+
+    .estrelas .opcao span {
+      min-width: 56px;
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+
+    .campo-texto {
+      width: 100%;
+      min-height: 155px;
+      resize: vertical;
+      padding: 15px 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 5px;
+      outline: none;
+      color: #eef6fa;
+      background: rgba(255,255,255,.018);
+      font: inherit;
+      font-size: 14px;
+      line-height: 1.7;
+      transition: border-color .25s ease, background .25s ease;
+    }
+
+    .campo-texto::placeholder { color: rgba(255,255,255,.24); }
+
+    .campo-texto:focus {
+      border-color: rgba(150,220,245,.40);
+      background: rgba(255,255,255,.025);
+    }
+
+    .acoes {
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    .enviar {
+      width: min(420px, 100%);
+      min-height: 56px;
+      padding: 15px 24px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 5px;
+      color: rgba(255,255,255,.94);
+      background: linear-gradient(
+        90deg,
+        rgba(80,190,235,.07),
+        rgba(255,255,255,.03),
+        rgba(155,15,25,.075)
+      );
+      font: inherit;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      cursor: pointer;
+      transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+    }
+
+    .enviar:hover:not(:disabled) {
+      transform: translateY(-3px);
+      border-color: rgba(255,255,255,.5);
+      box-shadow:
+        -28px 0 65px rgba(80,190,235,.08),
+        28px 0 65px rgba(175,20,30,.09);
+    }
+
+    .enviar:disabled {
+      opacity: .5;
+      cursor: wait;
+    }
+
+    .status-envio {
+      min-height: 22px;
+      margin: 18px 0 0;
+      color: rgba(255,255,255,.42);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .status-envio.erro { color: #dc777d; }
+
+    .sucesso {
+      display: none;
+      padding: 62px 30px;
+      border-top: 1px solid rgba(255,255,255,.07);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      text-align: center;
+    }
+
+    .sucesso.visivel { display: block; }
+
+    .sucesso small {
+      display: block;
+      margin-bottom: 18px;
+      color: rgba(185,35,45,.55);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 5px;
+    }
+
+    .sucesso h2 {
+      margin: 0;
+      color: rgba(255,255,255,.92);
+      font-size: clamp(25px, 4vw, 36px);
+    }
+
+    .sucesso p {
+      margin: 18px 0 0;
+      color: rgba(255,255,255,.4);
+      font-size: 14px;
+    }
+
+    .sucesso a {
+      display: inline-block;
+      margin-top: 28px;
+      color: #dff6ff;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .rodape-avaliar {
+      margin-top: 70px;
+      color: rgba(255,255,255,.12);
+      text-align: center;
+      font-size: 9px;
+      letter-spacing: 5px;
+    }
+
+    .campo-armadilha {
+      position: absolute !important;
+      left: -9999px !important;
+      width: 1px !important;
+      height: 1px !important;
+      overflow: hidden !important;
+    }
+
+    @media (max-width: 650px) {
+      .avaliar-topo { min-height: 68px; }
+      .avaliar-topo .projeto { display: none; }
+      .avaliar-container { padding: 65px 0 90px; }
+      .avaliar-intro { margin-bottom: 42px; }
+      .pergunta { padding: 22px 18px; }
+
+      .opcoes {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .opcao,
+      .opcao span {
+        width: 100%;
+      }
+
+      .estrelas {
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+      .estrelas .opcao span {
+        min-width: 0;
+        padding-inline: 8px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .avaliar-topo .voltar,
+      .opcao span,
+      .enviar,
+      .campo-texto {
+        transition: none;
+      }
+    }
+  </style>
+
+  <link rel="stylesheet" href="mobile.css">
+</head>
+
+<body class="pagina-avaliar">
+
+  <header class="avaliar-topo">
+    <a href="index.html" class="voltar">← VOLTAR</a>
+    <span class="projeto">JUDGMENT RONIN & NIGHTMARE</span>
+  </header>
+
+  <main class="avaliar-container">
+
+    <section class="avaliar-intro">
+      <p class="avaliar-label">AVALIAÇÃO DA TIMELINE</p>
+
+      <h1>
+        <span class="azul">SUA ESCOLHA</span>
+        <br>
+        TAMBÉM <span class="vermelho">IMPORTA.</span>
+      </h1>
+
+      <p>
+        Se você explorou o projeto, conte o que achou.
+        As respostas ajudam a decidir o que pode ser melhorado
+        nas próximas versões do site.
+      </p>
+
+      <div class="avaliar-linha"></div>
+    </section>
+
+    <form
+      class="avaliacao-form"
+      id="avaliacao-form"
+      action="https://formspree.io/f/xzebjvlb"
+      method="POST"
+    >
+
+      <fieldset class="pergunta">
+        <legend>1. Qual nota você dá ao site?</legend>
+
+        <div class="opcoes estrelas">
+          <label class="opcao">
+            <input type="radio" name="nota" value="1 estrela" required>
+            <span>★ 1</span>
+          </label>
+
+          <label class="opcao">
+            <input type="radio" name="nota" value="2 estrelas">
+            <span>★ 2</span>
+          </label>
+
+          <label class="opcao">
+            <input type="radio" name="nota" value="3 estrelas">
+            <span>★ 3</span>
+          </label>
+
+          <label class="opcao">
+            <input type="radio" name="nota" value="4 estrelas">
+            <span>★ 4</span>
+          </label>
+
+          <label class="opcao">
+            <input type="radio" name="nota" value="5 estrelas">
+            <span>★ 5</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="pergunta">
+        <legend>2. O que você mais gostou?</legend>
+        <p class="ajuda">Pode marcar mais de uma opção.</p>
+
+        <div class="opcoes">
+          <label class="opcao">
+            <input type="checkbox" name="mais_gostou" value="História">
+            <span>História</span>
+          </label>
+
+          <label class="opcao">
+            <input type="checkbox" name="mais_gostou" value="Personagens">
+            <span>Personagens</span>
+          </label>
+
+          <label class="opcao">
+            <input type="checkbox" name="mais_gostou" value="Músicas">
+            <span>Músicas</span>
+          </label>
+
+          <label class="opcao">
+            <input type="checkbox" name="mais_gostou" value="Visual">
+            <span>Visual</span>
+          </label>
+
+          <label class="opcao">
+            <input type="checkbox" name="mais_gostou" value="Extras e Easter Eggs">
+            <span>Extras / Easter Eggs</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="pergunta">
+        <legend>3. Como foi navegar pelo site?</legend>
+
+        <div class="opcoes">
+          <label class="opcao">
+            <input type="radio" name="navegacao" value="Muito fácil" required>
+            <span>Muito fácil</span>
+          </label>
+
+          <label class="opcao">
+            <input type="radio" name="navegacao" value="Fácil">
+            <span>Fácil</span>
+          </label>
+
+          <label class="opcao">
+            <input type="radio" name="navegacao" value="Ok">
+            <span>Ok</span>
+          </label>
+
+          <label class="opcao">
+            <input type="radio" name="navegacao" value="Um pouco confuso">
+            <span>Um pouco confuso</span>
+          </label>
+
+          <label class="opcao">
+            <input type="radio" name="navegacao" value="Confuso">
+            <span>Confuso</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="pergunta">
+        <legend>4. Você encontrou algum Easter Egg? 👀</legend>
+
+        <div class="opcoes">
+          <label class="opcao">
+            <input type="radio" name="easter_egg" value="Sim" required>
+            <span>Sim</span>
+          </label>
+
+          <label class="opcao">
+            <input type="radio" name="easter_egg" value="Não">
+            <span>Não</span>
+          </label>
+
+          <label class="opcao">
+            <input type="radio" name="easter_egg" value="Talvez...">
+            <span>Talvez...</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="pergunta">
+        <legend>5. Você recomendaria o projeto para outra pessoa?</legend>
+
+        <div class="opcoes">
+          <label class="opcao">
+            <input type="radio" name="recomendaria" value="Sim" required>
+            <span>Sim</span>
+          </label>
+
+          <label class="opcao">
+            <input type="radio" name="recomendaria" value="Talvez">
+            <span>Talvez</span>
+          </label>
+
+          <label class="opcao">
+            <input type="radio" name="recomendaria" value="Não">
+            <span>Não</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="pergunta">
+        <legend>6. Quer deixar algum comentário ou sugestão?</legend>
+        <p class="ajuda">
+          Opcional. Pode contar o que mais gostou ou o que você mudaria.
+        </p>
+
+        <textarea
+          class="campo-texto"
+          name="comentario"
+          maxlength="1200"
+          placeholder="Escreva aqui..."
+        ></textarea>
+      </fieldset>
+
+      <div class="campo-armadilha" aria-hidden="true">
+        <label>
+          Não preencha este campo:
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+        </label>
+      </div>
+
+      <input
+        type="hidden"
+        name="origem"
+        value="Judgment Ronin & Nightmare — avaliar.html"
+      >
+
+      <div class="acoes">
+        <button
+          class="enviar"
+          id="enviar-avaliacao"
+          type="submit"
+        >
+          ENVIAR JULGAMENTO
+        </button>
+
+        <p
+          class="status-envio"
+          id="status-envio"
+          role="status"
+          aria-live="polite"
+        ></p>
+      </div>
+
+    </form>
+
+    <section
+      class="sucesso"
+      id="sucesso"
+      aria-live="polite"
+    >
+      <small>TIMELINE // REGISTRO CONCLUÍDO</small>
+      <h2>AVALIAÇÃO REGISTRADA.</h2>
+      <p>A TIMELINE AGRADECE.</p>
+
+      <a href="index.html">
+        ← VOLTAR AO INÍCIO
+      </a>
+    </section>
+
+    <footer class="rodape-avaliar">
+      JUDGMENT RONIN & NIGHTMARE
+    </footer>
+
+  </main>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const form = document.getElementById("avaliacao-form");
+      const botao = document.getElementById("enviar-avaliacao");
+      const status = document.getElementById("status-envio");
+      const sucesso = document.getElementById("sucesso");
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        if (!form.reportValidity()) return;
+
+        botao.disabled = true;
+        botao.textContent = "ENVIANDO...";
+        status.classList.remove("erro");
+        status.textContent = "Registrando avaliação na timeline...";
+
+        try {
+          const resposta = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: {
+              "Accept": "application/json"
+            }
+          });
+
+          if (!resposta.ok) {
+            throw new Error("Falha no envio");
+          }
+
+          form.hidden = true;
+          sucesso.classList.add("visivel");
+
+          sucesso.scrollIntoView({
+            behavior: window.matchMedia(
+              "(prefers-reduced-motion: reduce)"
+            ).matches ? "auto" : "smooth",
+            block: "center"
+          });
+
+        } catch (erro) {
+          console.warn("Falha ao enviar avaliação:", erro);
+
+          status.classList.add("erro");
+          status.textContent =
+            "Não foi possível enviar agora. Tente novamente em alguns instantes.";
+
+          botao.disabled = false;
+          botao.textContent = "ENVIAR JULGAMENTO";
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
