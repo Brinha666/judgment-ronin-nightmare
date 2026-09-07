@@ -670,13 +670,155 @@
       color: #dff6ff;
     }
 
-    .origem-nightmare-espera {
-      border-left: 2px solid rgba(190,35,45,0.35);
+    /* ======================================================
+       RELATO DO CRIADOR DE NIGHTMARE
+    ====================================================== */
+
+    .origem-nightmare {
+      border-left: 2px solid rgba(190,35,45,0.48);
     }
 
-    .origem-nightmare-espera .em-breve {
-      color: rgba(210,70,80,0.65);
-      border-color: rgba(190,35,45,0.18);
+    .origem-nightmare::before {
+      background:
+        linear-gradient(
+          110deg,
+          rgba(150,20,30,0.03),
+          transparent 42%,
+          rgba(220,25,40,0.07)
+        );
+    }
+
+    .origem-nightmare .rotulo {
+      color: rgba(215,70,80,0.70);
+    }
+
+    .abrir-arquivo.nightmare-arquivo {
+      color: #e0555d;
+      border-color: rgba(195,45,55,0.26);
+      background: rgba(170,20,30,0.035);
+    }
+
+    .abrir-arquivo.nightmare-arquivo:hover {
+      border-color: rgba(220,65,75,0.52);
+      background: rgba(180,25,35,0.075);
+    }
+
+    .relato-nightmare {
+      margin-top: 30px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(200,45,55,0.13);
+    }
+
+    .relato-nightmare[hidden] {
+      display: none;
+    }
+
+    .relato-nightmare .relato-data {
+      color: rgba(220,65,75,0.72);
+    }
+
+    .nome-nightmare-origem {
+      color: #db3e47;
+      font-weight: 800;
+      text-shadow: 0 0 16px rgba(210,30,40,0.24);
+    }
+
+    .nightmare-fnf-destaque {
+      display: block;
+      width: fit-content;
+      max-width: 100%;
+      margin: 36px auto;
+      padding: 14px 19px;
+      border: 1px solid rgba(200,50,60,0.18);
+      color: #ef6068;
+      background: rgba(145,12,22,0.045);
+      font-size: clamp(19px, 3vw, 27px);
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-align: center;
+      text-shadow: 0 0 20px rgba(210,35,45,0.20);
+    }
+
+    .nascimento-nightmare {
+      position: relative;
+      isolation: isolate;
+      display: block;
+      width: fit-content;
+      max-width: 100%;
+      margin: 52px auto !important;
+      padding: 18px 26px;
+      color: #ff525c;
+      font-size: clamp(25px, 4vw, 38px);
+      font-weight: 900;
+      line-height: 1.3;
+      text-align: center;
+      letter-spacing: 1px;
+      text-shadow:
+        0 0 13px rgba(255,45,55,0.30),
+        0 0 35px rgba(170,0,15,0.16);
+      transition:
+        transform 0.35s ease,
+        text-shadow 0.35s ease;
+    }
+
+    .nascimento-nightmare::before,
+    .nascimento-nightmare::after {
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      color: rgba(230,40,50,0);
+      font-size: 16px;
+      letter-spacing: 18px;
+      white-space: nowrap;
+      pointer-events: none;
+      transform: translateY(-50%) scale(0.8);
+      transition:
+        color 0.4s ease,
+        transform 0.4s ease,
+        text-shadow 0.4s ease;
+    }
+
+    .nascimento-nightmare::before {
+      content: "•  ◉  •";
+      right: calc(100% + 12px);
+    }
+
+    .nascimento-nightmare::after {
+      content: "•  ◉  •";
+      left: calc(100% + 12px);
+    }
+
+    .nascimento-nightmare:hover {
+      transform: scale(1.025);
+      text-shadow:
+        0 0 16px rgba(255,55,65,0.48),
+        0 0 46px rgba(180,0,18,0.25);
+    }
+
+    .nascimento-nightmare:hover::before,
+    .nascimento-nightmare:hover::after {
+      color: rgba(245,55,65,0.80);
+      transform: translateY(-50%) scale(1);
+      text-shadow: 0 0 12px rgba(255,30,40,0.55);
+    }
+
+    .origem-nightmare .imagem-memoria:hover {
+      border-color: rgba(220,55,65,0.33);
+      box-shadow: 0 0 35px rgba(180,20,30,0.10);
+    }
+
+    .assinatura-nightmare {
+      margin-top: 48px;
+      padding: 28px 0 0;
+      border-top: 1px solid rgba(200,45,55,0.11);
+      text-align: center;
+      color: rgba(255,255,255,0.50);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .assinatura-nightmare strong {
+      color: #e0555d;
     }
 
     /* ======================================================
@@ -1106,6 +1248,16 @@
       .aviso-creditos {
 
         font-size: 11px;
+      }
+
+      .memoria-visual,
+      .memoria-visual.nightmare-memoria {
+        grid-template-columns: 1fr;
+      }
+
+      .nascimento-nightmare::before,
+      .nascimento-nightmare::after {
+        display: none;
       }
 
       .relato-texto {
@@ -1681,12 +1833,12 @@
          ORIGEM DE NIGHTMARE
     ===================================================== -->
 
-    <section class="bloco origem-nightmare-espera" id="origem-nightmare">
+    <section class="bloco origem-nightmare" id="origem-nightmare">
 
       <div class="bloco-conteudo">
 
         <p class="rotulo">
-          ARQUIVO DE PERSONAGEM
+          RELATO DO CRIADOR
         </p>
 
         <h2 class="titulo-bloco">
@@ -1694,17 +1846,393 @@
         </h2>
 
         <p class="texto-bloco">
-          Este espaço está reservado para o relato do criador de Nightmare.
-          Quando ele chegar, a história dele entra aqui com as próprias palavras.
+          Antes do Vazio, das cabeças flutuantes e das viagens entre mundos,
+          Nightmare começou de um jeito muito mais simples: FNF, lives,
+          improviso e a vontade de ter um personagem que fosse realmente seu.
         </p>
 
-        <!-- ==================================================
-             COLE A ORIGEM DO NIGHTMARE AQUI QUANDO RECEBER
-        =================================================== -->
+        <button
+          class="abrir-arquivo nightmare-arquivo"
+          id="botao-nightmare"
+          type="button"
+          aria-expanded="false"
+          aria-controls="relato-nightmare"
+        >
+          <span id="texto-botao-nightmare">LER RELATO</span>
+        </button>
 
-        <span class="em-breve">
-          AGUARDANDO ARQUIVO
-        </span>
+
+        <article
+          class="relato-nightmare"
+          id="relato-nightmare"
+          hidden
+        >
+
+          <header class="relato-topo">
+
+            <p class="relato-data">
+              ARQUIVO DO CRIADOR // 2022 → ?
+            </p>
+
+            <h3>
+              Como um RolePlay virou um personagem original.
+            </h3>
+
+            <p class="relato-subtitulo">
+              Um relato em primeira pessoa sobre Friday Night Funkin',
+              Indie Cross, lives, Nightmare Sans e o nascimento de Nightmare.
+            </p>
+
+          </header>
+
+
+          <div class="relato-texto">
+
+            <p class="surto vermelho-relato">
+              OULAR!!1!!1!1
+            </p>
+
+            <p>
+              Aqui quem fala é a pessoa com a pior memória do mundo! KKKK.
+            </p>
+
+            <p>
+              Ou, anteriormente...
+            </p>
+
+            <p class="surto vermelho-relato">
+              <span class="nome-nightmare-origem">Nightmare.</span>
+            </p>
+
+            <p>
+              E também <strong>[MELHOR] amigo do Rody — ou Rodrigo!</strong>
+            </p>
+
+            <p>
+              Enfim, irei <strong>TENTAR</strong> contar a história do NIGHTMARE.
+            </p>
+
+            <p>
+              Bem... eu sempre gostei MUITO de <strong>Friday Night Funkin'</strong>
+              e dos mods dele. Foi praticamente o único jogo que acompanhei desde o
+              lançamento, tanto a evolução do jogo original quanto a evolução dos mods.
+            </p>
+
+            <p>
+              E foi justamente nessa paixão por FNF que a nossa história começou.
+            </p>
+
+            <p>
+              Tudo começa lá em <strong>2022</strong>.
+            </p>
+
+            <p>
+              Eu sempre tive muito tempo livre, então ficava assistindo a vídeos de
+              YouTubers jogando Friday Night Funkin', já que naquela época eu não tinha
+              como jogar direito no celular.
+            </p>
+
+            <p>
+              Hoje até existe port pra celular.
+            </p>
+
+            <p>
+              Eu só não jogo porque o meu celular é uma batata.
+            </p>
+
+            <p>
+              Enfim.
+            </p>
+
+            <p>
+              Foi mais ou menos nessa época que lançou um dos meus mods favoritos...
+            </p>
+
+            <span class="nightmare-fnf-destaque">
+              FRIDAY NIGHT FUNKIN' — INDIE CROSS!
+            </span>
+
+            <p>
+              Simplesmente um dos melhores mods, na minha opinião.
+            </p>
+
+            <p>
+              Ele juntava três jogos indies muito conhecidos:
+              <strong>Cuphead, UNDERTALE e Bendy.</strong>
+            </p>
+
+            <p>
+              O único que eu não conhecia tanto era Bendy, porque o jogo era grande
+              demais e eu fiquei com preguiça de assistir. KKKK.
+            </p>
+
+            <p>
+              Agora você deve estar pensando:
+            </p>
+
+            <p class="surto">
+              “Mas o que esse mod tem a ver com a história do NIGHTMARE?”
+            </p>
+
+            <p>
+              E eu vou te responder.
+            </p>
+
+            <p class="surto vermelho-relato">
+              PORQUE FOI ELE QUE DEU VIDA AO NIGHTMARE!1!!1
+            </p>
+
+            <p>
+              Dentro do mod existe uma dificuldade chamada <strong>Nightmare</strong>.
+            </p>
+
+            <p>
+              Nela, cada um dos personagens principais possui uma música especial:
+              Cuphead, Sans e Bendy.
+            </p>
+
+            <p>
+              E, nessas músicas, cada um recebe uma forma própria chamada de Nightmare:
+              <strong>Nightmare Cuphead, Nightmare Sans e Nightmare Bendy.</strong>
+            </p>
+
+            <p>
+              A ideia era que essas fossem algumas das músicas mais difíceis do mod,
+              já que apareciam no final.
+            </p>
+
+
+            <div class="memoria-visual">
+
+              <button
+                class="imagem-memoria"
+                type="button"
+                data-imagem="Assets/nightmare-sans-indie-cross.png"
+                aria-label="Ampliar imagem do Nightmare Sans de Indie Cross"
+              >
+                <img
+                  src="Assets/nightmare-sans-indie-cross.png"
+                  alt="Nightmare Sans de Friday Night Funkin' Indie Cross"
+                >
+              </button>
+
+              <p class="memoria-legenda">
+                <strong>REFERÊNCIA // NIGHTMARE SANS</strong>
+                Uma das inspirações que estavam presentes antes mesmo de Nightmare
+                perder o “Sans” do nome. Clique para ampliar.
+              </p>
+
+            </div>
+
+
+            <p>
+              E agora que eu expliquei isso... vamos voltar um pouquinho.
+            </p>
+
+            <p>
+              Lembra que eu falei que gostava de assistir a YouTubers jogando mods
+              de Friday Night Funkin'?
+            </p>
+
+            <p>
+              Eu também gostava muito de assistir a lives.
+            </p>
+
+            <p>
+              Só que, por algum motivo, eu tinha o costume de <strong>“fingir” ser
+              algum personagem de FNF</strong> enquanto estava nelas.
+            </p>
+
+            <p>
+              Nada demais. Eu simplesmente colocava o nome do personagem e uma foto
+              dele no perfil.
+            </p>
+
+            <p>
+              Eu já fui o <strong>Boyfriend</strong>, do Friday Night Funkin' original.
+            </p>
+
+            <p>
+              Já fui o <strong>MissingNo</strong>, de Hypno's Lullaby.
+            </p>
+
+            <p>
+              E, por fim...
+            </p>
+
+            <p class="surto vermelho-relato">
+              Nightmare Sans, do Indie Cross.
+            </p>
+
+            <p>
+              Tá legal. Mas o que ISSO tem a ver com o Nightmare?
+            </p>
+
+            <p class="surto">
+              CALMA, A GENTE TÁ CHEGANDO LÁ!
+            </p>
+
+            <p>
+              Durante um desses meus “Roleplays” como Nightmare Sans, eu entrei na
+              live de um ser chamado <strong>Lux_x1</strong>.
+            </p>
+
+            <p>
+              Ele foi um grande parceiro naquela época da minha vida, porque
+              praticamente uma das únicas coisas que eu fazia era assistir às lives dele.
+            </p>
+
+            <p>
+              Lá eu conseguia conversar com pessoas maravilhosas.
+            </p>
+
+            <p>
+              E foi também onde conheci meu <strong>best friend</strong>.
+            </p>
+
+            <p>
+              Mas eu não vou falar muito sobre isso aqui...
+            </p>
+
+            <p>
+              Porque essas informações já estão no relato logo acima do meu, hehe.
+            </p>
+
+            <p class="surto vermelho-relato">
+              E ESTE RELATO É PRA FALAR DO NIGHTMARE1!!1!1
+            </p>
+
+            <p>
+              Voltando.
+            </p>
+
+            <p>
+              Durante as lives do Lux_x1, comecei a perceber uma coisa.
+            </p>
+
+            <p>
+              Era muito legal ver pessoas que tinham <strong>personagens originais
+              próprios</strong>. Personagens que pertenciam a elas.
+            </p>
+
+            <p>
+              E em algum momento eu pensei:
+            </p>
+
+            <p class="surto">
+              “Eu quero ter um também.”
+            </p>
+
+            <p>
+              Então... eu improvisei. Literalmente.
+            </p>
+
+            <p>
+              Tirei o <strong>“Sans”</strong> de “Nightmare Sans”.
+            </p>
+
+            <p>
+              E sobrou:
+            </p>
+
+            <p class="surto vermelho-relato">
+              Nightmare.
+            </p>
+
+            <p>
+              A minha foto de perfil nessa época era o Nightmare de
+              <strong>Five Nights at Freddy's 4</strong>, porque eu achava ele MUITO massa.
+            </p>
+
+            <p>
+              Eu sempre gostei de toda aquela estética de pesadelo, e especialmente
+              da estética de FNAF 4.
+            </p>
+
+
+            <div class="memoria-visual nightmare-memoria">
+
+              <p class="memoria-legenda">
+                <strong>REFERÊNCIA // NIGHTMARE — FNAF 4</strong>
+                A foto de perfil que ajudou a reforçar a estética de pesadelo antes
+                do visual próprio de Nightmare existir. Clique para ampliar.
+              </p>
+
+              <button
+                class="imagem-memoria"
+                type="button"
+                data-imagem="Assets/nightmare-fnaf4.png"
+                aria-label="Ampliar imagem de Nightmare de Five Nights at Freddy's 4"
+              >
+                <img
+                  src="Assets/nightmare-fnaf4.png"
+                  alt="Nightmare de Five Nights at Freddy's 4"
+                >
+              </button>
+
+            </div>
+
+
+            <p>
+              Só que depois minha imaginação começou a trabalhar.
+            </p>
+
+            <p>
+              Eu queria que Nightmare tivesse um visual realmente dele.
+            </p>
+
+            <p>
+              Então comecei a criar um design original inspirado principalmente no
+              <strong>Nightmare Sans do Indie Cross</strong>.
+            </p>
+
+            <p>
+              Fiz ele completamente preto.
+            </p>
+
+            <p>
+              Dei a ele um sorriso parecido com o do Sans, só que mais afiado.
+            </p>
+
+            <p>
+              Os olhos ficaram vermelhos.
+            </p>
+
+            <p>
+              O sorriso também.
+            </p>
+
+            <p>
+              Principalmente porque...
+            </p>
+
+            <p class="surto vermelho-relato">
+              vermelho é a minha cor favorita.
+            </p>
+
+            <p>
+              E então foi assim que...
+            </p>
+
+            <p class="nascimento-nightmare">
+              NIGHTMARE NASCEU!1!1!1
+            </p>
+
+            <p class="surto">
+              “Pera... foi assim?”
+            </p>
+
+            <p class="surto vermelho-relato">
+              SIM!
+            </p>
+
+            <div class="assinatura-nightmare">
+              <strong>FIM.</strong>
+            </div>
+
+          </div>
+
+        </article>
 
       </div>
 
@@ -1908,6 +2436,27 @@
       if (!aberto) {
         setTimeout(() => {
           relatoOrigem.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 80);
+      }
+
+    });
+
+
+    const botaoNightmare = document.getElementById("botao-nightmare");
+    const relatoNightmare = document.getElementById("relato-nightmare");
+    const textoBotaoNightmare = document.getElementById("texto-botao-nightmare");
+
+    botaoNightmare.addEventListener("click", () => {
+
+      const aberto = botaoNightmare.getAttribute("aria-expanded") === "true";
+
+      botaoNightmare.setAttribute("aria-expanded", String(!aberto));
+      relatoNightmare.hidden = aberto;
+      textoBotaoNightmare.textContent = aberto ? "LER RELATO" : "FECHAR RELATO";
+
+      if (!aberto) {
+        setTimeout(() => {
+          relatoNightmare.scrollIntoView({ behavior: "smooth", block: "start" });
         }, 80);
       }
 
