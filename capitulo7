@@ -1,0 +1,3907 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Capítulo 07 — O Julgamento Ronin | Judgment Ronin & Nightmare
+    </title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="easter.css">
+    <link rel="stylesheet" href="mobile.css">
+
+    <style>
+
+        .sans-texto {
+            color: #9cecff;
+        }
+
+        .nightmare-texto {
+            color: #b42b32;
+        }
+
+        .chara-texto {
+            color: #d94b4b;
+        }
+
+        .frisk-texto {
+            color: rgba(255,255,255,0.94);
+        }
+
+        .gaster-traducao {
+            color: rgba(255,255,255,0.82);
+            font-style: italic;
+        }
+
+        .dialogo {
+            padding-left: 18px;
+
+            border-left:
+                1px solid rgba(255,255,255,0.10);
+        }
+
+        .gaster-fala {
+            margin-bottom: 23px;
+        }
+
+        .gaster-simbolos {
+            color: #ffffff;
+
+            padding-left: 18px;
+
+            border-left:
+                1px solid rgba(255,255,255,0.10);
+
+            text-shadow:
+                0 0 8px rgba(180,220,255,0.20);
+        }
+
+        .botao-capitulo {
+            cursor: pointer;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .botao-capitulo:hover {
+            transform: translateY(-2px);
+
+            border-color:
+                rgba(255,255,255,0.20);
+
+            background:
+                rgba(255,255,255,0.025);
+        }
+
+    </style>
+
+</head>
+
+
+<body class="pagina-historia">
+
+
+    <!-- FUNDO -->
+
+    <div class="fundo-estrelas"></div>
+
+    <div class="aura aura-sans"></div>
+    <div class="aura aura-nightmare"></div>
+
+
+
+    <!-- CABEÇALHO -->
+
+    <header class="cabecalho-pagina">
+
+        <a
+            href="historia.html"
+            class="voltar"
+        >
+            ← VOLTAR
+        </a>
+
+        <span>
+            JUDGMENT RONIN & NIGHTMARE
+        </span>
+
+    </header>
+
+
+
+    <!-- CONTEÚDO -->
+
+    <main class="historia-container">
+
+
+        <!-- INTRODUÇÃO -->
+
+        <section class="cabecalho-historia">
+
+            <span class="categoria">
+                HISTÓRIA
+            </span>
+
+            <h1>
+                Arquivos da Timeline
+            </h1>
+
+            <p>
+                Cada capítulo acompanha os acontecimentos desta linha do tempo
+                e as escolhas que fizeram uma rota aparentemente comum sair
+                completamente do esperado.
+            </p>
+
+        </section>
+
+
+
+        <!-- CAPÍTULOS -->
+
+        <nav class="lista-capitulos">
+
+
+            <button
+                class="botao-capitulo"
+                type="button"
+                onclick="window.location.href='historia.html'"
+            >
+                <span>PRÓLOGO</span>
+                <strong>O Último Presente</strong>
+            </button>
+
+
+            <button
+                class="botao-capitulo"
+                type="button"
+                onclick="window.location.href='capitulo1.html'"
+            >
+                <span>CAPÍTULO 01</span>
+                <strong>O Vazio que Sorria</strong>
+            </button>
+
+
+            <button
+                class="botao-capitulo"
+                type="button"
+                onclick="window.location.href='capitulo2.html'"
+            >
+                <span>CAPÍTULO 02</span>
+                <strong>Aquilo que Veio do Nada</strong>
+            </button>
+
+
+            <button
+                class="botao-capitulo"
+                type="button"
+                onclick="window.location.href='capitulo3.html'"
+            >
+                <span>CAPÍTULO 03</span>
+                <strong>A Porta que Não Devia Abrir</strong>
+            </button>
+
+
+            <button
+                class="botao-capitulo"
+                type="button"
+                onclick="window.location.href='capitulo4.html'"
+            >
+                <span>CAPÍTULO 04</span>
+                <strong>A Chama Abandonada</strong>
+            </button>
+
+
+            <button
+                class="botao-capitulo"
+                type="button"
+                onclick="window.location.href='capitulo5.html'"
+            >
+                <span>CAPÍTULO 05</span>
+                <strong>Sem Segunda Chance</strong>
+            </button>
+
+
+            <button
+                class="botao-capitulo"
+                type="button"
+                onclick="window.location.href='capitulo6.html'"
+            >
+                <span>CAPÍTULO 06</span>
+                <strong>A Última Brecha</strong>
+            </button>
+
+
+            <button
+                class="capitulo-selecionado"
+                type="button"
+            >
+                <span>CAPÍTULO 07</span>
+                <strong>O Julgamento Ronin</strong>
+            </button>
+
+
+            <button
+                class="botao-capitulo"
+                type="button"
+                onclick="window.location.href='capitulo8.html'"
+            >
+                <span>CAPÍTULO 08</span>
+                <strong>Além da Barreira</strong>
+            </button>
+
+
+        </nav>
+
+
+
+        <!-- LEITURA -->
+
+        <article class="leitura">
+
+
+            <header class="cabecalho-capitulo">
+
+                <span>
+                    CAPÍTULO 07
+                </span>
+
+                <h2>
+                    O Julgamento Ronin
+                </h2>
+
+                <div class="linha-capitulo"></div>
+
+            </header>
+
+
+
+            <p>
+                O corredor do Julgamento estava vazio.
+            </p>
+
+            <p>
+                Nenhum guarda.
+            </p>
+
+            <p>
+                Nenhum monstro escondido.
+            </p>
+
+            <p>
+                Nenhuma voz atravessando as paredes.
+            </p>
+
+            <p>
+                Sans havia feito questão disso.
+            </p>
+
+            <p>
+                Se aquela batalha aconteceria, não haveria mais ninguém
+                entre eles.
+            </p>
+
+            <p>
+                Nightmare observava os pilares ao redor.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Então é aqui?”
+            </p>
+
+
+            <p>
+                Sans colocou as mãos nos bolsos.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “é.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Não parece muito especial.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “você devia ver quando tem gente sendo julgada.”
+            </p>
+
+
+            <p>
+                Nightmare olhou para ele.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Isso foi uma piada?”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “talvez.”
+            </p>
+
+
+            <p>
+                A chama azul permanecia acesa no capacete.
+            </p>
+
+            <p>
+                Diferente das outras vezes, ela não oscilava.
+            </p>
+
+            <p>
+                Não diminuía.
+            </p>
+
+            <p>
+                Parecia esperar.
+            </p>
+
+            <p>
+                Nightmare virou para o corredor.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Ela está vindo.”
+            </p>
+
+
+            <p>
+                Sans também sentiu.
+            </p>
+
+            <p>
+                Passos.
+            </p>
+
+            <p>
+                Lentos.
+            </p>
+
+            <p>
+                Sem hesitação.
+            </p>
+
+            <p>
+                O sorriso desapareceu de seu rosto.
+            </p>
+
+            <p>
+                A figura de Frisk surgiu à distância.
+            </p>
+
+            <p>
+                Mas não era Frisk quem caminhava.
+            </p>
+
+            <p>
+                Nightmare percebeu antes mesmo que Sans dissesse qualquer coisa.
+            </p>
+
+            <p>
+                A postura.
+            </p>
+
+            <p>
+                Os olhos.
+            </p>
+
+            <p>
+                Aquele sorriso imóvel.
+            </p>
+
+            <p>
+                Uma energia vermelha se formava ao redor de uma das mãos.
+            </p>
+
+            <p>
+                Sans abaixou um pouco a cabeça.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “então essa é a Chara.”
+            </p>
+
+
+            <p>
+                Nightmare observou.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Ela parece pequena.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “não se engana.”
+            </p>
+
+
+            <p>
+                Chara parou a alguns metros.
+            </p>
+
+            <p>
+                Seus olhos passaram por Nightmare.
+            </p>
+
+            <p>
+                Depois encontraram Sans.
+            </p>
+
+            <p>
+                O sorriso aumentou.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Quanta confiança, esqueletinho.”
+            </p>
+
+
+            <p>
+                Sans permaneceu parado.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Já matei você várias vezes.”
+            </p>
+
+
+            <p>
+                A Determinação tomou a forma de uma lâmina vermelha.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Vai ser apenas mais uma.”
+            </p>
+
+
+            <p>
+                Sans ficou alguns segundos olhando.
+            </p>
+
+            <p>
+                Então suspirou.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “sabe, criança...”
+            </p>
+
+
+            <p>
+                A chama azul brilhou.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “normalmente eu falaria que odeio fazer promessas.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “ou que ainda vejo alguma coisa em você.”
+            </p>
+
+
+            <p>
+                Chara não respondeu.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “mas, de verdade?”
+            </p>
+
+
+            <p>
+                Sans retirou as mãos dos bolsos.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “tudo que sobra pra você agora...”
+            </p>
+
+
+            <p>
+                Os olhos dele se abriram.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “é julgamento.”
+            </p>
+
+
+            <p>
+                Nightmare avançou um passo.
+            </p>
+
+            <p>
+                Extensões do Vazio começaram a surgir atrás dele.
+            </p>
+
+            <p>
+                Olhos vermelhos se abriram lentamente.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Julgamento em dobro.”
+            </p>
+
+
+            <p>
+                Chara riu.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Então venham.”
+            </p>
+
+
+
+            <div class="quebra-cena">
+                ✦
+            </div>
+
+
+
+            <p>
+                O primeiro ataque veio de Sans.
+            </p>
+
+            <p>
+                Chara mal teve tempo de erguer a lâmina antes de sentir
+                o próprio corpo ser puxado para o lado.
+            </p>
+
+            <p>
+                Sua alma mudou de direção.
+            </p>
+
+            <p>
+                Azul.
+            </p>
+
+            <p>
+                A gravidade a lançou para uma das laterais do corredor.
+            </p>
+
+            <p>
+                Nightmare já estava esperando.
+            </p>
+
+            <p>
+                Duas extensões negras fecharam a rota.
+            </p>
+
+            <p>
+                Chara girou a lâmina.
+            </p>
+
+            <p>
+                Um corte vermelho atravessou o espaço e obrigou Nightmare
+                a recuar.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Interessante.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “Night!”
+            </p>
+
+
+            <p>
+                Nightmare desapareceu.
+            </p>
+
+            <p>
+                Um segundo depois, Sans mudou novamente a direção da gravidade.
+            </p>
+
+            <p>
+                Chara caiu.
+            </p>
+
+            <p>
+                Mas antes que tocasse o chão, Nightmare surgiu abaixo.
+            </p>
+
+            <p>
+                Uma extensão do Vazio a arremessou de volta.
+            </p>
+
+            <p>
+                Chara recuperou o controle no ar.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Vocês ensaiaram isso?”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “não.”
+            </p>
+
+
+            <p>
+                Nightmare apareceu atrás dela.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Estamos improvisando.”
+            </p>
+
+
+            <p>
+                Chara desviou.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Dá pra perceber.”
+            </p>
+
+
+            <p>
+                O primeiro Gaster Blaster surgiu.
+            </p>
+
+            <p>
+                Depois outro.
+            </p>
+
+            <p>
+                Chara correu.
+            </p>
+
+            <p>
+                Os ataques atravessaram o corredor enquanto Sans mudava
+                constantemente a direção de sua alma.
+            </p>
+
+            <p>
+                Nightmare fechava os caminhos seguros.
+            </p>
+
+            <p>
+                Chara ainda encontrava brechas.
+            </p>
+
+            <p>
+                Pequenas.
+            </p>
+
+            <p>
+                Quase impossíveis.
+            </p>
+
+            <p>
+                Mas encontrava.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “ela é boa.”
+            </p>
+
+
+            <p>
+                Nightmare surgiu ao lado dele.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Ela já fez isso antes.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “muitas vezes.”
+            </p>
+
+
+            <p>
+                Outro corte vermelho veio.
+            </p>
+
+            <p>
+                Sans teleportou.
+            </p>
+
+            <p>
+                A linha de Determinação atravessou apenas o espaço vazio.
+            </p>
+
+            <p>
+                Nightmare tentou agarrá-la.
+            </p>
+
+            <p>
+                Chara girou e rompeu as extensões.
+            </p>
+
+            <p>
+                Elas desapareceram no Vazio antes de se reconstruírem.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Ela consegue atingir minhas criações.”
+            </p>
+
+
+            <p>
+                Nightmare parecia quase fascinado.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “Night.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Sim?”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “depois.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Certo.”
+            </p>
+
+
+            <p>
+                Chara avançou novamente.
+            </p>
+
+            <p>
+                Sans tentou puxar sua alma.
+            </p>
+
+            <p>
+                Dessa vez ela resistiu.
+            </p>
+
+            <p>
+                Por um instante.
+            </p>
+
+            <p>
+                A Determinação vermelha brilhou mais forte.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Surpreso?”
+            </p>
+
+
+            <p>
+                A influência de Sans venceu.
+            </p>
+
+            <p>
+                Mas demorou.
+            </p>
+
+            <p>
+                Tempo suficiente para Chara escapar do próximo ataque.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “heh.”
+            </p>
+
+
+            <p>
+                Sans inclinou a cabeça.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “você realmente tá...”
+            </p>
+
+
+            <p>
+                Ele fez uma pequena pausa.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “determinada a perder.”
+            </p>
+
+
+            <p>
+                Silêncio.
+            </p>
+
+            <p>
+                Nightmare olhou para Sans.
+            </p>
+
+            <p>
+                Chara também.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Isso foi um trocadilho?”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “foi.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Foi horrível.”
+            </p>
+
+
+            <p>
+                Sans desapareceu.
+            </p>
+
+            <p>
+                Chara imediatamente se colocou em posição.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “...Sans?”
+            </p>
+
+
+            <p>
+                Nada.
+            </p>
+
+            <p>
+                Alguns segundos depois, Sans reapareceu exatamente no mesmo lugar.
+            </p>
+
+            <p>
+                Com um trompete nas mãos.
+            </p>
+
+            <p>
+                Nightmare ficou imóvel.
+            </p>
+
+            <p>
+                Chara também.
+            </p>
+
+            <p>
+                Sans levou o instrumento à boca.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “Wah, wah, wah, waaaaaah...”
+            </p>
+
+
+            <p>
+                O som atravessou todo o corredor.
+            </p>
+
+            <p>
+                Nightmare permaneceu encarando-o.
+            </p>
+
+            <p>
+                Sans abaixou o trompete.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “heh.”
+            </p>
+
+
+            <p>
+                Nightmare apontou lentamente para o instrumento.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Isso realmente era necessário?”
+            </p>
+
+
+            <p>
+                Sans parou.
+            </p>
+
+            <p>
+                O sorriso diminuiu por um instante.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “heh...”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “falou igual o meu irmão.”
+            </p>
+
+
+            <p>
+                Nightmare não respondeu.
+            </p>
+
+            <p>
+                Sans olhou para o trompete por mais um segundo.
+            </p>
+
+            <p>
+                Então desapareceu.
+            </p>
+
+            <p>
+                Quando voltou, estava sem ele.
+            </p>
+
+            <p>
+                A chama azul continuava acesa.
+            </p>
+
+            <p>
+                E o humor desapareceu junto.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “certo.”
+            </p>
+
+
+            <p>
+                Sans voltou os olhos para Chara.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “acabou o intervalo.”
+            </p>
+
+
+            <p>
+                Chara apertou a lâmina.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Finalmente.”
+            </p>
+
+
+
+            <div class="quebra-cena">
+                ✦
+            </div>
+
+
+
+            <p>
+                A luta perdeu qualquer ritmo previsível.
+            </p>
+
+            <p>
+                Sans controlava a posição.
+            </p>
+
+            <p>
+                Nightmare controlava o espaço.
+            </p>
+
+            <p>
+                Chara tentava quebrar os dois.
+            </p>
+
+            <p>
+                Quando Sans criava uma abertura, Nightmare transformava
+                aquilo em uma armadilha.
+            </p>
+
+            <p>
+                Quando Nightmare forçava Chara para alguma direção,
+                Sans já estava esperando.
+            </p>
+
+            <p>
+                Mas Chara aprendia.
+            </p>
+
+            <p>
+                Rápido.
+            </p>
+
+            <p>
+                A lâmina deixou de servir apenas para ataques próximos.
+            </p>
+
+            <p>
+                Cada movimento passou a deixar uma linha vermelha no espaço.
+            </p>
+
+            <p>
+                Algumas desapareciam.
+            </p>
+
+            <p>
+                Outras permaneciam.
+            </p>
+
+            <p>
+                Sans percebeu tarde demais.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “Night!”
+            </p>
+
+
+            <p>
+                As linhas se fecharam.
+            </p>
+
+            <p>
+                Nightmare desapareceu antes que fossem atingidas.
+            </p>
+
+            <p>
+                Sans teleportou para o outro lado.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Vocês também estão improvisando agora?”
+            </p>
+
+
+            <p>
+                Nightmare surgiu atrás dela.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Sim.”
+            </p>
+
+
+            <p>
+                Um tentáculo tentou prender seu braço.
+            </p>
+
+            <p>
+                Chara rompeu a magia.
+            </p>
+
+            <p>
+                Outro segurou sua perna.
+            </p>
+
+            <p>
+                Ela se soltou.
+            </p>
+
+            <p>
+                Sans atacou.
+            </p>
+
+            <p>
+                Dessa vez, acertou.
+            </p>
+
+            <p>
+                A energia de KARMA começou a agir.
+            </p>
+
+            <p>
+                Chara recuou.
+            </p>
+
+            <p>
+                O sorriso diminuiu pela primeira vez.
+            </p>
+
+            <p>
+                Sans viu.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “doeu?”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Não muito.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “vai acumulando.”
+            </p>
+
+
+            <p>
+                Chara encarou-o.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “consequência é meio chata assim.”
+            </p>
+
+
+            <p>
+                Ela avançou.
+            </p>
+
+            <p>
+                Nightmare interceptou.
+            </p>
+
+            <p>
+                Mais cabeças apareceram atrás dele.
+            </p>
+
+            <p>
+                Quatro.
+            </p>
+
+            <p>
+                Cinco.
+            </p>
+
+            <p>
+                Seis.
+            </p>
+
+            <p>
+                Cada uma observando um ponto diferente.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “não exagera.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Eu consigo.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “Night.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Eu consigo.”
+            </p>
+
+
+            <p>
+                Sans não insistiu.
+            </p>
+
+            <p>
+                Nightmare abriu os braços.
+            </p>
+
+            <p>
+                Um dos Gaster Blasters de Sans permaneceu parado no ar.
+            </p>
+
+            <p>
+                Sans franziu o cenho.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “ei.”
+            </p>
+
+
+            <p>
+                O blaster virou lentamente.
+            </p>
+
+            <p>
+                Nightmare sorriu.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Olha.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “você tá controlando meu ataque?”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Estou aprendendo.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “isso é meio invasivo.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Você invade a gravidade das pessoas.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “argumento justo.”
+            </p>
+
+
+            <p>
+                Chara lançou um corte.
+            </p>
+
+            <p>
+                Nightmare moveu o blaster.
+            </p>
+
+            <p>
+                A energia vermelha atravessou a magia que ele controlava.
+            </p>
+
+            <p>
+                Nightmare arregalou os olhos.
+            </p>
+
+            <p>
+                Sans percebeu.
+            </p>
+
+            <p>
+                Tarde demais.
+            </p>
+
+            <p>
+                O golpe alcançou Sans e o derrubou.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Sans!”
+            </p>
+
+
+            <p>
+                Nightmare desapareceu.
+            </p>
+
+            <p>
+                Chara tentou avançar.
+            </p>
+
+            <p>
+                Uma parede de Vazio surgiu diante dela.
+            </p>
+
+            <p>
+                Nightmare apareceu ao lado de Sans.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Ei.”
+            </p>
+
+
+            <p>
+                Sans tentou se levantar.
+            </p>
+
+            <p>
+                O corpo não respondeu como deveria.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “heh.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Não faz piada agora.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “eu nem fiz.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Você ia.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “talvez.”
+            </p>
+
+
+            <p>
+                A chama do capacete oscilou.
+            </p>
+
+
+            <div class="gaster-fala">
+
+                <p class="gaster-simbolos">
+                    ☠︎✌︎⚐︎ 💧︎☜︎ ☹︎☜︎✞︎✌︎☠︎❄︎☜︎📬︎
+                </p>
+
+                <p class="gaster-traducao">
+                    (Não se levante.)
+                </p>
+
+            </div>
+
+
+            <p>
+                Sans ficou sério.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “não temos muito essa opção.”
+            </p>
+
+
+            <div class="gaster-fala">
+
+                <p class="gaster-simbolos">
+                    ☜︎🕆︎ 👎︎✋︎💧︎💧︎☜︎ 🏱︎✌︎☼︎✌︎ ☠︎✌︎⚐︎ 💧︎☜︎ ☹︎☜︎✞︎✌︎☠︎❄︎✌︎☼︎📬︎
+                </p>
+
+                <p class="gaster-traducao">
+                    (Eu disse para não se levantar.)
+                </p>
+
+            </div>
+
+
+            <p>
+                Nightmare olhou para Chara.
+            </p>
+
+            <p>
+                Ela já tentava atravessar a barreira.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “Night.”
+            </p>
+
+
+            <p>
+                Nightmare virou.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “segura ela.”
+            </p>
+
+
+            <p>
+                Nightmare hesitou.
+            </p>
+
+            <p>
+                Depois assentiu.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Não demora.”
+            </p>
+
+
+            <p>
+                Ele desapareceu.
+            </p>
+
+            <p>
+                Sans ficou sozinho por alguns segundos.
+            </p>
+
+            <p>
+                Ou quase.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “e aí?”
+            </p>
+
+
+            <p>
+                Gaster não respondeu imediatamente.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “não gosto desse silêncio.”
+            </p>
+
+
+            <div class="gaster-fala">
+
+                <p class="gaster-simbolos">
+                    💧︎🕆︎✌︎ ✌︎☹︎💣︎✌︎ ☜︎💧︎❄︎✌︎ ✋︎☠︎💧︎❄︎✌︎✞︎☜︎☹︎📬︎
+                </p>
+
+                <p class="gaster-traducao">
+                    (Sua alma está instável.)
+                </p>
+
+            </div>
+
+
+            <p>
+                Sans olhou para a própria mão.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “já ouvi coisa pior.”
+            </p>
+
+
+            <div class="gaster-fala">
+
+                <p class="gaster-simbolos">
+                    💧︎✌︎☠︎💧︎📬︎
+                </p>
+
+                <p class="gaster-traducao">
+                    (Sans.)
+                </p>
+
+            </div>
+
+
+            <p>
+                O tom mudou.
+            </p>
+
+            <p>
+                Sans parou de sorrir.
+            </p>
+
+
+            <div class="gaster-fala">
+
+                <p class="gaster-simbolos">
+                    ☜︎✠︎✋︎💧︎❄︎☜︎ 🕆︎💣︎✌︎ 💣︎✌︎☠︎☜︎✋︎☼︎✌︎ 👎︎☜︎ ☜︎💧︎❄︎✌︎👌︎✋︎☹︎✋︎☪︎✌︎☼︎📬︎
+                </p>
+
+                <p class="gaster-traducao">
+                    (Existe uma maneira de estabilizá-la.)
+                </p>
+
+            </div>
+
+
+            <p class="dialogo sans-texto">
+                “claro que existe.”
+            </p>
+
+
+            <p>
+                Silêncio.
+            </p>
+
+            <p>
+                Sans entendeu antes que Gaster precisasse explicar.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “não.”
+            </p>
+
+
+            <div class="gaster-fala">
+
+                <p class="gaster-simbolos">
+                    ☠︎✌︎⚐︎ ☟︎✌︎ ❄︎☜︎💣︎🏱︎⚐︎ 🏱︎✌︎☼︎✌︎ 👎︎✋︎💧︎👍︎🕆︎❄︎✋︎☼︎📬︎
+                </p>
+
+                <p class="gaster-traducao">
+                    (Não há tempo para discutir.)
+                </p>
+
+            </div>
+
+
+            <p class="dialogo sans-texto">
+                “eu falei não.”
+            </p>
+
+
+            <div class="gaster-fala">
+
+                <p class="gaster-simbolos">
+                    ☜︎ ☜︎🕆︎ ⚐︎🕆︎✞︎✋︎📬︎
+                </p>
+
+                <p class="gaster-traducao">
+                    (E eu ouvi.)
+                </p>
+
+            </div>
+
+
+            <p class="dialogo sans-texto">
+                “então procura outra coisa.”
+            </p>
+
+
+            <div class="gaster-fala">
+
+                <p class="gaster-simbolos">
+                    ☠︎✌︎⚐︎ ☜︎✠︎✋︎💧︎❄︎☜︎ ⚐︎🕆︎❄︎☼︎✌︎📬︎
+                </p>
+
+                <p class="gaster-traducao">
+                    (Não existe outra.)
+                </p>
+
+            </div>
+
+
+            <p>
+                Ao longe, Nightmare continuava mantendo Chara ocupada.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “você acabou de voltar.”
+            </p>
+
+
+            <p>
+                Gaster ficou em silêncio.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “eu nem tive tempo suficiente pra ficar bravo com você direito.”
+            </p>
+
+
+            <p>
+                Por um instante, Sans recebeu algo que não era uma resposta.
+            </p>
+
+            <p>
+                Uma memória.
+            </p>
+
+            <p>
+                Uma mesa.
+            </p>
+
+            <p>
+                Papyrus pequeno demais para alcançar alguma coisa.
+            </p>
+
+            <p>
+                Sans tentando ajudar.
+            </p>
+
+            <p>
+                Uma voz séria mandando os dois descerem dali.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “isso é golpe baixo.”
+            </p>
+
+
+            <div class="gaster-fala">
+
+                <p class="gaster-simbolos">
+                    ❄︎✌︎☹︎✞︎☜︎☪︎📬︎
+                </p>
+
+                <p class="gaster-traducao">
+                    (Talvez.)
+                </p>
+
+            </div>
+
+
+            <p>
+                Sans quase riu.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “você tá aprendendo humor agora?”
+            </p>
+
+
+            <div class="gaster-fala">
+
+                <p class="gaster-simbolos">
+                    ☠︎✌︎⚐︎📬︎
+                </p>
+
+                <p class="gaster-traducao">
+                    (Não.)
+                </p>
+
+            </div>
+
+
+            <p class="dialogo sans-texto">
+                “é definitivamente meu pai.”
+            </p>
+
+
+            <p>
+                Silêncio.
+            </p>
+
+            <p>
+                A luta continuava ao longe.
+            </p>
+
+
+            <div class="gaster-fala">
+
+                <p class="gaster-traducao">
+                    (Não posso mudar o que fiz.)
+                </p>
+
+            </div>
+
+
+            <div class="gaster-fala">
+
+                <p class="gaster-traducao">
+                    (Nem o tempo em que não estive presente.)
+                </p>
+
+            </div>
+
+
+            <div class="gaster-fala">
+
+                <p class="gaster-traducao">
+                    (Nem os erros que deixei para vocês.)
+                </p>
+
+            </div>
+
+
+            <p>
+                Sans permaneceu quieto.
+            </p>
+
+
+            <div class="gaster-fala">
+
+                <p class="gaster-traducao">
+                    (Mas ainda posso fazer isto.)
+                </p>
+
+            </div>
+
+
+            <p class="dialogo sans-texto">
+                “você não precisa.”
+            </p>
+
+
+            <div class="gaster-fala">
+
+                <p class="gaster-traducao">
+                    (Preciso.)
+                </p>
+
+            </div>
+
+
+            <p>
+                Sans respirou fundo.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “porque é cientista?”
+            </p>
+
+
+            <p>
+                Nenhuma resposta.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “porque acha que deve alguma coisa?”
+            </p>
+
+
+            <p>
+                Ainda nada.
+            </p>
+
+
+            <p>
+                Sans abaixou a cabeça.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “ou porque é meu pai?”
+            </p>
+
+
+            <p>
+                Dessa vez, a resposta demorou.
+            </p>
+
+
+            <div class="gaster-fala">
+
+                <p class="gaster-traducao">
+                    (Sans.)
+                </p>
+
+            </div>
+
+
+            <p>
+                A presença parecia diferente.
+            </p>
+
+            <p>
+                Mais fraca.
+            </p>
+
+            <p>
+                Mas também mais próxima.
+            </p>
+
+
+            <div class="gaster-fala">
+
+                <p class="gaster-traducao">
+                    (Cuide de Papyrus em suas lembranças.)
+                </p>
+
+            </div>
+
+
+            <p>
+                Sans apertou o cachecol.
+            </p>
+
+
+            <div class="gaster-fala">
+
+                <p class="gaster-traducao">
+                    (Cuide de quem ainda está aqui.)
+                </p>
+
+            </div>
+
+
+            <p>
+                A energia começou a se mover.
+            </p>
+
+            <p>
+                A alma de Sans se estabilizou.
+            </p>
+
+            <p>
+                A chama azul voltou a crescer.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “Gaster.”
+            </p>
+
+
+            <p>
+                A presença começou a desaparecer.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “Gaster.”
+            </p>
+
+
+            <p>
+                Então, pela última vez, a voz respondeu.
+            </p>
+
+            <p>
+                Sem símbolos.
+            </p>
+
+            <p>
+                Sem formalidade.
+            </p>
+
+
+            <p class="dialogo gaster-traducao">
+                “Eu tenho orgulho de você, meu filho.”
+            </p>
+
+
+            <p>
+                Sans ficou imóvel.
+            </p>
+
+            <p>
+                A presença desapareceu.
+            </p>
+
+            <p>
+                Nenhuma segunda voz.
+            </p>
+
+            <p>
+                Nenhuma memória surgindo antes de ser chamada.
+            </p>
+
+            <p>
+                Nenhum comentário.
+            </p>
+
+            <p>
+                Nada.
+            </p>
+
+            <p>
+                Sans abaixou a cabeça.
+            </p>
+
+            <p>
+                Por alguns segundos, permitiu-se ficar ali.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Sans!”
+            </p>
+
+
+            <p>
+                Ele abriu os olhos.
+            </p>
+
+            <p>
+                A chama azul explodiu novamente no capacete.
+            </p>
+
+            <p>
+                Sans levantou.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “tô indo.”
+            </p>
+
+
+
+            <div class="quebra-cena">
+                ✦
+            </div>
+
+
+
+            <p>
+                Chara percebeu primeiro.
+            </p>
+
+            <p>
+                Sans estava de pé novamente.
+            </p>
+
+            <p>
+                O sorriso dela desapareceu.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Você deveria ter ficado no chão.”
+            </p>
+
+
+            <p>
+                Sans caminhou lentamente.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “é.”
+            </p>
+
+
+            <p>
+                A chama ficou mais intensa.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “muita gente já falou isso.”
+            </p>
+
+
+            <p>
+                Nightmare apareceu ao lado dele.
+            </p>
+
+            <p>
+                Havia menos cabeças agora.
+            </p>
+
+            <p>
+                Sua energia também havia diminuído.
+            </p>
+
+            <p>
+                Ele olhou para Sans.
+            </p>
+
+            <p>
+                Depois ficou quieto.
+            </p>
+
+            <p>
+                Não perguntou.
+            </p>
+
+            <p>
+                Não precisava.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Então vamos terminar.”
+            </p>
+
+
+            <p>
+                Sans encarou-a.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “finalmente concordamos em alguma coisa.”
+            </p>
+
+
+            <p>
+                A gravidade mudou.
+            </p>
+
+            <p>
+                Chara tentou resistir.
+            </p>
+
+            <p>
+                Sans forçou.
+            </p>
+
+            <p>
+                Nightmare surgiu imediatamente.
+            </p>
+
+            <p>
+                Duas extensões prenderam os pés de Chara.
+            </p>
+
+            <p>
+                Ela rompeu uma.
+            </p>
+
+            <p>
+                Outra apareceu.
+            </p>
+
+            <p>
+                Depois outra.
+            </p>
+
+            <p>
+                Sans criou um Gaster Blaster.
+            </p>
+
+            <p>
+                Nightmare o segurou com o Vazio.
+            </p>
+
+            <p>
+                Chara lançou um corte.
+            </p>
+
+            <p>
+                Nightmare mudou a posição.
+            </p>
+
+            <p>
+                Outro blaster surgiu.
+            </p>
+
+            <p>
+                Depois outro.
+            </p>
+
+            <p>
+                Chara conseguiu escapar do primeiro ataque.
+            </p>
+
+            <p>
+                Não do segundo.
+            </p>
+
+            <p>
+                A magia a fez recuar.
+            </p>
+
+            <p>
+                KARMA.
+            </p>
+
+            <p>
+                Chara respirava cada vez mais pesado.
+            </p>
+
+            <p>
+                O sorriso ainda estava ali.
+            </p>
+
+            <p>
+                Mas já não parecia tão fácil mantê-lo.
+            </p>
+
+            <p>
+                Um movimento que antes seria instantâneo demorou uma fração a mais.
+            </p>
+
+            <p>
+                Seus cortes vermelhos já não permaneciam tão firmes.
+            </p>
+
+            <p>
+                Chara ainda se soltava das extensões de Nightmare.
+            </p>
+
+            <p>
+                Mas agora precisava gastar mais força.
+            </p>
+
+            <p>
+                Mais Determinação.
+            </p>
+
+            <p>
+                Mais esforço.
+            </p>
+
+            <p>
+                E, por mais poderosa que fosse aquela vontade...
+            </p>
+
+            <p>
+                o corpo que controlava ainda era o de uma criança.
+            </p>
+
+            <p>
+                A respiração ficou pesada.
+            </p>
+
+            <p>
+                Os movimentos perderam precisão.
+            </p>
+
+            <p>
+                Chara levou a mão até a bolsa.
+            </p>
+
+            <p>
+                Procurou.
+            </p>
+
+            <p>
+                Nada.
+            </p>
+
+            <p>
+                Outro bolso.
+            </p>
+
+            <p>
+                Nada.
+            </p>
+
+            <p>
+                Ela congelou.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “heh.”
+            </p>
+
+
+            <p>
+                Chara ergueu os olhos.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Cala a boca.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “nem falei nada.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Eu sei o que você ia falar.”
+            </p>
+
+
+            <p>
+                Sans sorriu.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “ótimo. economiza trabalho.”
+            </p>
+
+
+            <p>
+                Ela avançou outra vez.
+            </p>
+
+            <p>
+                Nightmare fechou uma das rotas.
+            </p>
+
+            <p>
+                Sans mudou a gravidade.
+            </p>
+
+            <p>
+                Chara escapou da primeira combinação.
+            </p>
+
+            <p>
+                Da segunda também.
+            </p>
+
+            <p>
+                Na terceira, quase perdeu o equilíbrio.
+            </p>
+
+            <p>
+                Recuperou-se.
+            </p>
+
+            <p>
+                Tentou atacar.
+            </p>
+
+            <p>
+                Nightmare desviou.
+            </p>
+
+            <p>
+                Outro corte.
+            </p>
+
+            <p>
+                Mais fraco.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Eu não estou cansada.”
+            </p>
+
+
+            <p>
+                Sans levantou uma sobrancelha.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “eu também não perguntei.”
+            </p>
+
+
+            <p>
+                Ela apertou os dentes.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “Night.”
+            </p>
+
+
+            <p>
+                Nightmare virou os olhos para ele.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “agora.”
+            </p>
+
+
+            <p>
+                As extensões avançaram.
+            </p>
+
+            <p>
+                Chara tentou escapar.
+            </p>
+
+            <p>
+                Sans mudou a direção de sua alma.
+            </p>
+
+            <p>
+                Ela resistiu.
+            </p>
+
+            <p>
+                Por alguns segundos, conseguiu permanecer no mesmo lugar.
+            </p>
+
+            <p>
+                A lâmina vermelha brilhou.
+            </p>
+
+            <p>
+                Sans fez mais força.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “EU NÃO VOU—”
+            </p>
+
+
+            <p>
+                A gravidade venceu.
+            </p>
+
+            <p>
+                Nightmare fechou as extensões ao redor dela.
+            </p>
+
+            <p>
+                Não para esmagar.
+            </p>
+
+            <p>
+                Para impedir que escapasse.
+            </p>
+
+            <p>
+                Chara tentou cortar o Vazio.
+            </p>
+
+            <p>
+                Uma vez.
+            </p>
+
+            <p>
+                Duas.
+            </p>
+
+            <p>
+                Três.
+            </p>
+
+            <p>
+                Cada movimento vinha mais lento que o anterior.
+            </p>
+
+            <p>
+                Nightmare fechou os olhos.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Eu consigo sentir.”
+            </p>
+
+
+            <p>
+                Chara congelou.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “sentir o quê?”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Duas presenças.”
+            </p>
+
+
+            <p>
+                Chara começou a lutar novamente.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Não.”
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Uma está segurando o corpo.”
+            </p>
+
+
+            <p>
+                Mais Vazio envolveu Frisk.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “E a outra...”
+            </p>
+
+
+            <p>
+                A expressão dele mudou.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “...está tentando voltar.”
+            </p>
+
+
+            <p>
+                Chara parou.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Não.”
+            </p>
+
+
+            <p>
+                Dessa vez, a palavra saiu diferente.
+            </p>
+
+            <p>
+                Não como ameaça.
+            </p>
+
+            <p>
+                Como medo.
+            </p>
+
+
+
+            <div class="quebra-cena">
+                ✦
+            </div>
+
+
+
+            <p>
+                Dentro da própria mente, Frisk ouviu Chara.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Não deixa ele.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu não estou fazendo nada.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “FAZ ALGUMA COISA.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “O quê?”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “ME AJUDA.”
+            </p>
+
+
+            <p>
+                Frisk ficou em silêncio.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Frisk!”
+            </p>
+
+
+            <p>
+                Nada.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “FRISK!”
+            </p>
+
+
+            <p>
+                Frisk finalmente respondeu.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Você nunca perguntou se eu queria isso.”
+            </p>
+
+
+            <p>
+                Chara ficou imóvel.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “O quê?”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Tudo isso.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Você dizia para onde ir.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Quem atacar.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Quando continuar.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “E você continuava.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu sei.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Você lutou comigo.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu sei.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Você escolheu também.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “EU SEI.”
+            </p>
+
+
+            <p>
+                O grito ecoou apenas entre as duas.
+            </p>
+
+            <p>
+                Frisk ficou quieta.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu sei que fiz.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu não estou fingindo que não fiz.”
+            </p>
+
+
+            <p>
+                Ela hesitou.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu só...”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu queria ter amigos.”
+            </p>
+
+
+            <p>
+                Chara permaneceu imóvel.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “O quê?”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Amigos.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu queria conhecer as pessoas daqui.”
+            </p>
+
+
+            <p>
+                As lembranças surgiram.
+            </p>
+
+            <p>
+                Toriel.
+            </p>
+
+            <p>
+                Papyrus.
+            </p>
+
+            <p>
+                Undyne.
+            </p>
+
+            <p>
+                Pessoas das quais havia fugido.
+            </p>
+
+            <p>
+                Pessoas que nunca teria conhecido de verdade.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu não queria ter que machucar ninguém.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Então por que continuou?”
+            </p>
+
+
+            <p>
+                Frisk ficou quieta.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Porque eu confiava em você.”
+            </p>
+
+
+            <p>
+                Dessa vez, foi Chara quem não teve resposta.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Você estava comigo desde o começo.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Quando eu não entendia aquele lugar.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Quando eu tinha medo.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Quando eu não sabia para onde ir.”
+            </p>
+
+
+            <p>
+                A voz dela tremeu.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu achei que você sabia o que estava fazendo.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Eu sabia.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Não.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Sabia sim.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Você sabia o que VOCÊ queria.”
+            </p>
+
+
+            <p>
+                Silêncio.
+            </p>
+
+            <p>
+                Nightmare continuava segurando as duas presenças.
+            </p>
+
+            <p>
+                Sans observava.
+            </p>
+
+            <p>
+                Chara tentou novamente puxar o controle.
+            </p>
+
+            <p>
+                Frisk resistiu.
+            </p>
+
+            <p>
+                Pela primeira vez, não apenas recusando uma ordem.
+            </p>
+
+            <p>
+                Empurrando de volta.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Para.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Nós chegamos até aqui juntas.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu sei.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Passamos por tudo juntas.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu sei.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Você acha que pode simplesmente jogar isso fora?”
+            </p>
+
+
+            <p>
+                Frisk sentiu as lembranças atravessarem as duas.
+            </p>
+
+            <p>
+                Waterfall.
+            </p>
+
+            <p>
+                Snowdin.
+            </p>
+
+            <p>
+                Hotland.
+            </p>
+
+            <p>
+                As vezes em que Chara havia ajudado.
+            </p>
+
+            <p>
+                As vezes em que Frisk teria se perdido sem ela.
+            </p>
+
+            <p>
+                As vezes em que uma protegeu a outra.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu não acho que tudo foi mentira.”
+            </p>
+
+
+            <p>
+                Chara hesitou.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Então me ajuda.”
+            </p>
+
+
+            <p>
+                Frisk ficou quieta.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Frisk.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Não.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Por quê?”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Porque você mudou.”
+            </p>
+
+
+            <p>
+                Chara pareceu ofendida.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Eu?”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Você começou dizendo que ia me ajudar.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Depois começou a escolher por mim.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Eu estava mantendo você viva.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Depois começou a decidir quem precisava morrer.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Eles tentavam impedir a gente.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Porque a gente estava machucando eles!”
+            </p>
+
+
+            <p>
+                Chara não respondeu.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Toda vez que eu ficava desconfortável...”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “você dizia para continuar.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Toda vez que eu perguntava...”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “você dizia que já tínhamos chegado longe demais.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Toda vez que eu pensava em parar...”
+            </p>
+
+
+            <p>
+                Frisk lembrou do pijama.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “você fazia parecer que não existia escolha.”
+            </p>
+
+
+            <p>
+                Chara respondeu mais baixo.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Eu precisava de você.”
+            </p>
+
+
+            <p>
+                Frisk parou.
+            </p>
+
+            <p>
+                Aquilo era diferente.
+            </p>
+
+            <p>
+                Não parecia uma ordem.
+            </p>
+
+            <p>
+                Nem uma ameaça.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Eu precisava de você.”
+            </p>
+
+
+            <p>
+                Por alguns instantes, Frisk sentiu a raiva de Chara diminuir.
+            </p>
+
+            <p>
+                E embaixo dela havia alguma coisa que raramente aparecia.
+            </p>
+
+            <p>
+                Medo.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Eu não tinha corpo.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Não tinha como fazer nada.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Eu só podia assistir.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Esperar.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Até você chegar.”
+            </p>
+
+
+            <p>
+                Frisk ouviu.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “E quando você chegou...”
+            </p>
+
+
+            <p>
+                Chara hesitou.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “eu finalmente podia fazer alguma coisa outra vez.”
+            </p>
+
+
+            <p>
+                Frisk permaneceu quieta.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Nós fizemos tudo juntas.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Você me escutava.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Você falava comigo.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Você precisava de mim.”
+            </p>
+
+
+            <p>
+                Frisk sentiu um aperto no peito.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu ainda precisava de você.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Então me ajuda.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Não desse jeito.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “FRISK.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu queria que você fosse minha amiga.”
+            </p>
+
+
+            <p>
+                Silêncio.
+            </p>
+
+            <p>
+                Chara parou completamente.
+            </p>
+
+            <p>
+                Até Nightmare percebeu a mudança.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Tem alguma coisa acontecendo.”
+            </p>
+
+
+            <p>
+                Sans não tirou os olhos delas.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “deixa.”
+            </p>
+
+
+            <p>
+                Dentro da mente, Frisk continuou.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Era só isso.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu estava sozinha.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Você estava comigo.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “E eu achei que isso significava que a gente era amiga.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Nós somos.”
+            </p>
+
+
+            <p>
+                Frisk sentiu os olhos arderem.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Então por que você não consegue me ouvir quando eu digo
+                que não quero mais?”
+            </p>
+
+
+            <p>
+                Nenhuma resposta.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Por que você precisa controlar meu corpo?”
+            </p>
+
+
+            <p>
+                Silêncio.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Por que eu preciso machucar pessoas para você ficar comigo?”
+            </p>
+
+
+            <p>
+                Chara não respondeu.
+            </p>
+
+            <p>
+                Frisk esperou.
+            </p>
+
+            <p>
+                Por alguns segundos, pareceu realmente possível que alguma
+                coisa mudasse.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Porque se pararmos agora...”
+            </p>
+
+
+            <p>
+                A voz voltou a endurecer.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “...tudo que fizemos não serviu para nada.”
+            </p>
+
+
+            <p>
+                Frisk fechou os olhos.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Então você não ouviu.”
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Frisk—”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Você ainda não ouviu.”
+            </p>
+
+
+            <p>
+                Chara tentou assumir o controle com mais força.
+            </p>
+
+            <p>
+                Frisk resistiu.
+            </p>
+
+            <p>
+                Nightmare abriu os olhos.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Agora.”
+            </p>
+
+
+            <p>
+                Uma silhueta vermelha começou a aparecer atrás de Frisk.
+            </p>
+
+            <p>
+                Chara percebeu.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “NÃO.”
+            </p>
+
+
+            <p>
+                A forma era pequena no começo.
+            </p>
+
+            <p>
+                Quase transparente.
+            </p>
+
+            <p>
+                Depois ganhou definição.
+            </p>
+
+            <p>
+                Um contorno.
+            </p>
+
+            <p>
+                Olhos.
+            </p>
+
+            <p>
+                Aquele sorriso.
+            </p>
+
+            <p>
+                Mas ele não durou.
+            </p>
+
+            <p>
+                Chara estava cansada demais até para mantê-lo.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “FRISK!”
+            </p>
+
+
+            <p>
+                Frisk sentia a conexão entre as duas sendo puxada.
+            </p>
+
+            <p>
+                Era difícil dizer quanto tempo aquilo parecia ter durado
+                quando cada retorno podia apagar tudo.
+            </p>
+
+            <p>
+                Mas para elas...
+            </p>
+
+            <p>
+                parecia uma vida inteira.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Você vai me abandonar?”
+            </p>
+
+
+            <p>
+                Frisk congelou.
+            </p>
+
+            <p>
+                A pergunta doeu mais que qualquer ordem.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Não quero.”
+            </p>
+
+
+            <p>
+                Chara pareceu confusa.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Então—”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Mas eu não posso continuar assim.”
+            </p>
+
+
+            <p>
+                A silhueta se desprendeu mais.
+            </p>
+
+            <p>
+                Chara tentou voltar.
+            </p>
+
+            <p>
+                Frisk sentiu.
+            </p>
+
+            <p>
+                E, por instinto...
+            </p>
+
+            <p>
+                quase deixou.
+            </p>
+
+            <p>
+                Quase.
+            </p>
+
+            <p>
+                Então lembrou do pijama.
+            </p>
+
+            <p>
+                Do sorriso de Papyrus.
+            </p>
+
+            <p>
+                De Flowey pedindo para Chara parar.
+            </p>
+
+            <p>
+                De Undyne ficando entre ela e todos os outros.
+            </p>
+
+            <p>
+                De Sans dizendo que escolhas importavam.
+            </p>
+
+            <p>
+                Frisk respirou fundo.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu sinto muito.”
+            </p>
+
+
+            <p>
+                Chara ficou imóvel.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Não.”
+            </p>
+
+
+            <p>
+                Nightmare puxou.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Frisk.”
+            </p>
+
+
+            <p>
+                A conexão começou a ceder.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Não.”
+            </p>
+
+
+            <p>
+                Frisk sentiu Chara se afastando.
+            </p>
+
+            <p>
+                Pela primeira vez desde que tudo começara...
+            </p>
+
+            <p>
+                ela estava ficando sozinha dentro da própria mente.
+            </p>
+
+            <p>
+                E estranhamente...
+            </p>
+
+            <p>
+                aquilo também doía.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Frisk...”
+            </p>
+
+
+            <p>
+                A voz estava mais distante.
+            </p>
+
+            <p>
+                Menos poderosa.
+            </p>
+
+            <p>
+                Mais parecida com alguém que simplesmente não queria desaparecer.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Por favor.”
+            </p>
+
+
+            <p>
+                Frisk fechou os olhos.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu queria que tivesse sido diferente.”
+            </p>
+
+
+            <p>
+                Chara não respondeu.
+            </p>
+
+            <p>
+                Nightmare abriu os braços.
+            </p>
+
+            <p>
+                O Vazio finalmente separou as duas.
+            </p>
+
+            <p>
+                Frisk caiu para a frente.
+            </p>
+
+            <p>
+                Sans teleportou e a segurou.
+            </p>
+
+            <p>
+                Nightmare permaneceu imóvel.
+            </p>
+
+            <p>
+                Diante dele, Chara agora existia separada de Frisk.
+            </p>
+
+            <p>
+                Translúcida.
+            </p>
+
+            <p>
+                Exausta.
+            </p>
+
+            <p>
+                Assustada.
+            </p>
+
+            <p>
+                E ainda tentando reunir Determinação suficiente para formar
+                a lâmina outra vez.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Ela ainda consegue.”
+            </p>
+
+
+            <p>
+                Sans olhou.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “então não dá chance.”
+            </p>
+
+
+            <p>
+                Chara ergueu os olhos.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “Eu não terminei.”
+            </p>
+
+
+            <p>
+                Nightmare estendeu a mão.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Terminou.”
+            </p>
+
+
+            <p>
+                O Vazio envolveu a presença de Chara.
+            </p>
+
+            <p>
+                Ela tentou resistir.
+            </p>
+
+            <p>
+                Mas já não havia Frisk sustentando aquela vontade junto dela.
+            </p>
+
+            <p>
+                A forma vermelha começou a desaparecer dentro da escuridão.
+            </p>
+
+
+            <p class="dialogo chara-texto">
+                “FRISK!”
+            </p>
+
+
+            <p>
+                Frisk abriu os olhos.
+            </p>
+
+            <p>
+                Olhou.
+            </p>
+
+            <p>
+                Chara ainda conseguia vê-la.
+            </p>
+
+            <p>
+                Por um último instante.
+            </p>
+
+            <p>
+                Frisk não desviou o olhar.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu queria ter sido sua amiga.”
+            </p>
+
+
+            <p>
+                Chara parou.
+            </p>
+
+            <p>
+                Nightmare fechou a mão.
+            </p>
+
+            <p>
+                O Vazio se recolheu.
+            </p>
+
+            <p>
+                A presença desapareceu.
+            </p>
+
+            <p>
+                Atrás de Nightmare, uma nova cabeça começou a tomar forma.
+            </p>
+
+            <p>
+                Negra como as outras.
+            </p>
+
+            <p>
+                Olhos vermelhos.
+            </p>
+
+            <p>
+                Mas diferente.
+            </p>
+
+            <p>
+                Um sorriso largo e familiar surgiu lentamente.
+            </p>
+
+            <p>
+                Nightmare virou os olhos para ela.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “...Isso é novo.”
+            </p>
+
+
+            <p>
+                A cabeça tentou se mover para frente.
+            </p>
+
+            <p>
+                Nightmare a puxou de volta.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Não.”
+            </p>
+
+
+            <p>
+                Ela continuou sorrindo.
+            </p>
+
+            <p>
+                Sans soltou lentamente o ar.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “boa sorte com essa.”
+            </p>
+
+
+            <p>
+                Nightmare olhou para ele.
+            </p>
+
+
+            <p class="dialogo nightmare-texto">
+                “Obrigado pela confiança.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “sempre.”
+            </p>
+
+
+            <p>
+                Frisk ainda estava apoiada em Sans.
+            </p>
+
+            <p>
+                Ela olhava para o lugar onde Chara estivera.
+            </p>
+
+            <p>
+                Por alguns segundos, não disse nada.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu fiz tudo aquilo.”
+            </p>
+
+
+            <p>
+                Sans não respondeu imediatamente.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Ela estava comigo.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “sim.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Mas eu deixei.”
+            </p>
+
+
+            <p>
+                Sans olhou para ela.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “sim.”
+            </p>
+
+
+            <p>
+                Frisk abaixou os olhos.
+            </p>
+
+            <p>
+                Não havia desculpa.
+            </p>
+
+            <p>
+                Nenhuma tentativa de colocar tudo em Chara.
+            </p>
+
+            <p>
+                Apenas reconhecimento.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu sei.”
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Mas eu não quero ser aquela pessoa.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “então não seja.”
+            </p>
+
+
+            <p>
+                Frisk levantou os olhos.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “É só isso?”
+            </p>
+
+
+            <p>
+                Sans balançou a cabeça.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “não.”
+            </p>
+
+
+            <p>
+                A voz ficou séria.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “mudar não apaga o que aconteceu.”
+            </p>
+
+
+            <p>
+                Frisk assentiu lentamente.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu sei.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “e dizer que sente muito não conserta tudo.”
+            </p>
+
+
+            <p>
+                Outro assentimento.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Eu sei.”
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “mas decidir o que você faz daqui pra frente ainda importa.”
+            </p>
+
+
+            <p>
+                Frisk olhou para ele.
+            </p>
+
+            <p>
+                Sans não sorriu.
+            </p>
+
+
+            <p class="dialogo sans-texto">
+                “não desperdiça.”
+            </p>
+
+
+            <p>
+                Frisk permaneceu em silêncio por alguns segundos.
+            </p>
+
+            <p>
+                Depois assentiu.
+            </p>
+
+
+            <p class="dialogo frisk-texto">
+                “Não vou.”
+            </p>
+
+
+
+            <footer class="fim-capitulo">
+
+                <span>
+                    FIM DO CAPÍTULO 07
+                </span>
+
+            </footer>
+
+
+        </article>
+
+
+    </main>
+
+
+
+    <!-- EASTER EGGS -->
+
+    <script src="easter.js"></script>
+
+
+</body>
+
+</html>
