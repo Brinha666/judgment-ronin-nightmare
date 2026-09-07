@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<link rel="stylesheet" href="easter.css">
-    <link rel="stylesheet" href="mobile.css">
+
 <head>
 
     <meta charset="UTF-8">
@@ -18,6 +17,16 @@
     <link
         rel="stylesheet"
         href="style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="easter.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="mobile.css"
     >
 
 </head>
@@ -179,7 +188,7 @@
                     <span>Bravura</span>
                     <span>Integridade</span>
                     <span>Perseverança</span>
-                    <span>Gentileza</span>
+                    <span>Bondade</span>
                     <span>Justiça</span>
 
                 </div>
@@ -315,6 +324,8 @@
         src="./Assets/nightmare.png"
         alt="Nightmare cercado por energia do vazio e pequenas entidades negras de olhos vermelhos."
         class="nightmare-imagem"
+        loading="lazy"
+        decoding="async"
     >
 
     <div class="sombra-imagem-nightmare"></div>
@@ -695,6 +706,8 @@
                     <button
                         id="botao-vazio"
                         type="button"
+                        aria-label="Tocar tema Vazio, de Nightmare"
+                        aria-pressed="false"
                     >
                         ▶ OUVIR VAZIO
                     </button>
@@ -702,7 +715,7 @@
 
                     <audio
                         id="musica-vazio"
-                        preload="metadata"
+                        preload="none"
                     >
                         <source
                             src="Assets/Vazio.mp3"
@@ -736,8 +749,106 @@
     </main>
 
 
-    <script src="script.js"></script>
-<script src="easter.js"></script>
+    <!-- ==================================================
+         PLAYER DO TEMA "VAZIO"
+         Esta página possui sua própria lógica de áudio.
+         script.js fica exclusivo da Home.
+    =================================================== -->
+
+    <script>
+        (() => {
+            "use strict";
+
+            const botao =
+                document.getElementById(
+                    "botao-vazio"
+                );
+
+            const audio =
+                document.getElementById(
+                    "musica-vazio"
+                );
+
+            if (!botao || !audio) {
+                return;
+            }
+
+            audio.volume = 0.55;
+
+            function atualizarBotao() {
+                const tocando =
+                    !audio.paused
+                    &&
+                    !audio.ended;
+
+                botao.textContent =
+                    tocando
+                    ?
+                    "❚❚ PAUSAR VAZIO"
+                    :
+                    "▶ OUVIR VAZIO";
+
+                botao.setAttribute(
+                    "aria-pressed",
+                    String(tocando)
+                );
+
+                botao.setAttribute(
+                    "aria-label",
+                    tocando
+                    ?
+                    "Pausar tema Vazio, de Nightmare"
+                    :
+                    "Tocar tema Vazio, de Nightmare"
+                );
+            }
+
+            botao.addEventListener(
+                "click",
+                async () => {
+                    if (audio.paused) {
+                        try {
+                            await audio.play();
+                        }
+                        catch (erro) {
+                            console.warn(
+                                "Não foi possível reproduzir Vazio:",
+                                erro
+                            );
+                        }
+                    }
+                    else {
+                        audio.pause();
+                    }
+
+                    atualizarBotao();
+                }
+            );
+
+            audio.addEventListener(
+                "play",
+                atualizarBotao
+            );
+
+            audio.addEventListener(
+                "pause",
+                atualizarBotao
+            );
+
+            audio.addEventListener(
+                "ended",
+                () => {
+                    audio.currentTime = 0;
+                    atualizarBotao();
+                }
+            );
+
+            atualizarBotao();
+        })();
+    </script>
+
+    <script src="easter.js"></script>
+
 </body>
 
 </html>
