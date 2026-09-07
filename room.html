@@ -10,8 +10,17 @@
         content="width=device-width, initial-scale=1.0"
     >
 
+    <!--
+        A Sala 666 é um Easter Egg.
+        Melhor não deixar mecanismo de busca indexar.
+    -->
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+
     <title>
-        Sala 666 | Judgment Ronin & Nightmare
+        Arquivo 666
     </title>
 
     <link
@@ -19,39 +28,47 @@
         href="easter.css"
     >
 
+    <link
+        rel="stylesheet"
+        href="mobile.css"
+    >
+
+
     <style>
+
+        /* ==========================================
+           BASE
+        ========================================== */
 
         * {
             box-sizing: border-box;
         }
 
 
+        html {
+            min-height: 100%;
+        }
+
+
         body {
             margin: 0;
 
-            min-height: 100svh;
+            min-height: 100vh;
 
-            display: flex;
+            overflow-x: hidden;
 
-            align-items: center;
-
-            justify-content: center;
-
-            padding: 30px;
-
-            color: white;
+            color: #eeeeee;
 
             background:
-
                 radial-gradient(
-                    circle at 25% 50%,
-                    rgba(80, 205, 255, 0.07),
+                    circle at 15% 50%,
+                    rgba(80, 190, 240, 0.055),
                     transparent 35%
                 ),
 
                 radial-gradient(
-                    circle at 75% 50%,
-                    rgba(180, 15, 25, 0.08),
+                    circle at 85% 50%,
+                    rgba(180, 15, 25, 0.075),
                     transparent 35%
                 ),
 
@@ -61,105 +78,337 @@
                 Arial,
                 Helvetica,
                 sans-serif;
+        }
+
+
+
+        /* ==========================================
+           ESTRELAS
+        ========================================== */
+
+        body::before {
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: -2;
+
+            pointer-events: none;
+
+            opacity: 0.22;
+
+            background-image:
+
+                radial-gradient(
+                    circle,
+                    rgba(210, 245, 255, 0.65) 1px,
+                    transparent 1px
+                ),
+
+                radial-gradient(
+                    circle,
+                    rgba(180, 25, 35, 0.45) 1px,
+                    transparent 1px
+                );
+
+            background-size:
+                170px 170px,
+                260px 260px;
+
+            background-position:
+                25px 40px,
+                100px 120px;
+        }
+
+
+
+        /* ==========================================
+           LINHAS / RUÍDO
+        ========================================== */
+
+        body::after {
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 20;
+
+            pointer-events: none;
+
+            opacity: 0.025;
+
+            background:
+                repeating-linear-gradient(
+                    0deg,
+                    transparent 0,
+                    transparent 3px,
+                    rgba(255,255,255,0.18) 4px
+                );
+        }
+
+
+
+        /* ==========================================
+           TOPO
+        ========================================== */
+
+        .room-topo {
+            width:
+                min(
+                    1100px,
+                    calc(100% - 40px)
+                );
+
+            min-height: 78px;
+
+            margin:
+                0 auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 25px;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.055);
+        }
+
+
+        .room-voltar {
+            color:
+                rgba(255,255,255,0.45);
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            transition:
+                color 0.3s ease,
+                transform 0.3s ease;
+        }
+
+
+        .room-voltar:hover {
+            color: #dff6ff;
+
+            transform:
+                translateX(-3px);
+        }
+
+
+        .room-arquivo {
+            color:
+                rgba(180,35,45,0.42);
+
+            font-size: 10px;
+
+            font-weight: bold;
+
+            letter-spacing: 4px;
+        }
+
+
+
+        /* ==========================================
+           SALA
+        ========================================== */
+
+        .room-container {
+            width:
+                min(
+                    850px,
+                    calc(100% - 40px)
+                );
+
+            min-height:
+                calc(100vh - 78px);
+
+            margin:
+                0 auto;
+
+            padding:
+                100px 0 110px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
 
             text-align: center;
         }
 
 
-        main {
-            width:
-                min(700px, 100%);
-        }
 
+        /* ==========================================
+           NÚMERO DO ARQUIVO
+        ========================================== */
 
-        .arquivo {
-            margin: 0 0 15px;
+        .room-codigo {
+            margin:
+                0 0 25px;
 
             color:
-                rgba(255, 255, 255, 0.22);
+                rgba(255,255,255,0.20);
 
-            font-size: 11px;
+            font-size: 10px;
 
-            letter-spacing: 5px;
+            font-weight: bold;
+
+            letter-spacing: 7px;
         }
 
 
-        h1 {
-            margin:
-                0;
+
+        /* ==========================================
+           TÍTULO
+        ========================================== */
+
+        .room-titulo {
+            margin: 0;
+
+            max-width: 760px;
+
+            color:
+                rgba(245,245,245,0.93);
 
             font-size:
-                clamp(42px, 9vw, 86px);
+                clamp(
+                    34px,
+                    6vw,
+                    66px
+                );
 
             letter-spacing:
                 -2px;
+
+            line-height: 1.05;
         }
 
 
-        .timeline {
+        .room-titulo span {
+            color:
+                #b62a32;
+
+            text-shadow:
+                0 0 35px
+                rgba(190,20,30,0.20);
+        }
+
+
+
+        /* ==========================================
+           SUBTÍTULO
+        ========================================== */
+
+        .room-subtitulo {
+            max-width: 610px;
+
             margin:
-                22px 0 50px;
+                30px auto 0;
 
             color:
-                rgba(255, 255, 255, 0.35);
+                rgba(255,255,255,0.35);
 
-            font-size:
-                12px;
+            font-size: 14px;
 
-            letter-spacing:
-                4px;
+            line-height: 1.9;
+
+            letter-spacing: 0.5px;
         }
 
 
-        .sixes {
-            display: flex;
 
-            justify-content: center;
+        /* ==========================================
+           SEPARADOR
+        ========================================== */
 
-            gap: 22px;
+        .room-linha {
+            width: 210px;
+
+            height: 1px;
 
             margin:
-                45px 0;
+                55px auto;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(100,210,255,0.50),
+                    rgba(255,255,255,0.14),
+                    rgba(190,25,35,0.50)
+                );
+        }
+
+
+
+        /* ==========================================
+           OS TRÊS 6
+        ========================================== */
+
+        .room-sixes {
+            width: 100%;
+
+            max-width: 600px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    3,
+                    1fr
+                );
+
+            gap: 22px;
         }
 
 
         .room-six {
-            width:
-                90px;
+            position: relative;
 
-            height:
-                110px;
+            aspect-ratio: 1 / 1;
 
             border:
                 1px solid
-                rgba(255, 255, 255, 0.08);
+                rgba(255,255,255,0.07);
 
-            border-radius:
-                5px;
+            border-radius: 6px;
 
             color:
-                rgba(255, 255, 255, 0.20);
+                rgba(255,255,255,0.18);
 
             background:
-                rgba(255, 255, 255, 0.012);
+                rgba(255,255,255,0.012);
 
-            font:
-                inherit;
+            cursor: pointer;
 
             font-size:
-                58px;
+                clamp(
+                    48px,
+                    9vw,
+                    82px
+                );
 
-            font-weight:
-                700;
-
-            cursor:
-                pointer;
+            font-weight: bold;
 
             transition:
-                color 0.5s ease,
-                border-color 0.5s ease,
-                transform 0.5s ease,
-                text-shadow 0.5s ease;
+                transform 0.4s ease,
+                color 0.4s ease,
+                border-color 0.4s ease,
+                background 0.4s ease,
+                box-shadow 0.4s ease;
         }
 
 
@@ -168,94 +417,269 @@
                 translateY(-4px);
 
             color:
-                rgba(255, 255, 255, 0.55);
-        }
-
-
-        .room-six.active {
-            color:
-                #dff6ff;
+                rgba(255,255,255,0.60);
 
             border-color:
-                rgba(160, 220, 255, 0.30);
+                rgba(255,255,255,0.15);
 
-            text-shadow:
-                0 0 20px
-                rgba(120, 210, 255, 0.25);
+            background:
+                rgba(255,255,255,0.025);
         }
 
 
-        .texto {
-            max-width:
-                560px;
+        /* PRIMEIRO 6 — JUSTIÇA */
+
+        .room-six:nth-child(1).active {
+            color: #9cecff;
+
+            border-color:
+                rgba(100,210,255,0.35);
+
+            background:
+                rgba(100,210,255,0.035);
+
+            box-shadow:
+                0 0 45px
+                rgba(70,180,230,0.10);
+        }
+
+
+        /* SEGUNDO 6 — ENTRE OS DOIS */
+
+        .room-six:nth-child(2).active {
+            color: #f2f7f8;
+
+            border-color:
+                rgba(255,255,255,0.25);
+
+            background:
+                rgba(255,255,255,0.03);
+
+            box-shadow:
+                0 0 45px
+                rgba(255,255,255,0.07);
+        }
+
+
+        /* TERCEIRO 6 — VAZIO */
+
+        .room-six:nth-child(3).active {
+            color: #c12c34;
+
+            border-color:
+                rgba(190,25,35,0.38);
+
+            background:
+                rgba(180,20,30,0.035);
+
+            box-shadow:
+                0 0 45px
+                rgba(170,0,15,0.12);
+        }
+
+
+
+        /* ==========================================
+           STATUS
+        ========================================== */
+
+        .room-status {
+            margin:
+                28px 0 0;
+
+            color:
+                rgba(255,255,255,0.16);
+
+            font-size: 9px;
+
+            font-weight: bold;
+
+            letter-spacing: 4px;
+        }
+
+
+
+        /* ==========================================
+           REVELAÇÃO
+        ========================================== */
+
+        .room-revelacao {
+            width: 100%;
+
+            max-width: 680px;
 
             margin:
-                0 auto;
-
-            color:
-                rgba(255, 255, 255, 0.34);
-
-            font-size:
-                14px;
-
-            line-height:
-                1.9;
-        }
-
-
-        .voltar {
-            display:
-                inline-block;
-
-            margin-top:
-                45px;
+                65px auto 0;
 
             padding:
-                12px 17px;
+                42px 32px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.07);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.07);
+
+            opacity: 0;
+
+            transform:
+                translateY(12px);
+
+            transition:
+                opacity 1.5s ease,
+                transform 1.5s ease;
+        }
+
+
+        .room-revelacao.visible {
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        .room-revelacao small {
+            display: block;
+
+            margin-bottom: 24px;
 
             color:
-                rgba(255, 255, 255, 0.48);
+                rgba(185,35,45,0.47);
 
-            text-decoration:
-                none;
+            font-size: 10px;
 
-            border:
-                1px solid
-                rgba(255, 255, 255, 0.09);
+            font-weight: bold;
 
-            border-radius:
-                3px;
+            letter-spacing: 6px;
+        }
+
+
+        .room-revelacao h2 {
+            margin:
+                0 0 25px;
+
+            color:
+                rgba(255,255,255,0.88);
 
             font-size:
-                11px;
+                clamp(
+                    23px,
+                    4vw,
+                    34px
+                );
 
-            letter-spacing:
-                2px;
+            letter-spacing: 1px;
         }
 
 
-        .voltar:hover {
+        .room-revelacao p {
+            margin:
+                13px 0;
+
             color:
-                white;
+                rgba(255,255,255,0.40);
+
+            font-size: 14px;
+
+            line-height: 1.9;
         }
 
 
-        @media (max-width: 600px) {
+        .room-frase-final {
+            margin-top:
+                35px !important;
 
-            .sixes {
+            color:
+                rgba(210,240,250,0.63)
+                !important;
+
+            font-style: italic;
+        }
+
+
+
+        /* ==========================================
+           RODAPÉ
+        ========================================== */
+
+        .room-final {
+            margin-top: auto;
+
+            padding-top: 85px;
+
+            color:
+                rgba(255,255,255,0.12);
+
+            font-size: 9px;
+
+            letter-spacing: 5px;
+        }
+
+
+
+        /* ==========================================
+           MOBILE
+        ========================================== */
+
+        @media (
+            max-width: 650px
+        ) {
+
+            .room-topo {
+                min-height: 68px;
+            }
+
+
+            .room-arquivo {
+                display: none;
+            }
+
+
+            .room-container {
+                min-height:
+                    calc(
+                        100vh - 68px
+                    );
+
+                padding:
+                    70px 0 90px;
+            }
+
+
+            .room-sixes {
                 gap: 10px;
             }
 
 
             .room-six {
-                width:
-                    74px;
+                border-radius: 4px;
+            }
 
-                height:
-                    90px;
 
-                font-size:
-                    47px;
+            .room-revelacao {
+                padding:
+                    35px 18px;
+            }
+
+        }
+
+
+
+        /* ==========================================
+           REDUZIR MOVIMENTO
+        ========================================== */
+
+        @media (
+            prefers-reduced-motion: reduce
+        ) {
+
+            .room-six,
+            .room-revelacao,
+            .room-voltar {
+                transition: none;
             }
 
         }
@@ -267,67 +691,293 @@
 
 <body>
 
-    <main>
 
-        <p class="arquivo">
-            ARQUIVO RESTRITO
-        </p>
+    <!-- ==========================================
+         TOPO
+    =========================================== -->
 
-        <h1>
-            SALA 6-6-6
-        </h1>
-
-        <p class="timeline">
-            TIMELINE 666
-        </p>
-
-
-        <div class="sixes">
-
-            <button
-                class="room-six"
-                type="button"
-            >
-                6
-            </button>
-
-            <button
-                class="room-six"
-                type="button"
-            >
-                6
-            </button>
-
-            <button
-                class="room-six"
-                type="button"
-            >
-                6
-            </button>
-
-        </div>
-
-
-        <p class="texto">
-            Algumas timelines são apagadas.
-            Outras são reescritas.
-            Algumas conseguem chegar ao fim.
-            <br><br>
-            Esta recebeu apenas uma chance.
-        </p>
-
+    <header class="room-topo">
 
         <a
             href="extras.html"
-            class="voltar"
+            class="room-voltar"
         >
-            ← VOLTAR
+            ← SAIR
         </a>
+
+        <span class="room-arquivo">
+            ARQUIVO NÃO CATALOGADO
+        </span>
+
+    </header>
+
+
+
+    <!-- ==========================================
+         SALA 666
+    =========================================== -->
+
+    <main class="room-container">
+
+
+        <p class="room-codigo">
+            ARQUIVO // 6-6-6
+        </p>
+
+
+        <h1 class="room-titulo">
+            VOCÊ NÃO DEVERIA
+            <span>ESTAR AQUI.</span>
+        </h1>
+
+
+        <p class="room-subtitulo">
+
+            Este arquivo não aparece em nenhuma rota normal do projeto.
+
+            <br><br>
+
+            Nenhum capítulo leva até aqui.
+
+            <br>
+
+            Nenhum menu deveria mostrar esta página.
+
+        </p>
+
+
+        <div class="room-linha"></div>
+
+
+
+        <!--
+            IMPORTANTE:
+
+            O easter.js procura exatamente
+            por elementos com class="room-six".
+
+            NÃO MUDE ESSA CLASSE.
+        -->
+
+        <section
+            class="room-sixes"
+            aria-label="Três símbolos"
+        >
+
+            <button
+                class="room-six"
+                type="button"
+                aria-label="Primeiro seis"
+            >
+                6
+            </button>
+
+
+            <button
+                class="room-six"
+                type="button"
+                aria-label="Segundo seis"
+            >
+                6
+            </button>
+
+
+            <button
+                class="room-six"
+                type="button"
+                aria-label="Terceiro seis"
+            >
+                6
+            </button>
+
+        </section>
+
+
+        <p
+            class="room-status"
+            id="room-status"
+        >
+            0 / 3
+        </p>
+
+
+
+        <!-- ======================================
+             REVELAÇÃO
+        ======================================= -->
+
+        <section
+            class="room-revelacao"
+            id="room-revelacao"
+            hidden
+        >
+
+            <small>
+                TIMELINE 666
+            </small>
+
+
+            <h2>
+                UMA ÚNICA CHANCE.
+            </h2>
+
+
+            <p>
+                Você encontrou aquilo que estava escondido
+                entre os arquivos.
+            </p>
+
+
+            <p>
+                Não existe prêmio.
+            </p>
+
+
+            <p>
+                Não existe atalho.
+            </p>
+
+
+            <p>
+                Apenas a confirmação de que você procurou
+                longe o bastante para chegar aqui.
+            </p>
+
+
+            <p class="room-frase-final">
+                “Escolhas continuam importando mesmo quando
+                ninguém está olhando.”
+            </p>
+
+        </section>
+
+
+
+        <footer class="room-final">
+
+            JUDGMENT RONIN & NIGHTMARE
+
+        </footer>
+
 
     </main>
 
 
+
+    <!-- ==========================================
+         EASTER SYSTEM
+    =========================================== -->
+
     <script src="easter.js"></script>
+
+
+    <!-- ==========================================
+         REVELAÇÃO VISUAL DA SALA
+
+         O Easter.js continua responsável
+         pelo segredo oficial.
+    =========================================== -->
+
+    <script>
+
+        (() => {
+
+            "use strict";
+
+
+            const sixes =
+                Array.from(
+                    document.querySelectorAll(
+                        ".room-six"
+                    )
+                );
+
+
+            const status =
+                document.getElementById(
+                    "room-status"
+                );
+
+
+            const revelation =
+                document.getElementById(
+                    "room-revelacao"
+                );
+
+
+            const clicked =
+                new Set();
+
+
+
+            function updateRoom() {
+
+                status.textContent =
+                    `${clicked.size} / 3`;
+
+
+                if (
+                    clicked.size !== 3
+                ) {
+                    return;
+                }
+
+
+                revelation.hidden =
+                    false;
+
+
+                requestAnimationFrame(
+                    () => {
+
+                        requestAnimationFrame(
+                            () => {
+
+                                revelation
+                                    .classList
+                                    .add(
+                                        "visible"
+                                    );
+
+                            }
+                        );
+
+                    }
+                );
+
+            }
+
+
+
+            sixes.forEach(
+                six => {
+
+                    six.addEventListener(
+                        "click",
+                        () => {
+
+                            clicked.add(
+                                six
+                            );
+
+
+                            six.classList.add(
+                                "active"
+                            );
+
+
+                            updateRoom();
+
+                        }
+                    );
+
+                }
+            );
+
+        })();
+
+    </script>
+
 
 </body>
 
