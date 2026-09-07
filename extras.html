@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<link rel="stylesheet" href="easter.css">
-  <link rel="stylesheet" href="mobile.css">
+
 <head>
 
   <meta charset="UTF-8">
@@ -449,6 +448,280 @@
     }
 
 
+
+
+    /* ======================================================
+       RELATO DE ORIGEM
+    ====================================================== */
+
+    .abrir-arquivo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 24px;
+      padding: 11px 15px;
+      border: 1px solid rgba(130,220,255,0.20);
+      border-radius: 3px;
+      color: #dff6ff;
+      background: rgba(100,210,255,0.025);
+      font-family: inherit;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: 0.35s ease;
+    }
+
+    .abrir-arquivo:hover {
+      transform: translateY(-2px);
+      border-color: rgba(130,220,255,0.45);
+      background: rgba(100,210,255,0.055);
+    }
+
+    .abrir-arquivo::after {
+      content: "↓";
+      transition: transform 0.35s ease;
+    }
+
+    .abrir-arquivo[aria-expanded="true"]::after {
+      transform: rotate(180deg);
+    }
+
+    .relato-origem {
+      margin-top: 30px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .relato-origem[hidden] {
+      display: none;
+    }
+
+    .relato-topo {
+      margin-bottom: 38px;
+    }
+
+    .relato-data {
+      margin: 0 0 11px;
+      color: rgba(150,225,255,0.62);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 4px;
+    }
+
+    .relato-topo h3 {
+      margin: 0 0 14px;
+      color: #f4f4f4;
+      font-size: clamp(25px, 4vw, 36px);
+    }
+
+    .relato-subtitulo {
+      margin: 0;
+      color: rgba(255,255,255,0.42);
+      font-size: 13px;
+      font-style: italic;
+      line-height: 1.7;
+    }
+
+    .relato-texto {
+      color: rgba(255,255,255,0.70);
+      font-size: 16px;
+      line-height: 1.95;
+    }
+
+    .relato-texto p {
+      margin: 0 0 22px;
+    }
+
+    .relato-texto strong {
+      color: rgba(255,255,255,0.96);
+    }
+
+    .surto {
+      margin: 34px 0 !important;
+      color: #f7f7f7;
+      font-size: clamp(20px, 3vw, 27px);
+      font-weight: 800;
+      line-height: 1.45;
+      text-align: center;
+      letter-spacing: 0.2px;
+    }
+
+    .surto.azul-relato {
+      color: #dff6ff;
+      text-shadow: 0 0 18px rgba(100,210,255,0.16);
+    }
+
+    .surto.vermelho-relato {
+      color: #d5444b;
+      text-shadow: 0 0 18px rgba(200,25,35,0.16);
+    }
+
+    .micro-pausa {
+      margin: 38px 0;
+      text-align: center;
+      color: rgba(255,255,255,0.22);
+      letter-spacing: 8px;
+    }
+
+    .memoria-visual {
+      margin: 38px 0 42px;
+      display: grid;
+      grid-template-columns: minmax(0, 310px) 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .memoria-visual.nightmare-memoria {
+      grid-template-columns: 1fr minmax(0, 370px);
+    }
+
+    .imagem-memoria {
+      width: 100%;
+      padding: 0;
+      border: 1px solid rgba(255,255,255,0.11);
+      border-radius: 5px;
+      background: rgba(255,255,255,0.015);
+      overflow: hidden;
+      cursor: zoom-in;
+      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .imagem-memoria:hover {
+      transform: translateY(-3px) scale(1.01);
+      border-color: rgba(150,225,255,0.28);
+      box-shadow: 0 0 35px rgba(90,190,230,0.07);
+    }
+
+    .nightmare-memoria .imagem-memoria:hover {
+      border-color: rgba(200,45,55,0.30);
+      box-shadow: 0 0 35px rgba(170,20,30,0.08);
+    }
+
+    .imagem-memoria img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .memoria-legenda {
+      margin: 0;
+      color: rgba(255,255,255,0.47);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .memoria-legenda strong {
+      display: block;
+      margin-bottom: 8px;
+      color: rgba(255,255,255,0.86);
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .segredo-nightmare {
+      display: inline-block;
+      min-width: 155px;
+      padding: 2px 8px;
+      color: transparent;
+      background: rgba(170,20,30,0.09);
+      border-bottom: 1px solid rgba(190,35,45,0.25);
+      border-radius: 2px;
+      text-shadow: none;
+      cursor: help;
+      user-select: none;
+      transition: color 0.45s ease, background 0.45s ease, text-shadow 0.45s ease;
+    }
+
+    .segredo-nightmare:hover,
+    .segredo-nightmare:focus,
+    .segredo-nightmare.revelado {
+      color: #d13b43;
+      background: rgba(170,20,30,0.025);
+      text-shadow: 0 0 18px rgba(210,30,40,0.35);
+      outline: none;
+    }
+
+    .banger-duo {
+      display: block;
+      margin: 35px auto;
+      width: fit-content;
+      padding: 13px 18px;
+      border: 1px solid rgba(255,255,255,0.10);
+      color: #f2f2f2;
+      background: linear-gradient(90deg, rgba(90,200,245,0.045), rgba(170,20,30,0.045));
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-align: center;
+    }
+
+    .assinatura-relato {
+      margin-top: 48px;
+      padding: 28px 0 0;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      text-align: center;
+      color: rgba(255,255,255,0.56);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .assinatura-relato strong {
+      color: #dff6ff;
+    }
+
+    .origem-nightmare-espera {
+      border-left: 2px solid rgba(190,35,45,0.35);
+    }
+
+    .origem-nightmare-espera .em-breve {
+      color: rgba(210,70,80,0.65);
+      border-color: rgba(190,35,45,0.18);
+    }
+
+    /* ======================================================
+       MODAL DAS IMAGENS
+    ====================================================== */
+
+    .modal-imagem {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      background: rgba(0,0,0,0.88);
+      backdrop-filter: blur(8px);
+    }
+
+    .modal-imagem.aberta {
+      display: flex;
+    }
+
+    .modal-imagem img {
+      display: block;
+      max-width: min(900px, 92vw);
+      max-height: 84vh;
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 0 70px rgba(0,0,0,0.75);
+    }
+
+    .fechar-modal {
+      position: fixed;
+      top: 24px;
+      right: 28px;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 50%;
+      color: rgba(255,255,255,0.78);
+      background: rgba(10,10,10,0.82);
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+
     /* ======================================================
        CRÉDITOS
     ====================================================== */
@@ -835,6 +1108,33 @@
         font-size: 11px;
       }
 
+      .relato-texto {
+        font-size: 15px;
+        line-height: 1.85;
+      }
+
+      .memoria-visual,
+      .memoria-visual.nightmare-memoria {
+        grid-template-columns: 1fr;
+      }
+
+      .nightmare-memoria .imagem-memoria {
+        order: 1;
+      }
+
+      .nightmare-memoria .memoria-legenda {
+        order: 2;
+      }
+
+      .surto {
+        margin: 28px 0 !important;
+      }
+
+      .segredo-nightmare {
+        min-width: 135px;
+      }
+
+
     }
 
   </style>
@@ -900,10 +1200,10 @@
 
 
     <!-- ====================================================
-         SOBRE
+         SOBRE O PROJETO
     ===================================================== -->
 
-    <section class="bloco">
+    <section class="bloco" id="como-tudo-comecou">
 
       <div class="bloco-conteudo">
 
@@ -916,13 +1216,494 @@
         </h2>
 
         <p class="texto-bloco">
-          A origem de Judgment Ronin, a chegada de Nightmare
-          e toda a história por trás da criação deste projeto
-          serão reunidas aqui.
+          Antes de Judgment Ronin & Nightmare virar uma história, ele foi
+          uma skin barata no Roblox, uma amizade, muitos RPs, músicas e
+          ideias imaginadas antes de dormir. Este é o relato de quem começou
+          toda essa bagunça.
         </p>
 
+        <button
+          class="abrir-arquivo"
+          id="botao-origem"
+          type="button"
+          aria-expanded="false"
+          aria-controls="relato-origem"
+        >
+          <span id="texto-botao-origem">LER RELATO</span>
+        </button>
+
+
+        <article
+          class="relato-origem"
+          id="relato-origem"
+          hidden
+        >
+
+          <header class="relato-topo">
+
+            <p class="relato-data">
+              REGISTRO PESSOAL // 2019 → 2026
+            </p>
+
+            <h3>
+              De 13 Robux a uma história inteira.
+            </h3>
+
+            <p class="relato-subtitulo">
+              Um relato em primeira pessoa sobre Sans, Roblox, Nightmare,
+              Banger Duo e o começo de Judgment Ronin & Nightmare.
+            </p>
+
+          </header>
+
+
+          <div class="relato-texto">
+
+            <p class="surto azul-relato">
+              OLÁ, CARO LEITOR!
+            </p>
+
+            <p>
+              Que prazer te ver aqui nos Extras. Admiro sua curiosidade.
+              Meu nome oficial é Rodrigo, prazer em conhecê-lo!
+            </p>
+
+            <p>
+              Bom... por onde eu começo? KSKSKSK.
+            </p>
+
+            <p>
+              Tudo começou lá em <strong>2019</strong>, quando eu era bem mais jovem.
+              Eu tinha um notebook da Lenovo que rodava Roblox chorando.
+            </p>
+
+            <p class="surto">
+              👀 O QUÊ? O QUE ROBLOX TEM A VER COM ISSO?
+            </p>
+
+            <p>
+              Calma, caro leitor, KSKSKSK. Você vai entender.
+            </p>
+
+            <p>
+              Eu já era muito fã de <strong>UNDERTALE</strong> havia bastante tempo.
+              Jogava toda hora; era facilmente um dos meus passatempos favoritos.
+              Eu também adorava assistir aos vídeos do Core falando sobre o jogo.
+              Era mágico ver um jogo tão simples à primeira vista conseguir prender
+              tanto a atenção de um guri como eu.
+            </p>
+
+            <p>
+              E vou ser sincero: eu gostava de praticamente todos os personagens.
+            </p>
+
+            <p>
+              Mas o Sans...
+            </p>
+
+            <p>
+              Um esqueleto baixinho que conta piadas e, quando realmente precisa,
+              demonstra uma determinação absurda?
+            </p>
+
+            <p class="surto azul-relato">
+              Foi amor à primeira vista.
+            </p>
+
+            <p>
+              Minha vida começou a girar em torno do Sans KSKSKSK.
+            </p>
+
+            <p>
+              Só existia um pequeno problema: UNDERTALE era single-player.
+              Não dava para simplesmente entrar e jogar com meus amigos.
+              Pelo menos naquela época eu ainda nem conhecia o Together.
+            </p>
+
+            <p>
+              Foi aí que entrou o Roblox.
+            </p>
+
+            <p class="surto">
+              Eu tinha <strong>100 Robux e um sonho.</strong>
+            </p>
+
+
+            <div class="memoria-visual">
+
+              <button
+                class="imagem-memoria"
+                type="button"
+                data-imagem="Assets/sans-antigo.png"
+                aria-label="Ampliar o antigo avatar do Sans"
+              >
+                <img
+                  src="Assets/sans-antigo.png"
+                  alt="Antigo avatar do Sans usado por Rodrigo no Roblox"
+                >
+              </button>
+
+              <p class="memoria-legenda">
+                <strong>ARQUIVO // ANTIGO AVATAR</strong>
+                Sim. Essa foi a minha skin de SUPER MEGA FÃ DO SANS.
+                Clique na imagem para ampliar. E, por favor, lembre que
+                NÃO EXISTIAM AS CABEÇAS BONITINHAS DE SANS DE HOJE KSKSKSK.
+              </p>
+
+            </div>
+
+
+            <p class="surto">
+              NÃO ME JULGUE.
+            </p>
+
+            <p>
+              Agora, se você for mais novo ou simplesmente não souber o que é esse
+              capacete, eu explico. Basicamente, ele era um item que ficou disponível
+              por volta de 2018–2020. Eu consegui pegar e achei ele MUITO bonito.
+            </p>
+
+            <p>
+              Até aí tudo bem.
+            </p>
+
+            <p>
+              Mas provavelmente existe uma pergunta passando pela sua cabeça:
+              <strong>por que colocar isso no Sans?</strong>
+            </p>
+
+            <p>
+              E a resposta é extremamente simples.
+            </p>
+
+            <p class="surto azul-relato">
+              ELE CARECA É MUITO FEIO NO ROBLOX DHSAKJDHKJA.
+            </p>
+
+            <p>
+              Eu não conseguia olhar para aquela cabeça e pensar: “Ah, tranquilo.”
+            </p>
+
+            <p class="surto">
+              NÃO. EU PRECISAVA COLOCAR ALGUMA COISA NA CARECA DELE.
+            </p>
+
+            <p>
+              E assim foi. A chama azul saindo do capacete combinava
+              surpreendentemente bem com o Sans, e eu fui bastante elogiado por
+              essa skin durante a época em que usava ela.
+            </p>
+
+            <p>
+              Agora... sobre aquele corte vermelho na barriga.
+            </p>
+
+            <p>
+              Isso veio um pouco depois, naquela época em que começaram a bombar
+              cada vez mais variações do Sans. Dust, Green, Nightmare e a infinidade
+              de versões que existem por aí KSKSKSK.
+            </p>
+
+            <p>
+              Mas, no meio delas, tinha um que conseguiu me conquistar de novo:
+            </p>
+
+            <p class="surto vermelho-relato">
+              LAST BREATH SANS.
+            </p>
+
+            <p>
+              Eu me apaixonei não apenas pelo design dele, mas principalmente pelas
+              músicas. Nossa. Eu me arrepiava inteiro.
+            </p>
+
+            <p>
+              Então, obviamente, fui correndo no Roblox olhar quantos Robux eu tinha.
+            </p>
+
+            <p class="surto">
+              4. 💀
+            </p>
+
+            <p>
+              QUATRO.
+            </p>
+
+            <p>
+              Eu rodei a página INTEIRA do Roblox tentando achar alguma coisa que
+              desse para comprar com aquilo. E achei aquele corte por
+              <strong>3 Robux</strong>. EKEKEKEKE.
+            </p>
+
+            <p>
+              Foi a melhor compra da minha vida.
+            </p>
+
+            <p>
+              No total, aquele avatar custava exatamente <strong>13 Robux</strong>:
+              5 da camiseta, 5 da calça, 3 do corte... e o capacete tinha sido de graça.
+            </p>
+
+            <p>
+              E assim ficou. Eu usei praticamente aquela mesma skin por anos.
+              Só fui trocar de verdade em 2025.
+            </p>
+
+            <div class="micro-pausa">✦</div>
+
+            <p>
+              Mas, durante esse tempo, especialmente entre <strong>2023 e 2024</strong>,
+              aconteceu outra coisa importante.
+            </p>
+
+            <p>
+              Eu passei bastante tempo sozinho em casa e não tinha muita gente para
+              conversar. Então comecei a assistir a lives de alguns criadores.
+            </p>
+
+            <p>
+              Foi assim que conheci o <strong>Lux_x1l</strong>.
+            </p>
+
+            <p>
+              Inclusive, deixo meus créditos e meu agradecimento a ele, porque foi
+              por causa da comunidade das lives dele que eu conheci várias pessoas
+              novas. Foi uma época muito boa. Eu ligava o computador e já ia conferir
+              se ele estava em live.
+            </p>
+
+            <p>
+              E foi em <strong>uma dessas lives</strong> que eu conheci uma pessoa.
+            </p>
+
+            <p>
+              Uma pessoa chamada...
+            </p>
+
+            <p class="surto">
+              <span
+                class="segredo-nightmare"
+                id="segredo-nightmare"
+                tabindex="0"
+                title="Passe o mouse..."
+              >NIGHTMARE</span>
+            </p>
+
+            <p class="surto vermelho-relato">
+              NIGHTMARE! SIM. ELE MESMO.
+            </p>
+
+            <p>
+              A gente começou a conversar e percebeu rápido que tinha gostos muito
+              parecidos — incluindo um amor indescritível por
+              <strong>Friday Night Funkin'</strong>.
+            </p>
+
+            <p>
+              E aí começou a desgraça.
+            </p>
+
+            <p>
+              A gente passava dias e noites jogando igual dois malucos KSKSKSK.
+              Ele sempre ganhava de mim. 😠
+            </p>
+
+            <p class="surto">
+              E O PIOR: ELE JOGAVA NO CELULAR E EU NO PC.
+            </p>
+
+            <p>
+              Eu era humilhado e ainda tinha que aceitar ;w;
+            </p>
+
+            <p>
+              Com o tempo, aquilo virou rotina. A gente começou a conversar
+              praticamente todos os dias.
+            </p>
+
+
+            <div class="memoria-visual nightmare-memoria">
+
+              <p class="memoria-legenda">
+                <strong>ARQUIVO // ANTIGO AVATAR DE NIGHTMARE</strong>
+                E, aliás... essa era a skin dele KSKSKSK. Clique para ampliar.
+              </p>
+
+              <button
+                class="imagem-memoria"
+                type="button"
+                data-imagem="Assets/nightmare-antigo.png"
+                aria-label="Ampliar o antigo avatar de Nightmare"
+              >
+                <img
+                  src="Assets/nightmare-antigo.png"
+                  alt="Antigo avatar de Nightmare no Roblox"
+                >
+              </button>
+
+            </div>
+
+
+            <p>
+              Além de jogar, tinha outra coisa que a gente adorava fazer:
+              <strong>RP — RolePlay.</strong>
+            </p>
+
+            <p>
+              Mas não era entrar no Brookhaven ou alguma coisa assim.
+            </p>
+
+            <p>
+              Era literalmente conversar como se eu fosse o Sans e ele fosse o
+              Nightmare. Criávamos situações, histórias, discussões, aventuras...
+            </p>
+
+            <span class="banger-duo">
+              BANGER DUO
+            </span>
+
+            <p>
+              Foi assim que nasceu um nome que eu provavelmente nunca vou esquecer.
+              Eu e ele explorávamos todo tipo de mundo do Roblox juntos. A dupla
+              passou por coisa pra caramba KSKSKSK.
+            </p>
+
+            <p>
+              Depois de algum tempo, eu descobri outra coisa sobre ele.
+            </p>
+
+            <p>
+              Ele fazia música.
+            </p>
+
+            <p class="surto vermelho-relato">
+              THIS GUY IS BADASS.
+            </p>
+
+            <p>
+              Todas as músicas que você ouviu durante sua viagem por este site foram
+              criadas por ele. E isso já acontecia muito antes deste projeto existir.
+            </p>
+
+            <p>
+              Eu recebia músicas novas quase toda semana. Ele chegou até a fazer
+              <strong>uma música de FNF usando a minha voz</strong> EKEKEKEKE.
+            </p>
+
+            <p>
+              Bons tempos.
+            </p>
+
+            <p>
+              E aí começou uma coisa curiosa.
+            </p>
+
+            <p>
+              Sempre que eu voltava da escola, ia dormir ou simplesmente ficava sem
+              fazer nada, começava a imaginar aqueles dois personagens passando por
+              todo tipo de situação.
+            </p>
+
+            <p>
+              Sans e Nightmare.
+            </p>
+
+            <p>
+              Mundo após mundo.
+            </p>
+
+            <p>
+              História após história.
+            </p>
+
+            <p>
+              Até que, algum dia, uma lâmpada acendeu na minha cabeça:
+            </p>
+
+            <p class="surto azul-relato">
+              E se... eu fizesse eles serem reais?
+            </p>
+
+            <p>
+              Não “reais” de verdade, obviamente KSKSKSK.
+            </p>
+
+            <p>
+              Mas reais <strong>como personagens</strong>.
+            </p>
+
+            <p>
+              Com uma história. Com motivos. Com consequências.
+              Com um começo e um fim.
+            </p>
+
+            <p class="surto">
+              Eu podia criar a nossa história.
+            </p>
+
+            <p>
+              E foi exatamente isso que eu fiz.
+            </p>
+
+            <p>
+              Por volta de <strong>março de 2026</strong>, comecei a desenvolver de
+              verdade aquilo que eventualmente se tornaria
+              <strong>Judgment Ronin & Nightmare</strong>.
+            </p>
+
+            <p>
+              E agora você sabe de onde começou toda essa bagunça.
+            </p>
+
+            <p>
+              Hihi.
+            </p>
+
+            <div class="assinatura-relato">
+              Se você chegou até aqui, obrigado de verdade por ter curiosidade
+              suficiente para conhecer não apenas a história, mas também tudo que
+              existiu antes dela.<br><br>
+              Eu fiz este projeto com muito amor e carinho, junto de pessoas que
+              fizeram parte dessa jornada.<br><br>
+              <strong>Até mais, caro leitor. E obrigado por fazer parte dessa experiência. 🧡</strong>
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ====================================================
+         ORIGEM DE NIGHTMARE
+    ===================================================== -->
+
+    <section class="bloco origem-nightmare-espera" id="origem-nightmare">
+
+      <div class="bloco-conteudo">
+
+        <p class="rotulo">
+          ARQUIVO DE PERSONAGEM
+        </p>
+
+        <h2 class="titulo-bloco">
+          A origem de Nightmare
+        </h2>
+
+        <p class="texto-bloco">
+          Este espaço está reservado para o relato do criador de Nightmare.
+          Quando ele chegar, a história dele entra aqui com as próprias palavras.
+        </p>
+
+        <!-- ==================================================
+             COLE A ORIGEM DO NIGHTMARE AQUI QUANDO RECEBER
+        =================================================== -->
+
         <span class="em-breve">
-          EM BREVE
+          AGUARDANDO ARQUIVO
         </span>
 
       </div>
@@ -1004,7 +1785,7 @@
         <article class="credito nightmare">
 
           <h3>
-            KK
+            Nightmare
           </h3>
 
           <p>
@@ -1020,7 +1801,7 @@
         <article class="credito vox">
 
           <h3>
-            Vox
+            Vox — ChatGPT / OpenAI
           </h3>
 
           <p>
@@ -1079,7 +1860,111 @@
 
 
   </main>
-<script src="easter.js"></script>
+
+
+
+  <!-- ======================================================
+       VISUALIZADOR DAS IMAGENS
+  ======================================================= -->
+
+  <div
+    class="modal-imagem"
+    id="modal-imagem"
+    aria-hidden="true"
+  >
+
+    <button
+      class="fechar-modal"
+      id="fechar-modal"
+      type="button"
+      aria-label="Fechar imagem"
+    >
+      ×
+    </button>
+
+    <img
+      id="imagem-ampliada"
+      src=""
+      alt="Imagem ampliada"
+    >
+
+  </div>
+
+
+  <script>
+
+    const botaoOrigem = document.getElementById("botao-origem");
+    const relatoOrigem = document.getElementById("relato-origem");
+    const textoBotaoOrigem = document.getElementById("texto-botao-origem");
+
+    botaoOrigem.addEventListener("click", () => {
+
+      const aberto = botaoOrigem.getAttribute("aria-expanded") === "true";
+
+      botaoOrigem.setAttribute("aria-expanded", String(!aberto));
+      relatoOrigem.hidden = aberto;
+      textoBotaoOrigem.textContent = aberto ? "LER RELATO" : "FECHAR RELATO";
+
+      if (!aberto) {
+        setTimeout(() => {
+          relatoOrigem.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 80);
+      }
+
+    });
+
+
+    const modalImagem = document.getElementById("modal-imagem");
+    const imagemAmpliada = document.getElementById("imagem-ampliada");
+    const fecharModal = document.getElementById("fechar-modal");
+
+    document.querySelectorAll(".imagem-memoria").forEach((botao) => {
+
+      botao.addEventListener("click", () => {
+
+        imagemAmpliada.src = botao.dataset.imagem;
+        modalImagem.classList.add("aberta");
+        modalImagem.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+
+      });
+
+    });
+
+
+    function fecharImagem() {
+
+      modalImagem.classList.remove("aberta");
+      modalImagem.setAttribute("aria-hidden", "true");
+      imagemAmpliada.src = "";
+      document.body.style.overflow = "";
+
+    }
+
+
+    fecharModal.addEventListener("click", fecharImagem);
+
+    modalImagem.addEventListener("click", (evento) => {
+      if (evento.target === modalImagem) {
+        fecharImagem();
+      }
+    });
+
+    document.addEventListener("keydown", (evento) => {
+      if (evento.key === "Escape" && modalImagem.classList.contains("aberta")) {
+        fecharImagem();
+      }
+    });
+
+
+    const segredoNightmare = document.getElementById("segredo-nightmare");
+
+    segredoNightmare.addEventListener("click", () => {
+      segredoNightmare.classList.toggle("revelado");
+    });
+
+  </script>
+
 
 </body>
 
