@@ -1337,7 +1337,42 @@ body.tema-nightmare #cursor-glow {
         );
 }
 
+/* ======================================
+   IMAGEM JUDGMENT RONIN
+====================================== */
 
+.judgment-imagem-container {
+    position: relative;
+
+    width:
+        min(520px, 55%);
+
+    float: right;
+
+    margin:
+        -15px -20px 45px 50px;
+
+    z-index: 2;
+}
+
+
+.judgment-imagem {
+    display: block;
+
+    width: 100%;
+
+    max-height: 760px;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    border:
+        1px solid rgba(130,220,255,0.22);
+
+    box-shadow:
+        0 0 60px rgba(80,180,230,0.10);
+}
 
 /* ======================================
    IMAGEM NIGHTMARE
@@ -1872,7 +1907,23 @@ body.tema-nightmare #cursor-glow {
         font-size: 10px;
     }
 
+/* IMAGEM JUDGMENT */
 
+.judgment-imagem-container {
+    float: none;
+
+    width: 100%;
+
+    margin:
+        0 0 45px;
+}
+
+
+.judgment-imagem {
+    max-height: none;
+
+    object-fit: contain;
+}
 
     /* IMAGEM NIGHTMARE */
 
